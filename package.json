@@ -1,0 +1,28 @@
+{
+  "name": "tamagochi",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.9.0",
+  "scripts": {
+    "test": "npm run test:unit && npm run test:fr && npm run test:e2e",
+    "test:unit": "node --test tests/unit/*.test.ts",
+    "test:fr": "node --test tests/fr-acceptance.test.ts",
+    "test:e2e": "node --test tests/e2e/*.test.ts",
+    "fr:manifest": "node scripts/fr-strict-pipeline.mjs init",
+    "fr:audit": "node scripts/fr-strict-pipeline.mjs audit-all",
+    "fr:fresh-audit": "node scripts/fr-zero-touch-revalidate.mjs",
+    "fr:check": "node scripts/fr-check.mjs",
+    "qa:check": "node scripts/qa-check.mjs",
+    "web:qa": "node scripts/serve-web-qa.mjs",
+    "web:game": "node scripts/serve-web-game.mjs",
+    "verify": "npm test && npm run fr:check && npm run qa:check"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

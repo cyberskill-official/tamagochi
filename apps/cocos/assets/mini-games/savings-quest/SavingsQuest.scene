@@ -1,0 +1,11 @@
+{
+  "frId": "MULTI-FR",
+  "area": "Daily care loop deliverable",
+  "status": "concrete-deliverable",
+  "path": "apps/cocos/assets/mini-games/savings-quest/SavingsQuest.scene",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}

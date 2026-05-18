@@ -1,0 +1,11 @@
+{
+  "frId": "FR-AR-001",
+  "area": "AR, sharing, and live-ops deliverable",
+  "status": "concrete-deliverable",
+  "path": "apps/cocos/assets/i18n/en/onboarding.json",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}

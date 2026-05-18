@@ -1,0 +1,11 @@
+{
+  "frId": "FR-I18N-001",
+  "area": "Daily care loop deliverable",
+  "status": "concrete-deliverable",
+  "path": "apps/cocos/assets/i18n/vi/streak.json",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}

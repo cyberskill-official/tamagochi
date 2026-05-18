@@ -1,0 +1,11 @@
+{
+  "frId": "MULTI-FR",
+  "area": "Compliance and child-safety deliverable",
+  "status": "concrete-deliverable",
+  "path": "apps/cocos/src/__sdk-allowlist/kids.json",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}

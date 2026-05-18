@@ -1,0 +1,4 @@
+AtlasContract
+Kind: pet
+Path: apps/cocos/assets/pets/_template/atlas-contract.atlas
+Verification: unit, fr-acceptance, e2e

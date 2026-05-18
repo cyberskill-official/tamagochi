@@ -1,0 +1,11 @@
+{
+  "frId": "FR-PET-001",
+  "area": "Pet lifecycle deliverable",
+  "status": "concrete-deliverable",
+  "path": "apps/cocos/assets/pets/_template/skeleton-contract.spine.json",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}

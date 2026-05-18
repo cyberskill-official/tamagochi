@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tamagochi Playable Local Game</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">CyberSkill Tamagochi</p>
+        <h1>Playable Local Game</h1>
+      </div>
+      <div class="header-actions">
+        <select id="tenant-select" aria-label="Tenant">
+          <option value="mochi">Consumer: Mochi</option>
+          <option value="techcombank">Techcombank PetOS</option>
+          <option value="viettel">Viettel PetOS</option>
+        </select>
+        <select id="audience-select" aria-label="Audience">
+          <option value="standard">13+ Standard</option>
+          <option value="kids">Under-13 Kids</option>
+        </select>
+        <button id="reset-btn" type="button">Reset Save</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="stage-panel" aria-label="Pet stage">
+        <div class="pet-wrap">
+          <div class="pet" id="pet-avatar">
+            <span id="pet-face">•ᴗ•</span>
+          </div>
+          <div class="pet-shadow"></div>
+        </div>
+        <div class="pet-summary">
+          <p class="eyebrow" id="tenant-label">mochi tenant</p>
+          <h2 id="pet-name">Egg</h2>
+          <p id="pet-stage">Ready to hatch</p>
+          <div class="stat-list">
+            <label>Hunger <progress id="stat-hunger" value="100" max="100"></progress><span id="value-hunger">100</span></label>
+            <label>Clean <progress id="stat-cleanliness" value="100" max="100"></progress><span id="value-cleanliness">100</span></label>
+            <label>Happy <progress id="stat-happiness" value="100" max="100"></progress><span id="value-happiness">100</span></label>
+            <label>Energy <progress id="stat-energy" value="100" max="100"></progress><span id="value-energy">100</span></label>
+          </div>
+        </div>
+      </section>
+
+      <section class="action-bar" aria-label="Primary care actions">
+        <button id="hatch-btn">Hatch</button>
+        <button id="name-btn">Name</button>
+        <button id="feed-btn">Feed</button>
+        <button id="clean-btn">Clean</button>
+        <button id="hug-btn">Hug</button>
+        <button id="minigame-btn">Mini-game</button>
+        <button id="age-btn">Age +1 Day</button>
+        <button id="rescue-btn">Rescue</button>
+      </section>
+
+      <section class="tabs" aria-label="Feature tabs">
+        <button class="tab active" data-tab="care">Care</button>
+        <button class="tab" data-tab="ai">AI</button>
+        <button class="tab" data-tab="social">Social</button>
+        <button class="tab" data-tab="economy">Economy</button>
+        <button class="tab" data-tab="viral">AR & Viral</button>
+        <button class="tab" data-tab="petos">PetOS</button>
+        <button class="tab" data-tab="audit">Audit</button>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel tab-panel" id="panel-care">
+          <h3>Care Loop</h3>
+          <p id="care-copy">Hatch, name, feed, clean, hug, play, age, and rescue your pet.</p>
+          <div class="pill-row">
+            <span id="coins-pill">Coins: 0</span>
+            <span id="hearts-pill">Hearts: 0</span>
+            <span id="streak-pill">Streak: 0</span>
+            <span id="forgiveness-pill">Forgiveness: 3</span>
+          </div>
+        </article>
+
+        <article class="panel tab-panel hidden" id="panel-ai">
+          <h3>AI Dialogue</h3>
+          <div class="inline-form">
+            <input id="chat-input" value="Are you happy today?" aria-label="Chat prompt">
+            <button id="chat-btn">Ask Pet</button>
+          </div>
+          <p id="chat-output">No dialogue yet.</p>
+          <p class="note">Kids SKU uses scripted dialogue only.</p>
+        </article>
+
+        <article class="panel tab-panel hidden" id="panel-social">
+          <h3>Social</h3>
+          <div class="button-grid">
+            <button id="friend-btn">Generate Friend Code</button>
+            <button id="coparent-btn">Create PetPair</button>
+            <button id="trade-btn">Trust Trade</button>
+            <button id="wedding-btn">Wedding</button>
+            <button id="breed-btn">Breed</button>
+          </div>
+          <p id="social-output">No social action yet.</p>
+        </article>
+
+        <article class="panel tab-panel hidden" id="panel-economy">
+          <h3>Economy & Live Ops</h3>
+          <div class="button-grid">
+            <button id="iap-btn">Buy Direct Outfit</button>
+            <button id="petplus-btn">Restore Pet+</button>
+            <button id="family-btn">Open Family Dashboard</button>
+            <button id="ad-btn">Rewarded Video</button>
+            <button id="battle-btn">Battle Pass</button>
+          </div>
+          <p id="economy-output">No economy action yet.</p>
+        </article>
+
+        <article class="panel tab-panel hidden" id="panel-viral">
+          <h3>AR & Viral</h3>
+          <div class="button-grid">
+            <button id="ar-btn">Bedroom Cam</button>
+            <button id="share-btn">Export 9:16 Clip</button>
+            <button id="drama-btn">Daily Drama</button>
+            <button id="gen-btn">Generative Palette</button>
+            <button id="push-btn">Push Check</button>
+          </div>
+          <p id="viral-output">No viral action yet.</p>
+        </article>
+
+        <article class="panel tab-panel hidden" id="panel-petos">
+          <h3>PetOS B2B</h3>
+          <div class="button-grid">
+            <button id="tenant-btn">Load Tenant Theme</button>
+            <button id="rls-btn">Test Tenant Isolation</button>
+            <button id="console-btn">Open PetOS Console</button>
+            <button id="tcb-btn">Techcombank Quest</button>
+            <button id="viettel-btn">Viettel Quest</button>
+          </div>
+          <p id="petos-output">No PetOS action yet.</p>
+        </article>
+
+        <article class="panel tab-panel hidden" id="panel-audit">
+          <h3>Feature Audit</h3>
+          <ul id="audit-list"></ul>
+        </article>
+      </section>
+
+      <section class="log-panel">
+        <h3>Game Log</h3>
+        <pre id="game-log"></pre>
+      </section>
+    </main>
+
+    <script type="module" src="./game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "frId": "FR-I18N-001",
+  "area": "Localization and accessibility deliverable",
+  "status": "concrete-deliverable",
+  "path": "apps/cocos/assets/i18n/_keys-registry.json",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}

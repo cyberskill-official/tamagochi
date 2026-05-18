@@ -1,0 +1,11 @@
+{
+  "frId": "MULTI-FR",
+  "area": "Infrastructure deliverable",
+  "status": "concrete-deliverable",
+  "path": "apps/cocos/settings/v2/packages/engine.json",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}

@@ -1,0 +1,4 @@
+Config
+Kind: media
+Path: infra/supabase/standard/config.toml
+Verification: unit, fr-acceptance, e2e

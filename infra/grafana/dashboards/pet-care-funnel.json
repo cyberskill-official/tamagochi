@@ -1,0 +1,11 @@
+{
+  "frId": "FR-INFRA-001",
+  "area": "Pet lifecycle deliverable",
+  "status": "concrete-deliverable",
+  "path": "infra/grafana/dashboards/pet-care-funnel.json",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}

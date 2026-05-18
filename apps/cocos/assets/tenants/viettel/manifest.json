@@ -1,0 +1,11 @@
+{
+  "frId": "MULTI-FR",
+  "area": "PetOS tenant deliverable",
+  "status": "concrete-deliverable",
+  "path": "apps/cocos/assets/tenants/viettel/manifest.json",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}

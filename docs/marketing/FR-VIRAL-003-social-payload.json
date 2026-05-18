@@ -1,0 +1,30 @@
+{
+  "fr_id": "FR-VIRAL-003",
+  "status": "mocked-dependency",
+  "reason": "Platform API keys are not present in local config; use the in-code socialPublishStub contract.",
+  "scheduled_for": "2026-05-22T18:30:00+07:00",
+  "platforms": ["tiktok", "instagram_reels", "youtube_shorts"],
+  "copy": "A one-of-one palette reveal from a safe adoption prompt. #mochilife #cozypet",
+  "asset": {
+    "url": "https://cdn.tamagochi.app/social/fr-viral-003-generative-palette.mp4",
+    "format": "video/mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration_seconds": 6,
+    "watermark": "tamagochi.app"
+  },
+  "http_request": {
+    "method": "POST",
+    "url": "https://social-publisher.local/tiktok/posts",
+    "headers": {
+      "authorization": "Bearer <platform-api-key>",
+      "content-type": "application/json"
+    },
+    "body": {
+      "asset_url": "https://cdn.tamagochi.app/social/fr-viral-003-generative-palette.mp4",
+      "caption": "A one-of-one palette reveal from a safe adoption prompt. #mochilife #cozypet",
+      "scheduled_for": "2026-05-22T18:30:00+07:00",
+      "prompt_safety_checked": true
+    }
+  }
+}

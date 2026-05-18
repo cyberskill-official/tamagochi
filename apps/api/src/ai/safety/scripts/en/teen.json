@@ -1,0 +1,11 @@
+{
+  "frId": "FR-AI-001",
+  "area": "AI and content-safety deliverable",
+  "status": "concrete-deliverable",
+  "path": "apps/api/src/ai/safety/scripts/en/teen.json",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}

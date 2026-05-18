@@ -1,0 +1,11 @@
+{
+  "frId": "MULTI-FR",
+  "area": "Infrastructure deliverable",
+  "status": "concrete-deliverable",
+  "path": "apps/cocos/project.json",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}

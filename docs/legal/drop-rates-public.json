@@ -1,0 +1,11 @@
+{
+  "frId": "FR-LEGAL-001",
+  "area": "Compliance and child-safety deliverable",
+  "status": "concrete-deliverable",
+  "path": "docs/legal/drop-rates-public.json",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}

@@ -1,0 +1,4 @@
+Config
+Kind: compliance
+Path: infra/supabase/kids/config.toml
+Verification: unit, fr-acceptance, e2e

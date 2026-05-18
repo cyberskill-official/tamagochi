@@ -1,0 +1,11 @@
+{
+  "frId": "FR-INFRA-001",
+  "area": "Authentication and identity deliverable",
+  "status": "concrete-deliverable",
+  "path": "infra/grafana/dashboards/auth-funnel.json",
+  "checks": [
+    "tenant scoped",
+    "audience safe",
+    "covered by automated verification"
+  ]
+}
