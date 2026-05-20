@@ -3,7 +3,7 @@ id: FR-PET-001
 title: "Pet entity schema (Postgres + Colyseus state) + hatch flow + naming with content-safety filter"
 module: PET
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

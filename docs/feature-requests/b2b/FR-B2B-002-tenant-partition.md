@@ -3,7 +3,7 @@ id: FR-B2B-002
 title: "Tenant partition — tenant_id on every table + Supabase RLS + Colyseus per-tenant rooms + per-tenant rate-limit"
 module: B2B
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P4
 milestone: "Scale & PetOS B2B"

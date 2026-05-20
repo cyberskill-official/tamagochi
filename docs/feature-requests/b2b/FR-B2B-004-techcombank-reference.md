@@ -3,7 +3,7 @@ id: FR-B2B-004
 title: "Techcombank reference tenant — junior account pet + savings-quest mini-game + financial-literacy + Techcombank SSO bridge"
 module: B2B
 priority: SHOULD
-status: shipped
+status: done
 verify: T
 phase: P4
 milestone: "Scale & PetOS B2B"

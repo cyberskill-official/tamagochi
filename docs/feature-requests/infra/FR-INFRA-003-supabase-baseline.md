@@ -3,7 +3,7 @@ id: FR-INFRA-003
 title: "Supabase Postgres + Auth + Storage + Edge Functions baseline (RLS + tenant partition + KMS backups)"
 module: INFRA
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P0
 milestone: "Foundation Gate"

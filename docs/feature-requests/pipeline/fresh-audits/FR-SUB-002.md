@@ -1,12 +1,12 @@
 # FR-SUB-002 Fresh Zero-Touch Audit
 
-**Derived state:** shipped (10/10) + strict-audited
+**Derived state:** done
 **Reason:** Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.
 **Attempts:** 1
 **Deliverables checked:** 8
 **Missing deliverables:** 0
 **Scaffold deliverables:** 0
-**Mocked dependency:** none
+**External production gate:** none
 
 ## Raw Terminal Results
 
@@ -16,18 +16,18 @@
 > tamagochi@0.1.0 test:unit
 > node --test tests/unit/*.test.ts
 
-✔ AI service covers persona, caching, moderation, cost caps, and kids scripted mode (1.844125ms)
-✔ media service covers AR fallback, vertical export, daily cap, generated palettes, and push rules (0.584916ms)
-✔ social service covers invite-only kids, PetPair, break-up detection, trade safety, and ceremony (0.354708ms)
-✔ i18n/a11y and B2B services cover locales, payment display, contrast, RLS, DPO, and reference tenants (0.171ms)
-✔ legal service enforces compliance, SDK, branding, and loot-box rules (0.99275ms)
-✔ auth service covers Apple, Google, Zalo, parent invites, and fail-closed validation (0.464125ms)
-✔ infra service validates build targets, tenant asset loading, bundle budgets, and realtime metadata (0.649625ms)
-✔ observability service separates kids SDKs, tags events, and catches security drift (0.124333ms)
-✔ pet service enforces hatch, consent, quota, safe names, uniqueness, evolution, and rescue (3.953458ms)
-✔ pet stat reconciliation and breeding are deterministic and tenant-safe (0.330042ms)
-✔ care service covers feed, clean, hug caps, mini-game caps, streak forgiveness, and sleep hours (0.2915ms)
-✔ economy service enforces double-entry ledger, no overdraft, IAP-only Hearts, subscriptions, ads, and exports (0.352625ms)
+✔ AI service covers persona, caching, moderation, cost caps, and kids scripted mode (3.350375ms)
+✔ media service covers AR fallback, vertical export, daily cap, generated palettes, and push rules (1.853834ms)
+✔ social service covers invite-only kids, PetPair, break-up detection, trade safety, and ceremony (1.336084ms)
+✔ i18n/a11y and B2B services cover locales, payment display, contrast, RLS, DPO, and reference tenants (0.212958ms)
+✔ legal service enforces compliance, SDK, branding, and loot-box rules (1.629459ms)
+✔ auth service covers Apple, Google, Zalo, parent invites, and fail-closed validation (0.533916ms)
+✔ infra service validates build targets, tenant asset loading, bundle budgets, and realtime metadata (1.777167ms)
+✔ observability service separates kids SDKs, tags events, and catches security drift (0.21175ms)
+✔ pet service enforces hatch, consent, quota, safe names, uniqueness, evolution, and rescue (3.128375ms)
+✔ pet stat reconciliation and breeding are deterministic and tenant-safe (0.258292ms)
+✔ care service covers feed, clean, hug caps, mini-game caps, streak forgiveness, and sleep hours (0.767875ms)
+✔ economy service enforces double-entry ledger, no overdraft, IAP-only Hearts, subscriptions, ads, and exports (0.308334ms)
 ℹ tests 12
 ℹ suites 0
 ℹ pass 12
@@ -35,7 +35,7 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 77.013917
+ℹ duration_ms 140.998375
 
 exit_code=0
 ```
@@ -46,60 +46,60 @@ exit_code=0
 > tamagochi@0.1.0 test:fr
 > node --test tests/fr-acceptance.test.ts --test-name-pattern FR-SUB-002
 
-✔ implementation registry covers every FR exactly once (0.768125ms)
-✔ FR-LEGAL-001 acceptance contract (0.085416ms)
-✔ FR-LEGAL-002 acceptance contract (0.202125ms)
-✔ FR-LEGAL-003 acceptance contract (0.089792ms)
-✔ FR-INFRA-001 acceptance contract (0.56775ms)
-✔ FR-INFRA-002 acceptance contract (0.045ms)
-✔ FR-INFRA-003 acceptance contract (0.056042ms)
-✔ FR-AUTH-001 acceptance contract (0.094042ms)
-✔ FR-AUTH-002 acceptance contract (0.112417ms)
-✔ FR-AUTH-003 acceptance contract (0.0995ms)
-✔ FR-OBS-001 acceptance contract (0.070166ms)
-✔ FR-ART-001 acceptance contract (0.061ms)
-✔ FR-PET-001 acceptance contract (0.056334ms)
-✔ FR-PET-002 acceptance contract (0.05725ms)
-✔ FR-PET-003 acceptance contract (0.064417ms)
-✔ FR-PET-004 acceptance contract (0.023375ms)
-✔ FR-CARE-001 acceptance contract (0.037708ms)
-✔ FR-CARE-002 acceptance contract (0.028834ms)
-✔ FR-CARE-003 acceptance contract (0.070458ms)
-✔ FR-CARE-004 acceptance contract (0.049083ms)
-✔ FR-CARE-005 acceptance contract (0.433708ms)
-✔ FR-AI-001 acceptance contract (0.093167ms)
-✔ FR-AI-002 acceptance contract (0.042875ms)
-✔ FR-AR-001 acceptance contract (0.039916ms)
-✔ FR-VIRAL-001 acceptance contract (0.030958ms)
-✔ FR-PET-005 acceptance contract (0.080417ms)
-✔ FR-PET-006 acceptance contract (0.026667ms)
-✔ FR-PET-007 acceptance contract (0.074334ms)
-✔ FR-PET-008 acceptance contract (0.047333ms)
-✔ FR-SOCIAL-001 acceptance contract (0.061875ms)
-✔ FR-SOCIAL-002 acceptance contract (0.055584ms)
-✔ FR-SOCIAL-003 acceptance contract (0.037208ms)
-✔ FR-SOCIAL-004 acceptance contract (0.025042ms)
-✔ FR-VIRAL-002 acceptance contract (0.0315ms)
-✔ FR-VIRAL-003 acceptance contract (0.04325ms)
-✔ FR-ECON-001 acceptance contract (0.1025ms)
-✔ FR-ECON-002 acceptance contract (0.029292ms)
-✔ FR-ECON-003 acceptance contract (0.026542ms)
-✔ FR-SUB-001 acceptance contract (0.031792ms)
-✔ FR-SUB-002 acceptance contract (0.048167ms)
-✔ FR-ADS-001 acceptance contract (0.056834ms)
-✔ FR-ADS-002 acceptance contract (0.048375ms)
-✔ FR-VIRAL-004 acceptance contract (0.025583ms)
-✔ FR-VIRAL-005 acceptance contract (0.033083ms)
-✔ FR-OBS-002 acceptance contract (0.046167ms)
-✔ FR-I18N-001 acceptance contract (0.041583ms)
-✔ FR-I18N-002 acceptance contract (0.031459ms)
-✔ FR-A11Y-001 acceptance contract (0.037583ms)
-✔ FR-AI-003 acceptance contract (0.039625ms)
-✔ FR-B2B-001 acceptance contract (0.027042ms)
-✔ FR-B2B-002 acceptance contract (0.048208ms)
-✔ FR-B2B-003 acceptance contract (0.019041ms)
-✔ FR-B2B-004 acceptance contract (0.020042ms)
-✔ FR-B2B-005 acceptance contract (0.016959ms)
+✔ implementation registry covers every FR exactly once (1.573708ms)
+✔ FR-LEGAL-001 acceptance contract (0.062291ms)
+✔ FR-LEGAL-002 acceptance contract (0.178041ms)
+✔ FR-LEGAL-003 acceptance contract (0.082125ms)
+✔ FR-INFRA-001 acceptance contract (0.714583ms)
+✔ FR-INFRA-002 acceptance contract (0.047833ms)
+✔ FR-INFRA-003 acceptance contract (0.052958ms)
+✔ FR-AUTH-001 acceptance contract (0.041125ms)
+✔ FR-AUTH-002 acceptance contract (0.094333ms)
+✔ FR-AUTH-003 acceptance contract (0.085167ms)
+✔ FR-OBS-001 acceptance contract (0.212708ms)
+✔ FR-ART-001 acceptance contract (0.081875ms)
+✔ FR-PET-001 acceptance contract (0.078958ms)
+✔ FR-PET-002 acceptance contract (0.061917ms)
+✔ FR-PET-003 acceptance contract (0.113333ms)
+✔ FR-PET-004 acceptance contract (0.042833ms)
+✔ FR-CARE-001 acceptance contract (0.056208ms)
+✔ FR-CARE-002 acceptance contract (0.042125ms)
+✔ FR-CARE-003 acceptance contract (0.071125ms)
+✔ FR-CARE-004 acceptance contract (0.050875ms)
+✔ FR-CARE-005 acceptance contract (0.052292ms)
+✔ FR-AI-001 acceptance contract (0.095125ms)
+✔ FR-AI-002 acceptance contract (0.049167ms)
+✔ FR-AR-001 acceptance contract (0.033375ms)
+✔ FR-VIRAL-001 acceptance contract (0.033ms)
+✔ FR-PET-005 acceptance contract (0.081792ms)
+✔ FR-PET-006 acceptance contract (0.029208ms)
+✔ FR-PET-007 acceptance contract (0.088416ms)
+✔ FR-PET-008 acceptance contract (0.063916ms)
+✔ FR-SOCIAL-001 acceptance contract (0.077375ms)
+✔ FR-SOCIAL-002 acceptance contract (0.062625ms)
+✔ FR-SOCIAL-003 acceptance contract (0.04525ms)
+✔ FR-SOCIAL-004 acceptance contract (0.030209ms)
+✔ FR-VIRAL-002 acceptance contract (0.04025ms)
+✔ FR-VIRAL-003 acceptance contract (0.054166ms)
+✔ FR-ECON-001 acceptance contract (0.124459ms)
+✔ FR-ECON-002 acceptance contract (0.035209ms)
+✔ FR-ECON-003 acceptance contract (0.038ms)
+✔ FR-SUB-001 acceptance contract (0.034791ms)
+✔ FR-SUB-002 acceptance contract (0.038125ms)
+✔ FR-ADS-001 acceptance contract (0.063708ms)
+✔ FR-ADS-002 acceptance contract (0.043333ms)
+✔ FR-VIRAL-004 acceptance contract (0.029875ms)
+✔ FR-VIRAL-005 acceptance contract (0.031833ms)
+✔ FR-OBS-002 acceptance contract (0.063792ms)
+✔ FR-I18N-001 acceptance contract (0.026ms)
+✔ FR-I18N-002 acceptance contract (0.031125ms)
+✔ FR-A11Y-001 acceptance contract (0.039416ms)
+✔ FR-AI-003 acceptance contract (0.0375ms)
+✔ FR-B2B-001 acceptance contract (0.025625ms)
+✔ FR-B2B-002 acceptance contract (0.064958ms)
+✔ FR-B2B-003 acceptance contract (0.024542ms)
+✔ FR-B2B-004 acceptance contract (0.022208ms)
+✔ FR-B2B-005 acceptance contract (0.029709ms)
 ℹ tests 54
 ℹ suites 0
 ℹ pass 54
@@ -107,7 +107,7 @@ exit_code=0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 79.524
+ℹ duration_ms 142.8405
 
 exit_code=0
 ```
@@ -118,13 +118,13 @@ exit_code=0
 > tamagochi@0.1.0 test:e2e
 > node --test tests/e2e/*.test.ts
 
-✔ E2E-006 game session orchestrator passes all product journeys (4.210708ms)
-✔ E2E-007 web QA console serves live browser-ready artifact (60.911208ms)
-✔ E2E-001 standard player hatch-to-share journey (2.781ms)
-✔ E2E-002 under-13 safe account and family journey (1.044875ms)
-✔ E2E-004 monetization and live-ops journey remains deterministic and non-randomized (0.263833ms)
-✔ E2E-003 social collection journey covers friends, PetPair, breeding, trust trade, and ceremony (3.264125ms)
-✔ E2E-005 PetOS tenant isolation journey covers theme, RLS, DPO, observability, localization, and reference tenants (1.048375ms)
+✔ E2E-006 game session orchestrator passes all product journeys (4.351833ms)
+✔ E2E-007 web QA console serves live browser-ready artifact (111.660292ms)
+✔ E2E-001 standard player hatch-to-share journey (3.998625ms)
+✔ E2E-002 under-13 safe account and family journey (0.647459ms)
+✔ E2E-004 monetization and live-ops journey remains deterministic and non-randomized (0.228875ms)
+✔ E2E-003 social collection journey covers friends, PetPair, breeding, trust trade, and ceremony (3.816959ms)
+✔ E2E-005 PetOS tenant isolation journey covers theme, RLS, DPO, observability, localization, and reference tenants (1.002417ms)
 ℹ tests 7
 ℹ suites 0
 ℹ pass 7
@@ -132,7 +132,7 @@ exit_code=0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 194.327584
+ℹ duration_ms 259.205708
 
 exit_code=0
 ```

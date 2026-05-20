@@ -3,7 +3,7 @@ id: FR-B2B-003
 title: "PetOS console — Next.js admin app for tenant operators · theme upload + quest CMS + KPI dashboard + entitlement tier config"
 module: B2B
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P4
 milestone: "Scale & PetOS B2B"

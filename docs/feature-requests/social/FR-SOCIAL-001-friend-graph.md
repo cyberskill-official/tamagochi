@@ -3,7 +3,7 @@ id: FR-SOCIAL-001
 title: "Friend graph — invite codes + accept/reject + blocklist + Colyseus presence (kids: invite-only, no name search)"
 module: SOCIAL
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P2
 milestone: "Social & Multi-Pet"

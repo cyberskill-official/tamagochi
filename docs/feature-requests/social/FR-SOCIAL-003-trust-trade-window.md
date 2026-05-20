@@ -3,7 +3,7 @@ id: FR-SOCIAL-003
 title: "Trust-trade window — both-sides-show confirm + server-authoritative atomic swap + rate-limit + no off-platform"
 module: SOCIAL
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P2
 milestone: "Social & Multi-Pet"

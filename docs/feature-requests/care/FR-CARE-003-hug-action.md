@@ -3,7 +3,7 @@ id: FR-CARE-003
 title: "Hug/pet action — happiness restore + haptic + Spine care_pet anim + 24h soft cap"
 module: CARE
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

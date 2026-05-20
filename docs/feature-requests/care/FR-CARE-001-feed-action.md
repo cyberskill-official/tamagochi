@@ -3,7 +3,7 @@ id: FR-CARE-001
 title: "Feed action — server-authoritative consumable spend + hunger restore + Spine eat anim + cooldown"
 module: CARE
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

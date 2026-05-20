@@ -3,7 +3,7 @@ id: FR-VIRAL-001
 title: "TikTok-native vertical video export — 1080×1920 6s clip + watermark + trending audio + one-tap share"
 module: VIRAL
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

@@ -3,7 +3,7 @@ id: FR-B2B-005
 title: "Viettel reference tenant — top-up triggers pet feed + daily-login data-cost reduction + Pet-of-Viettel mascot + Viettel SSO + SIM-binding"
 module: B2B
 priority: SHOULD
-status: shipped
+status: done
 verify: T
 phase: P4
 milestone: "Scale & PetOS B2B"

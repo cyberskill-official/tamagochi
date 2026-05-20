@@ -3,7 +3,7 @@ id: FR-LEGAL-003
 title: "Apple Kids Category + Google Play Families declarations + contextual-ad gate + parental external-link gate"
 module: LEGAL
 priority: MUST
-status: shipped
+status: done
 verify: I
 phase: P0
 milestone: "Foundation Gate"

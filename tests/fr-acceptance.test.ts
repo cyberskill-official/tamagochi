@@ -284,7 +284,7 @@ const cases: Record<string, () => void | Promise<void>> = {
 test('implementation registry covers every FR exactly once', () => {
   assert.equal(BUILD_ORDER.length, 53);
   assert.equal(new Set(BUILD_ORDER).size, 53);
-  assert.equal(implementedFrs().every((fr) => fr.status === 'shipped'), true);
+  assert.equal(implementedFrs().every((fr) => fr.status === 'done'), true);
   assert.deepEqual(Object.keys(cases).sort(), [...BUILD_ORDER].sort());
 });
 

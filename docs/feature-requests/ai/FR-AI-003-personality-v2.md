@@ -3,7 +3,7 @@ id: FR-AI-003
 title: "AI personality v2 — selfie-aware reactions + name-aware memory + multi-pet sibling awareness (13+ only)"
 module: AI
 priority: SHOULD
-status: shipped
+status: done
 verify: T
 phase: P4
 milestone: "Scale & PetOS B2B"

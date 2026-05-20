@@ -3,7 +3,7 @@ id: FR-PET-003
 title: "Stat-bar model (hunger / cleanliness / happiness / energy) with stage-aware decay + offline reconciliation"
 module: PET
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

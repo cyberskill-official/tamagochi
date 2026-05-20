@@ -3,7 +3,7 @@ id: FR-PET-002
 title: "Pet evolution stages (egg → baby → teen → adult) + wall-clock-resistant age timer + stage-gated unlocks"
 module: PET
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

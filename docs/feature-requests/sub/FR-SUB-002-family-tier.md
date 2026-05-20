@@ -3,7 +3,7 @@ id: FR-SUB-002
 title: "Family tier ($9.99/mo; VN ₫199K/mo) — up to 5 child profiles + parental dashboard + screen-time/spend caps + content filter"
 module: SUB
 priority: SHOULD
-status: shipped
+status: done
 verify: T
 phase: P3
 milestone: "Monetization & Live-Ops"

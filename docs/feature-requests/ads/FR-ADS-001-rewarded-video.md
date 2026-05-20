@@ -3,7 +3,7 @@ id: FR-ADS-001
 title: "Rewarded video — LevelPlay (IronSource) + AppLovin MAX waterfall + no interstitials + daily cap"
 module: ADS
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P3
 milestone: "Monetization & Live-Ops"

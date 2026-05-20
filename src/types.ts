@@ -53,5 +53,5 @@ export interface FRRecord {
   id: string;
   phase: 'P0' | 'P1' | 'P2' | 'P3' | 'P4';
   module: string;
-  status: 'shipped';
+  status: 'done';
 }

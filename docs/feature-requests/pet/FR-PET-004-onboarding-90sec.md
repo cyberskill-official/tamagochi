@@ -3,7 +3,7 @@ id: FR-PET-004
 title: "90-second onboarding flow (Hatch → Name → first pat → optional co-parent stub → tutorial dismiss)"
 module: PET
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

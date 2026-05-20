@@ -3,7 +3,7 @@ id: FR-VIRAL-005
 title: "Push notifications — FCM + APNS via Supabase Edge Functions + sleep-hour respect + frequency caps + COPPA restrictions"
 module: VIRAL
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P3
 milestone: "Monetization & Live-Ops"

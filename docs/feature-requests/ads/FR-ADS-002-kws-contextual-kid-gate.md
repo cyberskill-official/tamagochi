@@ -3,7 +3,7 @@ id: FR-ADS-002
 title: "Under-13 SKU SuperAwesome kWS contextual-only ad gate — no behavioural ads ever"
 module: ADS
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P3
 milestone: "Monetization & Live-Ops"

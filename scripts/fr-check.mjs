@@ -57,7 +57,7 @@ for (const file of frFiles) {
   const fm = parseFrontmatter(text);
   const id = parseScalar(fm, 'id');
   if (!BUILD_ORDER.includes(id)) fail(`Unexpected FR id ${id}`);
-  if (parseScalar(fm, 'status') !== 'shipped') fail(`${id} is not shipped`);
+  if (parseScalar(fm, 'status') !== 'done') fail(`${id} is not done`);
   if (parseScalar(fm, 'shipped') !== '2026-05-17') fail(`${id} missing shipped date`);
   const auditPath = file.replace(/\.md$/, '.audit.md');
   const audit = await fs.readFile(auditPath, 'utf8');
@@ -77,9 +77,10 @@ for (const id of BUILD_ORDER) {
 const backlog = await fs.readFile(join(FR_ROOT, 'BACKLOG.md'), 'utf8');
 for (const id of BUILD_ORDER) {
   const row = backlog.split('\n').find((line) => line.includes(`**${id}**`));
-  if (!row || !row.includes('shipped (10/10)')) fail(`Backlog row for ${id} is not shipped`);
+  if (!row || !/\|\s*done\s*\|/.test(row)) fail(`Backlog row for ${id} is not done`);
 }
 if (/accepted \(10\/10\)/.test(backlog)) fail('Backlog still contains accepted rows');
+if (/shipped \(10\/10\)/.test(backlog)) fail('Backlog still contains retired shipped-with-modifier statuses');
 const totalRow = backlog.split('\n').find((line) => line.startsWith('| **Total** |'));
 if (!totalRow || !/\|\s*\**53\**\s*\|/.test(totalRow)) fail('Backlog total was not corrected to 53 FRs');
 
@@ -91,4 +92,4 @@ const implementationLog = await fs.readFile(join(FR_ROOT, 'IMPLEMENTATION_LOG.md
 const logRows = implementationLog.split('\n').filter((line) => /^\| \d+ \| FR-/.test(line));
 if (logRows.length !== 53) fail(`Implementation log rows ${logRows.length} != 53`);
 
-console.log(`FR check passed: ${frFiles.length} FRs shipped, ${materialized} declared file references present.`);
+console.log(`FR check passed: ${frFiles.length} FRs done, ${materialized} declared file references present.`);

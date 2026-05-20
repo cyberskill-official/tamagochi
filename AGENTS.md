@@ -1,7 +1,7 @@
 # CyberOS Layer-1 Memory Protocol — AGENTS.md (tamagochi edition)
 
 Version: 2.0.0 · Spec status: Normative · Project: `cyberskill/tamagochi`
-Companion files (informative): `docs/Tamagotchi-Style Virtual Pet Game - Strategic Implementation Plan.md` (input plan), `docs/feature-requests/AUTHORING.md` (per-FR playbook), `docs/feature-requests/BACKLOG.md` (active backlog), `docs/feature-requests/SESSION_PROGRESS.md` (authoring trace), `docs/feature-requests/MANIFEST.json` (per-module FR counters).
+Companion files (informative): `docs/Tamagotchi-Style Virtual Pet Game - Strategic Implementation Plan.md` (input plan), `feature-request-audit` skill (per-FR playbook), `docs/feature-requests/BACKLOG.md` (active backlog), `docs/feature-requests/SESSION_PROGRESS.md` (authoring trace), `docs/feature-requests/MANIFEST.json` (per-module FR counters).
 
 The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, NOT RECOMMENDED, MAY, and OPTIONAL in this document are to be interpreted as described in BCP 14 (RFC 2119, RFC 8174) when, and only when, they appear in all capitals.
 
@@ -193,7 +193,7 @@ At the end of any session that touched the BRAIN, the agent SHALL report:
 
 ## §14  Cross-agent interop
 
-§14.1  A consumer that does not adopt the ledger MUST obey the cross-agent subset documented in `docs/feature-requests/AUTHORING.md`. It MUST NOT write to `audit/`, `HEAD`, or `.lock` directly. All chain-touching operations route through the canonical writer.
+§14.1  A consumer that does not adopt the ledger MUST obey the cross-agent subset documented in `feature-request-audit` skill. It MUST NOT write to `audit/`, `HEAD`, or `.lock` directly. All chain-touching operations route through the canonical writer.
 
 §14.2  **Cross-BRAIN merge.** Each imported memory MUST become a fresh `put` row on the local chain whose `extra.imported_from` identifies the source store fingerprint and whose `extra.foreign_chain` records the source record's chain hash. The import block MUST be bracketed by a `session.start` and `session.end` audit row on the local chain. Idempotent re-import is RECOMMENDED via `manifest.imports.<fingerprint>.last_imported_seq`.
 
@@ -239,4 +239,4 @@ At the end of any session that touched the BRAIN, the agent SHALL report:
 
 ---
 
-**End of normative spec.** Per-FR authoring procedure: `docs/feature-requests/AUTHORING.md`. Active backlog and phase index: `docs/feature-requests/BACKLOG.md`.
+**End of normative spec.** Per-FR authoring procedure: `feature-request-audit` skill. Active backlog and phase index: `docs/feature-requests/BACKLOG.md`.

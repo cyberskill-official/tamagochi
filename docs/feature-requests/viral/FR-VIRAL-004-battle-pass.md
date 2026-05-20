@@ -3,7 +3,7 @@ id: FR-VIRAL-004
 title: "Battle pass — $4.99 / 4 weeks · ~40 tiers · free + premium track · daily/weekly objectives · carry-over rules"
 module: VIRAL
 priority: SHOULD
-status: shipped
+status: done
 verify: T
 phase: P3
 milestone: "Monetization & Live-Ops"

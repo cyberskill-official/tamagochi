@@ -3,7 +3,7 @@ id: FR-LEGAL-002
 title: "Loot-box-free / deterministic-only randomisation policy (Belgium / NL / EU posture)"
 module: LEGAL
 priority: MUST
-status: shipped
+status: done
 verify: I
 phase: P0
 milestone: "Foundation Gate"

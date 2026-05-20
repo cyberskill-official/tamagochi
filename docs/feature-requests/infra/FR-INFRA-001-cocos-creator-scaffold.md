@@ -3,7 +3,7 @@ id: FR-INFRA-001
 title: "Cocos Creator 3.x + TypeScript project scaffold (iOS / Android / WebGL)"
 module: INFRA
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P0
 milestone: "Foundation Gate"

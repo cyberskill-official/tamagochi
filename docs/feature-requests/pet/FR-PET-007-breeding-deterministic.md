@@ -3,7 +3,7 @@ id: FR-PET-007
 title: "Breeding system — two adult pets → child with deterministic trait inheritance + 24h incubation + revealed appearance"
 module: PET
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P2
 milestone: "Social & Multi-Pet"

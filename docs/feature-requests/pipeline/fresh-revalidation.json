@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-18",
+  "generated": "2026-05-20",
   "records": [
     {
       "id": "FR-LEGAL-001",
@@ -26,7 +26,7 @@
         "scripts/legal/generate-ca05-form.mjs"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -50,7 +50,7 @@
         "apps/api/src/legal/legal.module.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -76,7 +76,7 @@
         "apps/cocos/gradle.properties"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -114,8 +114,8 @@
         "turbo.json"
       ],
       "ready": true,
-      "state": "shipped (10/10) + mocked-dependency",
-      "reason": "Cocos Creator native builds require Cocos editor/Xcode/Android signing; local web QA and bundle tests are available.",
+      "state": "done",
+      "reason": "Done with local mock/sandbox coverage; production gate remains: Cocos Creator native builds require Cocos editor/Xcode/Android signing; local web QA and bundle tests are available.",
       "missing": [],
       "scaffold": [],
       "attempts": 1
@@ -154,7 +154,7 @@
         "turbo.json"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -189,7 +189,7 @@
         ".github/workflows/supabase-migrate.yml"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -219,8 +219,8 @@
         "apps/cocos/package.json"
       ],
       "ready": true,
-      "state": "shipped (10/10) + mocked-dependency",
-      "reason": "Apple/Google OAuth production validation requires provider credentials; sandbox token validation is local.",
+      "state": "done",
+      "reason": "Done with local mock/sandbox coverage; production gate remains: Apple/Google OAuth production validation requires provider credentials; sandbox token validation is local.",
       "missing": [],
       "scaffold": [],
       "attempts": 1
@@ -249,8 +249,8 @@
         "infra/supabase/standard/config.toml"
       ],
       "ready": true,
-      "state": "shipped (10/10) + mocked-dependency",
-      "reason": "Zalo OA approval and OAuth credentials are external; mocked bearer validation is local.",
+      "state": "done",
+      "reason": "Done with local mock/sandbox coverage; production gate remains: Zalo OA approval and OAuth credentials are external; mocked bearer validation is local.",
       "missing": [],
       "scaffold": [],
       "attempts": 1
@@ -282,7 +282,7 @@
         "infra/supabase/kids/config.toml"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -316,7 +316,7 @@
         "turbo.json"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -352,7 +352,7 @@
         "apps/cocos/scripts/assert-bundle-budget.mjs"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -386,7 +386,7 @@
         "apps/realtime/src/index.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -414,7 +414,7 @@
         "apps/realtime/src/rooms/PetRoom.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -444,7 +444,7 @@
         "apps/realtime/src/rooms/PetRoom.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -476,7 +476,7 @@
         "apps/cocos/assets/_root/app/AppRouter.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -504,7 +504,7 @@
         "apps/realtime/src/rooms/PetRoom.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -529,7 +529,7 @@
         "infra/supabase/standard/migrations/20260517_010_care_actions.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -551,7 +551,7 @@
         "apps/cocos/assets/_root/care/__tests__/HugAction.spec.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -583,7 +583,7 @@
         "apps/api/src/pets/stats/stat-decay.service.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -610,7 +610,7 @@
         "infra/supabase/standard/migrations/20260517_012_streak_state.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -643,7 +643,7 @@
         "apps/api/src/care/mini-game/mini-game.service.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -672,7 +672,7 @@
         "apps/api/src/ai/persona/persona.service.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -700,8 +700,8 @@
         "apps/cocos/fastlane/Fastfile"
       ],
       "ready": true,
-      "state": "shipped (10/10) + mocked-dependency",
-      "reason": "ARKit/ARCore require physical devices; Photo Studio fallback and AR decision logic are local.",
+      "state": "done",
+      "reason": "Done with local mock/sandbox coverage; production gate remains: ARKit/ARCore require physical devices; Photo Studio fallback and AR decision logic are local.",
       "missing": [],
       "scaffold": [],
       "attempts": 1
@@ -724,7 +724,7 @@
         "infra/supabase/standard/migrations/20260517_015_share_tracking.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -749,7 +749,7 @@
         "apps/realtime/src/state/PlayerPetsRoster.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -776,7 +776,7 @@
         "infra/supabase/standard/migrations/20260517_006_pets_table.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -801,7 +801,7 @@
         "infra/supabase/standard/migrations/20260517_016_breeding.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -825,7 +825,7 @@
         "infra/supabase/standard/migrations/20260517_017_grandma_rescues.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -851,7 +851,7 @@
         "apps/realtime/src/presence/redisPresence.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -880,7 +880,7 @@
         "apps/realtime/src/rooms/PetRoom.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -904,7 +904,7 @@
         "infra/supabase/standard/migrations/20260517_019_trades.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -927,7 +927,7 @@
         "infra/supabase/standard/migrations/20260517_020_pet_weddings.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -949,7 +949,7 @@
         "infra/supabase/standard/migrations/20260517_021_daily_dramas.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -973,7 +973,7 @@
         "apps/api/src/pets/pets.service.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1002,7 +1002,7 @@
         "apps/api/src/pets/breeding/breeding.service.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1030,8 +1030,8 @@
         "infra/supabase/standard/migrations/20260517_023_iap_purchases.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + mocked-dependency",
-      "reason": "Apple/Google/Antom/Xsolla receipts require merchant credentials; receipt-prefix sandbox validation is local.",
+      "state": "done",
+      "reason": "Done with local mock/sandbox coverage; production gate remains: Apple/Google/Antom/Xsolla receipts require merchant credentials; receipt-prefix sandbox validation is local.",
       "missing": [],
       "scaffold": [],
       "attempts": 1
@@ -1054,7 +1054,7 @@
         "infra/supabase/standard/migrations/20260517_024_ugc_submissions.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1083,7 +1083,7 @@
         "apps/api/src/care/streak/forgiveness-token.service.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1107,7 +1107,7 @@
         "infra/supabase/standard/migrations/20260517_026_family_tier.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1132,8 +1132,8 @@
         "infra/supabase/standard/migrations/20260517_027_ad_views.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + mocked-dependency",
-      "reason": "LevelPlay/AppLovin SDK calls require ad-network credentials; reward validation is mocked local.",
+      "state": "done",
+      "reason": "Done with local mock/sandbox coverage; production gate remains: LevelPlay/AppLovin SDK calls require ad-network credentials; reward validation is mocked local.",
       "missing": [],
       "scaffold": [],
       "attempts": 1
@@ -1154,8 +1154,8 @@
         "apps/cocos/assets/_root/ads/KidContextualAdUi.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + mocked-dependency",
-      "reason": "SuperAwesome kWS requires sandbox credentials; contextual-only policy is enforced local.",
+      "state": "done",
+      "reason": "Done with local mock/sandbox coverage; production gate remains: SuperAwesome kWS requires sandbox credentials; contextual-only policy is enforced local.",
       "missing": [],
       "scaffold": [],
       "attempts": 1
@@ -1176,7 +1176,7 @@
         "infra/supabase/standard/migrations/20260517_028_battle_pass.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1204,7 +1204,7 @@
         "infra/supabase/standard/migrations/20260517_029_push.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1230,7 +1230,7 @@
         "apps/realtime/src/anticheat/rateLimiter.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1258,8 +1258,8 @@
         "apps/cocos/assets/_root/loaders/AssetBundleLoader.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + mocked-dependency",
-      "reason": "Crowdin sync requires a project token; locale bundle coverage is local.",
+      "state": "done",
+      "reason": "Done with local mock/sandbox coverage; production gate remains: Crowdin sync requires a project token; locale bundle coverage is local.",
       "missing": [],
       "scaffold": [],
       "attempts": 1
@@ -1284,8 +1284,8 @@
         "apps/api/src/econ/iap/iap-catalogue.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + mocked-dependency",
-      "reason": "Antom/Xsolla rails require merchant credentials; pricing table validation is local.",
+      "state": "done",
+      "reason": "Done with local mock/sandbox coverage; production gate remains: Antom/Xsolla rails require merchant credentials; pricing table validation is local.",
       "missing": [],
       "scaffold": [],
       "attempts": 1
@@ -1310,7 +1310,7 @@
         "apps/cocos/assets/_root/care/BubbleParticle.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1332,7 +1332,7 @@
         "apps/api/src/ai/persona/persona.service.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1358,7 +1358,7 @@
         "apps/cocos/assets/_root/loaders/AssetBundleLoader.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1380,7 +1380,7 @@
         "apps/realtime/src/rooms/_BaseTenantRoom.ts"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1407,7 +1407,7 @@
         "infra/supabase/standard/migrations/20260517_034_petos_console.sql"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1432,7 +1432,7 @@
         "docs/b2b/techcombank-integration-spec.md"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],
@@ -1456,7 +1456,7 @@
         "docs/b2b/viettel-integration-spec.md"
       ],
       "ready": true,
-      "state": "shipped (10/10) + strict-audited",
+      "state": "done",
       "reason": "Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.",
       "missing": [],
       "scaffold": [],

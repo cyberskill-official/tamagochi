@@ -3,7 +3,7 @@ id: FR-CARE-002
 title: "Clean/bath action — soap consumable + cleanliness restore + bubble particle + analytics"
 module: CARE
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

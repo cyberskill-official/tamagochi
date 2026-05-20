@@ -3,7 +3,7 @@ id: FR-PET-005
 title: "Multi-pet inventory — 3 slots free, 10 slots Pet+ with entitlement check stubs"
 module: PET
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P2
 milestone: "Social & Multi-Pet"

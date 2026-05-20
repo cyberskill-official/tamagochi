@@ -3,7 +3,7 @@ id: FR-LEGAL-001
 title: "COPPA-2025 + Vietnam PDPL 2026 compliance baseline (DPO + DPIA + A05 + Safe Harbor vendor)"
 module: LEGAL
 priority: MUST
-status: shipped
+status: done
 verify: I
 phase: P0
 milestone: "Foundation Gate"

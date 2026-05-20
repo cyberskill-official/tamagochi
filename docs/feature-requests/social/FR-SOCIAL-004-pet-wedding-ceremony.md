@@ -3,7 +3,7 @@ id: FR-SOCIAL-004
 title: "Pet Wedding / Best Friend Ceremony — synchronous 2-player mini-event + married cosmetic + auto-rendered share clip"
 module: SOCIAL
 priority: SHOULD
-status: shipped
+status: done
 verify: T
 phase: P2
 milestone: "Social & Multi-Pet"

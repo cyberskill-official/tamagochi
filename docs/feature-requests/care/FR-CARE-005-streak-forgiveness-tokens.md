@@ -3,7 +3,7 @@ id: FR-CARE-005
 title: "Streak system with forgiveness tokens + Cozy Hour weekly window + ethical no-FOMO copy"
 module: CARE
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

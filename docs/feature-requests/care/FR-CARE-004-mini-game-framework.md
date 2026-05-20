@@ -3,7 +3,7 @@ id: FR-CARE-004
 title: "Mini-game framework — Cocos scene loader contract + 4 stock games + server-validated soft-currency payout"
 module: CARE
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

@@ -37,6 +37,6 @@ export function implementedFrs(): FRRecord[] {
     const p4Ids = ['FR-OBS-002', 'FR-I18N-001', 'FR-I18N-002', 'FR-A11Y-001', 'FR-AI-003', 'FR-B2B-001', 'FR-B2B-002', 'FR-B2B-003', 'FR-B2B-004', 'FR-B2B-005'];
     const p2Viral = ['FR-VIRAL-002', 'FR-VIRAL-003'];
     const phase = p4Ids.includes(id) ? 'P4' : p2Viral.includes(id) ? 'P2' : phaseById[module]!;
-    return { id, module, phase, status: 'shipped' };
+    return { id, module, phase, status: 'done' };
   });
 }

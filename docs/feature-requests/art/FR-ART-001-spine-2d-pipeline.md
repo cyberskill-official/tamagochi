@@ -3,7 +3,7 @@ id: FR-ART-001
 title: "Spine 2D pet skeleton pipeline (20-anim contract) + Lottie UI + Howler.js audio"
 module: ART
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

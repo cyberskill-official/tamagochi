@@ -3,7 +3,7 @@ id: FR-AR-001
 title: "Bedroom Cam — ARKit/ARCore plane detection + Spine pet placement + 9:16 video capture with watermark"
 module: AR
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

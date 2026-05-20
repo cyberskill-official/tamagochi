@@ -3,7 +3,7 @@ id: FR-PET-008
 title: "Permadeath-Lite — 7-day neglect → grandma_house + free 3-day daily-ritual rescue (no real-money revival)"
 module: PET
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P2
 milestone: "Social & Multi-Pet"

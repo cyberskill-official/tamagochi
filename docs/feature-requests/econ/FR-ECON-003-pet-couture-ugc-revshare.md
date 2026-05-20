@@ -3,7 +3,7 @@ id: FR-ECON-003
 title: "Pet Couture UGC — in-app outfit designer + Trust & Safety review + 30% creator rev-share (Roblox UGC playbook)"
 module: ECON
 priority: COULD
-status: shipped
+status: done
 verify: T
 phase: P3
 milestone: "Monetization & Live-Ops"

@@ -3,7 +3,7 @@ id: FR-PET-006
 title: "5 launch species (Mochi/Pengu/Bao/Fluffit/Tako) × 5 rarity tiers, all earnable (no real-money random pulls)"
 module: PET
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P2
 milestone: "Social & Multi-Pet"

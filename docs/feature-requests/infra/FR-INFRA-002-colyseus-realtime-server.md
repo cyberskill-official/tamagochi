@@ -3,7 +3,7 @@ id: FR-INFRA-002
 title: "Colyseus Node/TS stateful real-time room server (AWS Singapore + presence + handler scaffold)"
 module: INFRA
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P0
 milestone: "Foundation Gate"

@@ -3,7 +3,7 @@ id: FR-ECON-002
 title: "IAP catalogue — outfits + room decor + premium species (direct purchase only) + VN MoMo/ZaloPay/VNPay/ViettelPay via Antom"
 module: ECON
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P3
 milestone: "Monetization & Live-Ops"

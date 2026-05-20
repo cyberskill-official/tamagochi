@@ -3,7 +3,7 @@ id: FR-VIRAL-003
 title: "Generative pet at adoption — text-prompt OR selfie → one-of-one Spine palette + safety denylist"
 module: VIRAL
 priority: SHOULD
-status: shipped
+status: done
 verify: T
 phase: P2
 milestone: "Social & Multi-Pet"

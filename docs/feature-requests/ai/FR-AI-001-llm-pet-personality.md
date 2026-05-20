@@ -3,7 +3,7 @@ id: FR-AI-001
 title: "LLM pet personality — Claude Haiku primary + Gemini Flash fallback + persona YAML + 20-event memory + cost cap"
 module: AI
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

@@ -3,7 +3,7 @@ id: FR-ECON-001
 title: "Currency ledger — soft Coins + premium Hearts + server-authoritative double-entry + anti-cheat ban"
 module: ECON
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P3
 milestone: "Monetization & Live-Ops"

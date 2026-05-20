@@ -3,7 +3,7 @@ id: FR-OBS-002
 title: "Anti-cheat + server-authoritative ledger audit — message signing + rate-limit + impossible-state ban + daily reconciliation"
 module: OBS
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P4
 milestone: "Scale & PetOS B2B"

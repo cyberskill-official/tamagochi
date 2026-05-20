@@ -3,7 +3,7 @@ id: FR-I18N-002
 title: "VN soft-launch payment rails — MoMo/ZaloPay/VNPay/ViettelPay via Antom + PH GCash + ID DANA via Xsolla"
 module: I18N
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P4
 milestone: "Scale & PetOS B2B"

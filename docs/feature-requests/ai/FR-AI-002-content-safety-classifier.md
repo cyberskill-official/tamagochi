@@ -3,7 +3,7 @@ id: FR-AI-002
 title: "Content safety classifier (OpenAI Moderation primary + Azure fallback) + kids-SKU scripted dialogue trees"
 module: AI
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P1
 milestone: "Core Pet MVP"

@@ -3,7 +3,7 @@ id: FR-AUTH-002
 title: "Zalo Sign-In (VN-mandatory) — Zalo OA SDK + Zalo OAuth Bearer + Supabase external provider"
 module: AUTH
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P0
 milestone: "Foundation Gate"

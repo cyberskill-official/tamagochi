@@ -1,7 +1,7 @@
 # Tamagochi — FR Authoring Session Progress
 
 **Owner:** Stephen Cheng
-**Workflow:** `AUTHORING.md` (project-local; loop-to-10/10 master rule per §12)
+**Workflow:** `feature-request-audit` skill (project-local; loop-to-10/10 master rule per §12)
 **Phase model:** capability-gated, not time-based (user directive 2026-05-17)
 
 This file is the authoring trace. Update each time an FR is created, audited, revised, or accepted.
@@ -13,12 +13,12 @@ This file is the authoring trace. Update each time an FR is created, audited, re
 ### Scaffolding (done)
 - Created `AGENTS.md` at project root (BRAIN protocol, tamagochi-scoped, self-contained — no cyberos/sale-noti path refs).
 - Created `CLAUDE.md` at project root (`@AGENTS.md` pointer matching sibling project shape).
-- Created `docs/feature-requests/AUTHORING.md` (FR playbook, 17-module closed catalogue, capability-gated phases).
+- Created `feature-request-audit` skill (FR playbook, 17-module closed catalogue, capability-gated phases).
 - Created `docs/feature-requests/BACKLOG.md` (51 FRs planned across P0-P4).
 - Created `docs/feature-requests/MANIFEST.json` (initial state file; all `last_fr_id_per_module` at 0).
 - Created `docs/feature-requests/SESSION_PROGRESS.md` (this file).
 
-### Authoring run (autonomous march per AUTHORING.md §12.1)
+### Authoring run (autonomous march per feature-request-audit skill §12.1)
 Author each FR completely, audit it via companion `.audit.md`, loop revise until `score_post_revision_2: 10/10` before starting the next FR. Do not ask between FRs.
 
 | # | FR-ID | Phase | Started | Score → 10/10 | Status |

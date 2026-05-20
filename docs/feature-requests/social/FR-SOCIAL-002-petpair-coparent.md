@@ -3,7 +3,7 @@ id: FR-SOCIAL-002
 title: "PetPair co-parent mode — two phones share one pet + receipt push + break-up screen on one-sided care"
 module: SOCIAL
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P2
 milestone: "Social & Multi-Pet"

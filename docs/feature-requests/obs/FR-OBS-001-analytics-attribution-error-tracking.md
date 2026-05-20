@@ -3,7 +3,7 @@ id: FR-OBS-001
 title: "Observability baseline — GameAnalytics + Mixpanel + AppsFlyer + Sentry + Better Stack (kids SKU restricted)"
 module: OBS
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P0
 milestone: "Foundation Gate"

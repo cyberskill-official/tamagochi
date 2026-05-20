@@ -2,7 +2,7 @@
   "version": "0.1.0",
   "project": "tamagochi",
   "authored_at": "2026-05-17",
-  "authoring_workflow_ref": "AUTHORING.md",
+  "authoring_workflow_ref": "feature-request-audit skill",
   "source_plan": "../Tamagotchi-Style Virtual Pet Game - Strategic Implementation Plan.md",
   "phase_model": "capability-gated (not time-based) per user directive 2026-05-17",
   "modules": {

@@ -3,7 +3,7 @@ id: FR-VIRAL-002
 title: "Daily Drama — procedural micro-events + 6s auto-rendered share clip + hashtag prefill + 1/day/pet cap"
 module: VIRAL
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P2
 milestone: "Social & Multi-Pet"

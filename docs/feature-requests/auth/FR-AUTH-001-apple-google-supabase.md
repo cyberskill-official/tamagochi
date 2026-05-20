@@ -3,7 +3,7 @@ id: FR-AUTH-001
 title: "Apple Sign-In + Google Sign-In via Supabase Auth + Cocos native bridge"
 module: AUTH
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P0
 milestone: "Foundation Gate"

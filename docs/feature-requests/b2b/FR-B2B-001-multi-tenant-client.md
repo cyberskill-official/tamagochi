@@ -3,7 +3,7 @@ id: FR-B2B-001
 title: "Multi-tenant Cocos client — tenant slug at boot + theme bundle (palette + logo + Spine + CMS) via Cloudflare R2"
 module: B2B
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P4
 milestone: "Scale & PetOS B2B"

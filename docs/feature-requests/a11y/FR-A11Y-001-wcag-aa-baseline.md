@@ -3,7 +3,7 @@ id: FR-A11Y-001
 title: "WCAG-AA baseline — 4.5:1 contrast + reduce-motion + colour-blind palette + OpenDyslexic + VoiceOver/TalkBack labels"
 module: A11Y
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P4
 milestone: "Scale & PetOS B2B"

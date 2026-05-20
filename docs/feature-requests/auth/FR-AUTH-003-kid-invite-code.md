@@ -3,7 +3,7 @@ id: FR-AUTH-003
 title: "Under-13 SKU invite-code flow + PRIVO / SuperAwesome kWS Safe Harbor parental consent gate"
 module: AUTH
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P0
 milestone: "Foundation Gate"

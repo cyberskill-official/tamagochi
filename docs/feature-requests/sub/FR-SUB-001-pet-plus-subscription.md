@@ -3,7 +3,7 @@ id: FR-SUB-001
 title: "Pet+ subscription — $4.99/mo or $39.99/yr (VN ₫99K/mo or ₫799K/yr) + entitlement service + restore-purchase + grace period"
 module: SUB
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P3
 milestone: "Monetization & Live-Ops"

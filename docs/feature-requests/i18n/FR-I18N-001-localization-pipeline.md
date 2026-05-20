@@ -3,7 +3,7 @@ id: FR-I18N-001
 title: "Localization pipeline — Crowdin + 9-language launch + diacritics-safe font fallback + RTL stub"
 module: I18N
 priority: MUST
-status: shipped
+status: done
 verify: T
 phase: P4
 milestone: "Scale & PetOS B2B"

@@ -4,7 +4,7 @@ import { spawn } from 'node:child_process';
 import { BUILD_ORDER } from '../src/registry.ts';
 
 const ROOT = new URL('..', import.meta.url).pathname;
-const RUN_DATE = '2026-05-18';
+const RUN_DATE = '2026-05-20';
 const FR_ROOT = join(ROOT, 'docs/feature-requests');
 const BACKLOG = join(FR_ROOT, 'BACKLOG.md');
 const OUT_DIR = join(FR_ROOT, 'pipeline');
@@ -136,9 +136,9 @@ async function assessDeliverables(fr, completed) {
     if (scaffoldPatterns.some((pattern) => pattern.test(text))) scaffold.push(rel);
   }
   const blockedDeps = fr.dependsOn.filter((id) => !completed.has(id));
-  if (blockedDeps.length) return { ready: false, state: '[BLOCKED]', reason: `Waiting on ${blockedDeps.join(', ')}`, missing, scaffold };
+  if (blockedDeps.length) return { ready: false, state: 'ready_to_implement', reason: `Routed back for rework: waiting on ${blockedDeps.join(', ')}`, missing, scaffold };
   if (missing.length || scaffold.length) {
-    return { ready: false, state: '[FAILED: UNRESOLVABLE ERROR]', reason: `${missing.length} missing and ${scaffold.length} scaffold deliverables`, missing, scaffold };
+    return { ready: false, state: 'ready_to_implement', reason: `Routed back for rework: ${missing.length} missing and ${scaffold.length} scaffold deliverables`, missing, scaffold };
   }
   return { ready: true, state: 'implementation-present', reason: 'Declared deliverables exist and no scaffold markers were detected.', missing, scaffold };
 }
@@ -172,12 +172,11 @@ async function runFrChecks(id) {
 }
 
 function terminalStateFor(fr, passed) {
-  if (!passed) return '[FAILED: UNRESOLVABLE ERROR]';
-  if (externalByFr.has(fr.id)) return 'shipped (10/10) + mocked-dependency';
-  return 'shipped (10/10) + strict-audited';
+  if (!passed) return 'ready_to_implement';
+  return 'done';
 }
 
-function generatedBlock(records, stage) {
+function generatedBlock(records, stage, rework) {
   const summary = records.reduce((acc, row) => {
     acc[row.state] = (acc[row.state] ?? 0) + 1;
     return acc;
@@ -186,21 +185,24 @@ function generatedBlock(records, stage) {
   const lines = [
     '<!-- ZERO_TOUCH_REVALIDATION:START -->',
     '',
-    `## §9 — Zero-touch stale-status revalidation (${RUN_DATE})`,
+    `## §9 — Zero-touch ${rework ? 'rework' : 'stale-status revalidation'} (${RUN_DATE})`,
     '',
-    'Current FR status labels were explicitly treated as stale for this run. This ledger is derived from dependency order, declared deliverables, scaffold-marker detection, per-FR tests, E2E tests, QA checks, and final coverage rather than from prior status text.',
+    rework
+      ? 'Rework mode was enabled, so terminal `done` rows were force-re-evaluated from the start of the implementation phase. This ledger is derived from dependency order, declared deliverables, scaffold-marker detection, per-FR tests, E2E tests, QA checks, and final coverage.'
+      : 'Current FR status labels were explicitly treated as stale for this run. This ledger is derived from dependency order, declared deliverables, scaffold-marker detection, per-FR tests, E2E tests, QA checks, and final coverage rather than from prior status text.',
     '',
     `**Stage:** ${stage}`,
     `**Summary:** ${states}`,
     `**Edge-case matrix:** [EDGE_CASE_MATRIX_${RUN_DATE}.md](EDGE_CASE_MATRIX_${RUN_DATE}.md)`,
     `**Raw reports:** [pipeline/fresh-audits/](pipeline/fresh-audits/)`,
     '',
-    '| # | FR-ID | Derived state | Evidence |',
-    '|---:|---|---|---|'
+    '| # | FR-ID | Derived state | External gate | Evidence |',
+    '|---:|---|---|---|---|'
   ];
   records.forEach((row, index) => {
     const evidence = row.reason.replaceAll('|', '/');
-    lines.push(`| ${index + 1} | ${row.id} | ${row.state} | ${evidence} |`);
+    const externalGate = externalByFr.has(row.id) ? 'mock/sandbox local; production credentials/device required' : 'none';
+    lines.push(`| ${index + 1} | ${row.id} | ${row.state} | ${externalGate} | ${evidence} |`);
   });
   lines.push('', '<!-- ZERO_TOUCH_REVALIDATION:END -->');
   return lines.join('\n');
@@ -213,21 +215,24 @@ function replaceStatusCell(backlog, id, state) {
   );
 }
 
-async function updateBacklog(records, stage) {
+async function updateBacklog(records, stage, rework) {
   let text = await fs.readFile(BACKLOG, 'utf8');
   text = text.replace(
     /\*\*Owner:\*\* Stephen Cheng \(Founder, CyberSkill\) · \*\*Status:\*\* .*/,
-    `**Owner:** Stephen Cheng (Founder, CyberSkill) · **Status:** v1.0.2 — stale statuses ignored; zero-touch revalidation ${stage}, ${RUN_DATE}`
+    `**Owner:** Stephen Cheng (Founder, CyberSkill) · **Status:** v1.0.2 — ${rework ? 'rework mode' : 'stale statuses ignored'}; zero-touch revalidation ${stage}, ${RUN_DATE}`
   );
   text = text.replace(
     /- \*\*Strict-audited marker:\*\* .*/,
-    '- **Terminal markers:** row status `shipped (10/10) + strict-audited` or `shipped (10/10) + mocked-dependency` is terminal for the zero-touch state engine; prior status text is not trusted until this run re-derives it.'
+    '- **Terminal markers:** row status `done` is terminal for the zero-touch state engine; implementation-quality modifiers are captured in audit evidence, not the lifecycle status.'
+  );
+  text = text.replace(
+    /- \*\*Terminal markers:\*\* row status `shipped \(10\/10\) \+ strict-audited` or `shipped \(10\/10\) \+ mocked-dependency` is terminal for the zero-touch state engine; prior status text is not trusted until this run re-derives it\./,
+    '- **Terminal markers:** row status `done` is terminal for the zero-touch state engine; implementation-quality modifiers are captured in audit evidence, not the lifecycle status.'
   );
   for (const row of records) {
-    if (row.state.startsWith('shipped')) text = replaceStatusCell(text, row.id, row.state);
-    if (row.state.startsWith('[FAILED') || row.state === '[BLOCKED]') text = replaceStatusCell(text, row.id, row.state);
+    if (row.state === 'done' || row.state === 'ready_to_implement') text = replaceStatusCell(text, row.id, row.state);
   }
-  const block = generatedBlock(records, stage);
+  const block = generatedBlock(records, stage, rework);
   if (/<!-- ZERO_TOUCH_REVALIDATION:START -->[\s\S]*?<!-- ZERO_TOUCH_REVALIDATION:END -->/.test(text)) {
     text = text.replace(/<!-- ZERO_TOUCH_REVALIDATION:START -->[\s\S]*?<!-- ZERO_TOUCH_REVALIDATION:END -->/, block);
   } else {
@@ -247,7 +252,7 @@ async function writeAudit(row, checks, attempts) {
     `**Deliverables checked:** ${row.deliverables.length}`,
     `**Missing deliverables:** ${row.missing?.length ?? 0}`,
     `**Scaffold deliverables:** ${row.scaffold?.length ?? 0}`,
-    externalByFr.has(row.id) ? `**Mocked dependency:** ${externalByFr.get(row.id)}` : '**Mocked dependency:** none',
+    externalByFr.has(row.id) ? `**External production gate:** ${externalByFr.get(row.id)}` : '**External production gate:** none',
     '',
     '## Raw Terminal Results',
     ''
@@ -264,9 +269,9 @@ async function writeAudit(row, checks, attempts) {
 
 async function writeSummary(records, coverage) {
   const lines = [
-    `# Fresh Zero-Touch Revalidation - ${RUN_DATE}`,
+    `# Fresh Zero-Touch Rework - ${RUN_DATE}`,
     '',
-    'All pre-existing FR status labels were ignored. The state below was re-derived from files and tests during this run.',
+    'Rework mode force-re-evaluated the backlog from the start of the implementation phase, including FRs already marked `done`. The state below was re-derived from files and tests during this run.',
     '',
     '| State | Count |',
     '|---|---:|'
@@ -291,6 +296,8 @@ async function coverageTargets() {
 }
 
 async function main() {
+  const args = new Set(process.argv.slice(2));
+  const rework = args.has('--rework') || args.has('rework');
   await fs.mkdir(AUDIT_DIR, { recursive: true });
   const byId = await loadFrMap();
   const frs = BUILD_ORDER.map((id) => {
@@ -303,16 +310,16 @@ async function main() {
 
   const completed = new Set();
   const records = [];
-  await updateBacklog(records, 'started');
+  await updateBacklog(records, rework ? 'rework-started' : 'started', rework);
 
   for (const fr of frs) {
     const assessed = await assessDeliverables(fr, completed);
     const row = { ...fr, ...assessed, state: assessed.state, attempts: 0 };
     records.push(row);
-    await updateBacklog(records, `assessed ${fr.id}`);
+    await updateBacklog(records, `assessed ${fr.id}`, rework);
     if (!assessed.ready) {
       await writeAudit(row, [], 0);
-      await updateBacklog(records, `blocked-or-failed ${fr.id}`);
+      await updateBacklog(records, `routed-back ${fr.id}`, rework);
       continue;
     }
 
@@ -326,17 +333,17 @@ async function main() {
     }
     row.state = terminalStateFor(fr, passed);
     row.reason = passed
-      ? (externalByFr.has(fr.id) ? externalByFr.get(fr.id) : 'Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.')
-      : 'Five consecutive verification attempts failed; no implementation edits were made by this runner.';
+      ? (externalByFr.has(fr.id) ? `Done with local mock/sandbox coverage; production gate remains: ${externalByFr.get(fr.id)}` : 'Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.')
+      : 'Routed back for rework: five consecutive verification attempts failed; no implementation edits were made by this runner.';
     if (passed) completed.add(fr.id);
     await writeAudit(row, checks, row.attempts);
-    await updateBacklog(records, `completed ${fr.id}`);
+    await updateBacklog(records, `completed ${fr.id}`, rework);
   }
 
   const coverage = await run('node', ['--test', '--experimental-test-coverage', ...(await coverageTargets())]);
   await writeSummary(records, coverage);
   await fs.writeFile(STATE_JSON, `${JSON.stringify({ generated: RUN_DATE, records, coverageExitCode: coverage.code }, null, 2)}\n`, 'utf8');
-  await updateBacklog(records, coverage.code === 0 ? 'coverage-passed' : 'coverage-failed');
+  await updateBacklog(records, coverage.code === 0 ? 'coverage-passed' : 'coverage-failed', rework);
   console.log(await fs.readFile(SUMMARY_MD, 'utf8'));
   if (coverage.code !== 0) process.exitCode = coverage.code;
 }
