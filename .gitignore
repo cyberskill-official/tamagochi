@@ -164,3 +164,7 @@ build/
 *.bak
 *.tmp
 *.temp
+.vercel
+
+# CyberOS vendored machine + local BRAIN at .cyberos/memory/store (regenerable via init; tenant data). Do not commit.
+.cyberos/
