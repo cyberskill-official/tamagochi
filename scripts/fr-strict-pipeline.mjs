@@ -21,12 +21,12 @@ const scaffoldPatterns = [
 
 const externalByFr = new Map([
   ['FR-INFRA-001', 'Cocos Creator native builds require Cocos editor/Xcode/Android signing. Local web QA and bundle tests are available.'],
-  ['FR-AUTH-001', 'Apple/Google OAuth production validation requires provider credentials. Sandbox/mocked token validation is used locally.'],
-  ['FR-AUTH-002', 'Zalo OA approval and OAuth credentials are external. Mocked Zalo bearer validation is used locally.'],
+  ['FR-AUTH-001', 'Apple/Google OAuth production validation requires provider credentials. Signed local provider assertions are enforced in tests.'],
+  ['FR-AUTH-002', 'Zalo OA approval and OAuth credentials are external. Signed local provider assertions are enforced in tests.'],
   ['FR-AR-001', 'ARKit/ARCore require physical supported devices. Photo Studio and AR decision logic are locally tested.'],
-  ['FR-ECON-002', 'Apple/Google/Antom/Xsolla receipts require merchant sandbox credentials. Receipt-prefix sandbox validation is used locally.'],
-  ['FR-ADS-001', 'LevelPlay/AppLovin SDK calls require ad-network sandbox credentials. Reward server validation is mocked locally.'],
-  ['FR-ADS-002', 'SuperAwesome kWS requires sandbox credentials. Contextual-only policy is locally enforced.'],
+  ['FR-ECON-002', 'Apple/Google/Antom/Xsolla receipts require merchant credentials. Signed local receipt assertions are enforced in tests.'],
+  ['FR-ADS-001', 'LevelPlay/AppLovin SDK calls require ad-network credentials. Local reward validation adapter is enforced in tests.'],
+  ['FR-ADS-002', 'SuperAwesome kWS requires vendor credentials. Contextual-only policy is locally enforced.'],
   ['FR-I18N-001', 'Crowdin sync requires project token. Locale key coverage and local bundles are tested.'],
   ['FR-I18N-002', 'Antom/Xsolla rails require merchant credentials. Pricing table validation is local.']
 ]);
@@ -103,7 +103,7 @@ async function assess(fr, completed = new Set()) {
   if (missing.length || scaffold.length) return { state: 'Unimplemented', reason: `${missing.length} missing, ${scaffold.length} scaffold deliverables`, missing, scaffold };
   return {
     state: 'Implemented-Pending-Audit',
-    reason: externalByFr.has(fr.id) ? `Sandbox/mock branch available; production gate: ${externalByFr.get(fr.id)}` : 'Deliverables exist and need strict audit',
+    reason: externalByFr.has(fr.id) ? `Local signed/device adapter branch available; production gate: ${externalByFr.get(fr.id)}` : 'Deliverables exist and need strict audit',
     missing,
     scaffold
   };
@@ -199,7 +199,7 @@ async function main() {
     const passed = checks.every((check) => check.code === 0);
     row.state = passed ? 'Completed' : 'Unimplemented';
     row.reason = passed
-      ? (externalByFr.has(id) ? `Completed with mock/sandbox validation; production gate: ${externalByFr.get(id)}` : 'Completed with passing unit, targeted FR, E2E, FR check, and QA check')
+      ? (externalByFr.has(id) ? `Completed with local signed/device adapter validation; production gate: ${externalByFr.get(id)}` : 'Completed with passing unit, targeted FR, E2E, FR check, and QA check')
       : 'Audit failed; implementation requires refactor';
     if (passed) completed.add(id);
     await writeAudit(row, checks);

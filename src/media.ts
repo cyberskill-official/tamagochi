@@ -9,7 +9,11 @@ export interface SocialPublishInput {
   assetUrl: string;
   caption: string;
   scheduledFor: string;
-  apiKey?: string;
+  accessToken: string;
+}
+
+export interface SocialPublishTransport {
+  post(url: string, body: Record<string, unknown>, headers: Record<string, string>): Promise<{ status: number; id: string }>;
 }
 
 export class MediaService {
@@ -54,28 +58,28 @@ export class MediaService {
     return { paletteSeed: hash(`${input.user.id}:${prompt}`, 16), oneOfOne: true };
   }
 
-  socialPublishStub(input: SocialPublishInput): { mode: 'mocked-dependency'; auditEvent: 'social.publish.mocked'; request: { method: 'POST'; url: string; headers: Record<string, string>; body: Record<string, unknown> }; blockedReason: 'missing_platform_api_key' } {
+  async publishSocial(input: SocialPublishInput, transport: SocialPublishTransport): Promise<{ mode: 'queued'; auditEvent: 'social.publish.queued'; platformPostId: string; request: { method: 'POST'; url: string; headers: Record<string, string>; body: Record<string, unknown> } }> {
     assert(input.assetUrl.startsWith('https://'), 'social.asset_url_https_required');
     assert(input.caption.length > 0 && input.caption.length <= 280, 'social.caption_length_invalid');
-    assert(!input.apiKey, 'social.live_publish_disabled_in_local_stub');
+    assert(input.accessToken.length >= 16, 'social.access_token_required');
+    const url = `https://social-publisher.local/${input.platform}/posts`;
+    const headers = {
+      authorization: `Bearer ${input.accessToken}`,
+      'content-type': 'application/json'
+    };
+    const body = {
+      fr_id: input.frId,
+      asset_url: input.assetUrl,
+      caption: input.caption,
+      scheduled_for: input.scheduledFor
+    };
+    const response = await transport.post(url, body, headers);
+    assert(response.status >= 200 && response.status < 300, 'social.publish_failed');
     return {
-      mode: 'mocked-dependency',
-      auditEvent: 'social.publish.mocked',
-      blockedReason: 'missing_platform_api_key',
-      request: {
-        method: 'POST',
-        url: `https://social-publisher.local/${input.platform}/posts`,
-        headers: {
-          authorization: 'Bearer <platform-api-key>',
-          'content-type': 'application/json'
-        },
-        body: {
-          fr_id: input.frId,
-          asset_url: input.assetUrl,
-          caption: input.caption,
-          scheduled_for: input.scheduledFor
-        }
-      }
+      mode: 'queued',
+      auditEvent: 'social.publish.queued',
+      platformPostId: response.id,
+      request: { method: 'POST', url, headers, body }
     };
   }
 

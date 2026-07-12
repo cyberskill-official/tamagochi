@@ -1,0 +1,12 @@
+.cyberos-memory
+.code-review-graph
+.playwright-cli
+output
+node_modules
+dist
+coverage
+docs
+apps/cocos
+apps/realtime
+infra/terraform
+*.log

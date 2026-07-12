@@ -21,7 +21,7 @@ test('E2E-001 standard player hatch-to-share journey', async () => {
   const media = new MediaService();
   const obs = new ObservabilityService();
 
-  const user = auth.signIn('apple', 'standard-player-token');
+  const user = auth.signIn('apple', auth.createProviderToken('apple', 'standard-player'));
   const bundle = await infra.loader.loadBundle('root', { cdnPrefix: 'https://cdn.tamagochi.app', tenantSlug: user.tenantId });
   assert.equal(bundle.url, 'https://cdn.tamagochi.app/mochi/root');
 
@@ -69,13 +69,14 @@ test('E2E-004 monetization and live-ops journey remains deterministic and non-ra
   const auth = new AuthService();
   const econ = new EconomyService();
   const care = new CareService();
-  const user = auth.signIn('google', 'spender-token');
+  const user = auth.signIn('google', auth.createProviderToken('google', 'spender'));
 
   econ.grant(user, 'coins', 300, 'mini-game:session-1');
   assert.equal(econ.spend(user, 'coins', 50, 'care.feed:food-1'), 250);
   assert.equal(econ.catalog.every((item) => item.randomized === false), true);
-  econ.validateIapReceipt('apple', 'apple:sub-receipt');
-  econ.restoreSubscription(user, 'apple:sub-receipt');
+  const receipt = econ.createSignedReceipt('apple', { userId: user.id, sku: 'pet_plus.monthly', transactionId: 'txn-spender-1', kind: 'subscription' });
+  econ.validateIapReceipt('apple', receipt);
+  econ.restoreSubscription(user, 'apple', receipt);
   const reward = econ.rewardedVideo(user, 'daily_bonus', true);
   const pass = econ.battlePass(user);
   const streak = care.claimStreak(user, new Date('2026-05-23T12:00:00Z'));

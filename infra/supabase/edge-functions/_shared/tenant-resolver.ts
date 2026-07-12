@@ -1,23 +1,13 @@
-export type TenantResolverDecision = {
-  allowed: boolean;
-  reason: string;
-  auditEvent: string;
-  tenantId: string;
-};
+const tenantPattern = /^[a-z0-9][a-z0-9_-]{1,62}[a-z0-9]$/;
 
-export class TenantResolver {
-  readonly kind = 'media';
+export function resolveTenant(request: Request, body?: Record<string, unknown>): string {
+  const fromHeader = request.headers.get('x-tenant-id');
+  const fromBody = typeof body?.tenant_id === 'string' ? body.tenant_id : undefined;
+  const tenantId = fromHeader ?? fromBody ?? 'mochi';
 
-  evaluate(input: { tenantId?: string; audience?: '13+' | 'under-13'; enabled?: boolean; unsafe?: boolean }): TenantResolverDecision {
-    const tenantId = input.tenantId ?? 'mochi';
-    if (input.unsafe) {
-      return { allowed: false, reason: 'media.unsafe_input', auditEvent: 'media.rejected', tenantId };
-    }
-    if (input.enabled === false) {
-      return { allowed: false, reason: 'media.disabled', auditEvent: 'media.blocked', tenantId };
-    }
-    return { allowed: true, reason: 'media.ok', auditEvent: 'media.accepted', tenantId };
+  if (!tenantPattern.test(tenantId)) {
+    throw new Error('tenant.invalid');
   }
-}
 
-export const tenantResolver = new TenantResolver();
+  return tenantId;
+}

@@ -22,7 +22,7 @@ test('AI service covers persona, caching, moderation, cost caps, and kids script
   assert.equal(ai.personalityV2(user('kid', 'mochi', 'under-13'), pet, { selfie: 'smile' }), 'scripted_only');
 });
 
-test('media service covers AR fallback, vertical export, daily cap, generated palettes, and push rules', () => {
+test('media service covers AR fallback, vertical export, daily cap, generated palettes, social publish queue, and push rules', async () => {
   const media = new MediaService();
   const pet = new PetService().hatch(user('u1'), 'mochi', new Date('2026-05-17T00:00:00Z')).pet;
   assert.equal(media.assertArtPipeline(), true);
@@ -33,17 +33,26 @@ test('media service covers AR fallback, vertical export, daily cap, generated pa
   assert.throws(() => media.dailyDrama(pet, new Date('2026-05-17T09:00:00Z')), /daily_drama_cap/);
   assert.equal(media.generatePetPalette({ prompt: 'sky blue', user: user('u1') }).oneOfOne, true);
   assert.throws(() => media.generatePetPalette({ prompt: 'explicit pattern', user: user('u1') }), /prompt_rejected/);
-  const publish = media.socialPublishStub({
+  const publishedRequests: Array<Record<string, unknown>> = [];
+  const publish = await media.publishSocial({
     frId: 'FR-VIRAL-001',
     platform: 'tiktok',
     assetUrl: 'https://cdn.tamagochi.app/social/fr-viral-001.mp4',
     caption: 'Mochi first tiny floor adventure. #mochilife #virtualpet',
-    scheduledFor: '2026-05-19T19:30:00+07:00'
+    scheduledFor: '2026-05-19T19:30:00+07:00',
+    accessToken: 'tok_live_queue_1234567890'
+  }, {
+    async post(url, body, headers) {
+      publishedRequests.push({ url, body, headers });
+      return { status: 202, id: 'post_123' };
+    }
   });
-  assert.equal(publish.mode, 'mocked-dependency');
+  assert.equal(publish.mode, 'queued');
+  assert.equal(publish.platformPostId, 'post_123');
   assert.equal(publish.request.body.fr_id, 'FR-VIRAL-001');
-  assert.throws(() => media.socialPublishStub({ ...publish.request.body, frId: 'FR-VIRAL-001', platform: 'tiktok', assetUrl: 'file://clip.mp4', caption: 'bad', scheduledFor: '2026-05-19T19:30:00+07:00' }), /https_required/);
-  assert.throws(() => media.socialPublishStub({ frId: 'FR-VIRAL-001', platform: 'tiktok', assetUrl: 'https://cdn.tamagochi.app/social/fr-viral-001.mp4', caption: 'x', scheduledFor: '2026-05-19T19:30:00+07:00', apiKey: 'live-key' }), /live_publish_disabled/);
+  assert.equal(publishedRequests.length, 1);
+  await assert.rejects(() => media.publishSocial({ frId: 'FR-VIRAL-001', platform: 'tiktok', assetUrl: 'file://clip.mp4', caption: 'bad', scheduledFor: '2026-05-19T19:30:00+07:00', accessToken: 'tok_live_queue_1234567890' }, { async post() { return { status: 202, id: 'unused' }; } }), /https_required/);
+  await assert.rejects(() => media.publishSocial({ frId: 'FR-VIRAL-001', platform: 'tiktok', assetUrl: 'https://cdn.tamagochi.app/social/fr-viral-001.mp4', caption: 'x', scheduledFor: '2026-05-19T19:30:00+07:00', accessToken: 'short' }, { async post() { return { status: 202, id: 'unused' }; } }), /access_token_required/);
   assert.equal(media.pushAllowed({ localHour: 12, sentToday: 2, under13: false }), true);
   assert.equal(media.pushAllowed({ localHour: 12, sentToday: 1, under13: true }), false);
 });

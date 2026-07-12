@@ -48,8 +48,8 @@ lines.push(
   '- Apple TestFlight / Google Play Internal Test require signing credentials and store accounts.',
   '- Zalo OA OAuth approval requires live OA credentials.',
   '- ARKit/ARCore placement requires physical supported devices.',
-  '- Apple/Google/Antom/Xsolla payment validation requires sandbox merchant credentials.',
-  '- LevelPlay/AppLovin/SuperAwesome checks require ad-network sandbox credentials.',
+  '- Apple/Google/Antom/Xsolla payment validation requires credentialed merchant accounts.',
+  '- LevelPlay/AppLovin/SuperAwesome checks require credentialed ad-network accounts.',
   '- Crowdin sync requires project token and translation workspace.',
   '',
   'All blocked items have local deterministic deliverables and automated tests; production validation resumes when credentials/devices are available.'

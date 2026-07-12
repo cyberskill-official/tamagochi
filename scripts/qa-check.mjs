@@ -24,7 +24,7 @@ const testCases = await requireFile('docs/testing/TEST_CASES.md', ['Coverage Mat
 await requireFile('docs/marketing/SOCIAL_CONTENT_SCHEDULE.md', ['Weekly Manual Schedule', 'Manual Posting Checklist']);
 await requireFile('docs/feature-requests/IMPLEMENTATION_AUDIT_2026-05-18.md', ['Per-FR Audit Table', 'External Deployment Gates']);
 await requireFile('apps/web-qa/index.html', ['Tamagochi QA Console', 'Run All FR Journeys']);
-await requireFile('apps/web-game/index.html', ['Playable Local Game', 'Primary care actions']);
+await requireFile('apps/web-game/index.html', ['Grove Quest Care Loop', 'virtual pet device', 'pet care controls']);
 
 for (const id of BUILD_ORDER) {
   if (!testCases.includes(id)) fail(`TEST_CASES.md does not reference ${id}`);

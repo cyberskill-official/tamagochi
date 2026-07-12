@@ -79,9 +79,10 @@ test('economy service enforces double-entry ledger, no overdraft, IAP-only Heart
   assert.equal(econ.spend(u, 'coins', 50, 'care.feed:1'), 150);
   assert.throws(() => econ.spend(u, 'coins', 1000, 'care.feed:2'), /insufficient_balance/);
   assert.equal(econ.reconcile().balanced, true);
-  assert.equal(econ.validateIapReceipt('apple', 'apple:receipt'), true);
-  assert.throws(() => econ.validateIapReceipt('apple', 'google:receipt'), /receipt_invalid/);
-  econ.restoreSubscription(u, 'apple:subscription');
+  const receipt = econ.createSignedReceipt('apple', { userId: u.id, sku: 'pet_plus.monthly', transactionId: 'txn-1', kind: 'subscription' });
+  assert.equal(econ.validateIapReceipt('apple', receipt), true);
+  assert.throws(() => econ.validateIapReceipt('google', receipt), /platform_mismatch/);
+  econ.restoreSubscription(u, 'apple', receipt);
   assert.equal(u.petPlus, true);
   assert.equal(econ.rewardedVideo(u, 'daily_bonus', true).interstitial, false);
   assert.throws(() => econ.rewardedVideo(u, 'daily_bonus', false), /reward_not_completed/);

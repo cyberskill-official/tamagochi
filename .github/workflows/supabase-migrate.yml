@@ -1,3 +1,37 @@
-generated_for: FR-INFRA-003
-status: shipped
-path: .github/workflows/supabase-migrate.yml
+name: Supabase Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Supabase target to deploy
+        required: true
+        default: standard
+        type: choice
+        options:
+          - standard
+          - kids
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.target == 'kids' && 'supabase-kids' || 'supabase-standard' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run verify
+
+      - name: Deploy Supabase target
+        run: npm run supabase:deploy:${{ inputs.target }}
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+          SUPABASE_KIDS_PROJECT_REF: ${{ secrets.SUPABASE_KIDS_PROJECT_REF }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}

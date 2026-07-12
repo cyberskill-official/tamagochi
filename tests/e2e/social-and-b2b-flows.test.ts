@@ -16,8 +16,8 @@ test('E2E-003 social collection journey covers friends, PetPair, breeding, trust
   const pets = new PetService();
   const care = new CareService();
   const social = new SocialService();
-  const a = auth.signIn('apple', 'social-a-token');
-  const b = auth.signIn('google', 'social-b-token');
+  const a = auth.signIn('apple', auth.createProviderToken('apple', 'social-a'));
+  const b = auth.signIn('google', auth.createProviderToken('google', 'social-b'));
   const petA = pets.hatch(a, 'mochi', new Date('2026-05-17T08:00:00Z')).pet;
   const petB = pets.hatch(b, 'pengu', new Date('2026-05-17T08:00:00Z')).pet;
   petA.stage = 'adult';
@@ -45,8 +45,8 @@ test('E2E-005 PetOS tenant isolation journey covers theme, RLS, DPO, observabili
   const i18n = new I18nA11yService();
   const econ = new EconomyService();
 
-  const techUser = auth.signIn('zalo', 'techcombank-token', 'techcombank');
-  const viettelUser = auth.signIn('zalo', 'viettel-token', 'viettel');
+  const techUser = auth.signIn('zalo', auth.createProviderToken('zalo', 'techcombank-user', 'techcombank'), 'techcombank');
+  const viettelUser = auth.signIn('zalo', auth.createProviderToken('zalo', 'viettel-user', 'viettel'), 'viettel');
   const rows = [
     { tenantId: 'techcombank', balance: 100 },
     { tenantId: 'viettel', balance: 200 }

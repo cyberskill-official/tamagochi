@@ -10,6 +10,7 @@ export * from './legal.ts';
 export * from './media.ts';
 export * from './observability.ts';
 export * from './pet.ts';
+export * from './platform.ts';
 export * from './registry.ts';
 export * from './social.ts';
 export * from './types.ts';

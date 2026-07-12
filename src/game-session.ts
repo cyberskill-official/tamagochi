@@ -33,7 +33,7 @@ export class TamagochiGameSession {
   readonly b2b = new B2BService();
 
   runStandardPlayerJourney(): ScenarioResult {
-    const user = this.auth.signIn('apple', 'standard-session-token');
+    const user = this.auth.signIn('apple', this.auth.createProviderToken('apple', 'standard-session'));
     const hatch = this.pets.hatch(user, 'mochi', new Date('2026-05-18T08:00:00+07:00'));
     const pet = this.pets.namePet(user, hatch.pet.id, 'Mochi', hatch.hatchAnimationToken);
     this.care.feed(user, pet);
@@ -66,8 +66,8 @@ export class TamagochiGameSession {
   }
 
   runSocialJourney(): ScenarioResult {
-    const a = this.auth.signIn('apple', 'social-a-session');
-    const b = this.auth.signIn('google', 'social-b-session');
+    const a = this.auth.signIn('apple', this.auth.createProviderToken('apple', 'social-a-session'));
+    const b = this.auth.signIn('google', this.auth.createProviderToken('google', 'social-b-session'));
     const petA = this.pets.hatch(a, 'mochi', new Date('2026-05-18T08:00:00+07:00')).pet;
     const petB = this.pets.hatch(b, 'pengu', new Date('2026-05-18T08:00:00+07:00')).pet;
     petA.stage = 'adult';
@@ -86,10 +86,11 @@ export class TamagochiGameSession {
   }
 
   runMonetizationJourney(): ScenarioResult {
-    const user = this.auth.signIn('zalo', 'monetization-session');
+    const user = this.auth.signIn('zalo', this.auth.createProviderToken('zalo', 'monetization-session'));
     this.econ.grant(user, 'coins', 300, 'mini-game:session');
     const balanceAfterSpend = this.econ.spend(user, 'coins', 50, 'care.feed:food');
-    this.econ.restoreSubscription(user, 'apple:subscription');
+    const subscriptionReceipt = this.econ.createSignedReceipt('apple', { userId: user.id, sku: 'pet_plus.monthly', transactionId: 'txn-session-pet-plus', kind: 'subscription' });
+    this.econ.restoreSubscription(user, 'apple', subscriptionReceipt);
     const reward = this.econ.rewardedVideo(user, 'daily_bonus', true);
     const pass = this.econ.battlePass(user);
     return {
@@ -100,8 +101,8 @@ export class TamagochiGameSession {
   }
 
   runTenantJourney(): ScenarioResult {
-    const techUser: UserProfile = this.auth.signIn('zalo', 'techcombank-session', 'techcombank');
-    const viettelUser: UserProfile = this.auth.signIn('zalo', 'viettel-session', 'viettel');
+    const techUser: UserProfile = this.auth.signIn('zalo', this.auth.createProviderToken('zalo', 'techcombank-session', 'techcombank'), 'techcombank');
+    const viettelUser: UserProfile = this.auth.signIn('zalo', this.auth.createProviderToken('zalo', 'viettel-session', 'viettel'), 'viettel');
     const rows = [{ tenantId: techUser.tenantId, value: 1 }, { tenantId: viettelUser.tenantId, value: 2 }];
     const visible = this.b2b.rlsSelect(rows, techUser.tenantId);
     const theme = this.b2b.resolveTheme('techcombank');

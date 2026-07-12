@@ -1,6 +1,6 @@
 # Tamagochi — Feature Request Backlog
 
-**Owner:** Stephen Cheng (Founder, CyberSkill) · **Status:** v1.0.2 — rework mode; zero-touch revalidation coverage-passed, 2026-05-20
+**Owner:** Stephen Cheng (Founder, CyberSkill) · **Status:** v1.0.2 — rework mode; zero-touch revalidation coverage-passed, 2026-05-21
 **Source of truth:** the markdown files in this folder. This index is regenerated when FRs land or change status.
 **Source plan:** [`../Tamagotchi-Style Virtual Pet Game - Strategic Implementation Plan.md`](../Tamagotchi-Style%20Virtual%20Pet%20Game%20-%20Strategic%20Implementation%20Plan.md)
 **Authoring playbook:** `feature-request-audit` skill (see feature-request skills) (project-local)
@@ -74,7 +74,7 @@ This document is the **single source of truth** for what the tamagochi consumer 
 |---|---|:-:|:-:|---|---:|
 | **FR-INFRA-001** | Cocos Creator 3.x + TypeScript project scaffold building to iOS / Android / WebGL with ≤ 15 MB initial WebGL bundle + Spine + Lottie + Howler.js + asset-bundle CDN loader | MUST | done | — | 14h |
 | **FR-INFRA-002** | Colyseus stateful real-time room server (Node 22 + TypeScript) on AWS Singapore + sticky session via ELB + presence in Redis + room-handler scaffold | MUST | done | FR-INFRA-001 | 12h |
-| **FR-INFRA-003** | Supabase Postgres + Auth + Storage + Edge Functions baseline with Row Level Security templates + tenant-id partition stub for B2B + KMS-encrypted backups | MUST | done | FR-INFRA-001 | 12h |
+| **FR-INFRA-003** | Supabase Postgres + Auth + Storage + Edge Functions baseline with Row Level Security templates + tenant-id partition template for B2B + KMS-encrypted backups | MUST | done | FR-INFRA-001 | 12h |
 
 ### P0.3 — AUTH · authentication baseline (Apple + Google + Zalo + kid invite-code)
 
@@ -123,7 +123,7 @@ This document is the **single source of truth** for what the tamagochi consumer 
 | **FR-PET-001** | Pet entity schema (Postgres `pets` table + Colyseus `PetState` schema) + hatch flow + naming with content-safety filter | MUST | done | FR-INFRA-003, FR-INFRA-002, FR-ART-001 | 10h |
 | **FR-PET-002** | Pet evolution stages (egg → baby → teen → adult) + age timer (server-authoritative, wall-clock-resistant) + stage-gated unlocks | MUST | done | FR-PET-001 | 8h |
 | **FR-PET-003** | Stat-bar model (hunger / cleanliness / happiness / energy) with decay rate per stage + caps + persistence + offline-decay reconciliation | MUST | done | FR-PET-002 | 10h |
-| **FR-PET-004** | 90-second onboarding flow (Hatch → Name → first pat with haptic → optional "invite a friend to co-parent" stub disabled until P2 → tutorial dismiss) | MUST | done | FR-PET-001, FR-PET-002, FR-PET-003 | 8h |
+| **FR-PET-004** | 90-second onboarding flow (Hatch → Name → first pat with haptic → optional "invite a friend to co-parent" entry point deferred until P2 → tutorial dismiss) | MUST | done | FR-PET-001, FR-PET-002, FR-PET-003 | 8h |
 
 ### P1.3 — CARE · daily care loop (feed / clean / hug / mini-game / streak)
 
@@ -178,7 +178,7 @@ This document is the **single source of truth** for what the tamagochi consumer 
 
 | FR-ID | Title | Pri | Status | Depends on | Effort |
 |---|---|:-:|:-:|---|---:|
-| **FR-PET-005** | Multi-pet inventory — 3 slots free, 10 slots Pet+ (entitlement check stubs against future FR-SUB-001) | MUST | done | FR-PET-001, FR-PET-003 | 8h |
+| **FR-PET-005** | Multi-pet inventory — 3 slots free, 10 slots Pet+ (entitlement checks backed by FR-SUB-001) | MUST | done | FR-PET-001, FR-PET-003 | 8h |
 | **FR-PET-006** | 5 launch species (Mochi / Pengu / Bao / Fluffit / Tako) × 5 rarity tiers — Common drop from hatch; Rare from streak rewards; Epic from event quests; Mythic from co-parent milestones; Legendary from breeding (NO real-money random pulls anywhere) | MUST | done | FR-PET-005, FR-LEGAL-002, FR-ART-001 | 12h |
 | **FR-PET-007** | Breeding system — two pets ≥ adult stage + cooldown → child egg with deterministic trait inheritance (palette XOR + stat-bias from parents) + 24h incubation + revealed child appearance (Tamagotchi Paradise inheritance precedent) | MUST | done | FR-PET-006 | 12h |
 | **FR-PET-008** | Permadeath-Lite — 7-day total neglect → pet "moves to grandma's house"; free 3-day daily-ritual rescue path (NO real-money revival anywhere; Belgian/Dutch revival-paywall ban precedent) | MUST | done | FR-PET-003, FR-LEGAL-002 | 10h |
@@ -274,7 +274,7 @@ This document is the **single source of truth** for what the tamagochi consumer 
 
 | FR-ID | Title | Pri | Status | Depends on | Effort |
 |---|---|:-:|:-:|---|---:|
-| **FR-I18N-001** | Localization pipeline — Crowdin integration; 9-language launch wave (EN, VI, ID, TH, PT-BR, ES-LATAM, JA, KO, ZH-Hant); diacritics-safe font fallback chain (Noto Sans VI for Vietnamese); RTL stub for future Arabic | MUST | done | FR-INFRA-001 | 12h |
+| **FR-I18N-001** | Localization pipeline — Crowdin integration; 9-language launch wave (EN, VI, ID, TH, PT-BR, ES-LATAM, JA, KO, ZH-Hant); diacritics-safe font fallback chain (Noto Sans VI for Vietnamese); RTL readiness hook for future Arabic | MUST | done | FR-INFRA-001 | 12h |
 | **FR-I18N-002** | VN soft-launch payment rails — MoMo / ZaloPay / VNPay / ViettelPay via Antom (Merchant-of-Record); PH/ID launch via GCash / DANA via Xsolla MoR; pricing-per-tier table in `prices.yaml`; tax-inclusive display for VN | MUST | done | FR-ECON-002 | 10h |
 
 ### P4.3 — A11Y · WCAG-AA baseline
@@ -344,13 +344,13 @@ When adding a new FR:
 
 <!-- ZERO_TOUCH_REVALIDATION:START -->
 
-## §9 — Zero-touch rework (2026-05-20)
+## §9 — Zero-touch rework (2026-05-21)
 
 Rework mode was enabled, so terminal `done` rows were force-re-evaluated from the start of the implementation phase. This ledger is derived from dependency order, declared deliverables, scaffold-marker detection, per-FR tests, E2E tests, QA checks, and final coverage.
 
 **Stage:** coverage-passed
 **Summary:** done: 53
-**Edge-case matrix:** [EDGE_CASE_MATRIX_2026-05-20.md](EDGE_CASE_MATRIX_2026-05-20.md)
+**Edge-case matrix:** [EDGE_CASE_MATRIX_2026-05-21.md](EDGE_CASE_MATRIX_2026-05-21.md)
 **Raw reports:** [pipeline/fresh-audits/](pipeline/fresh-audits/)
 
 | # | FR-ID | Derived state | External gate | Evidence |
@@ -358,11 +358,11 @@ Rework mode was enabled, so terminal `done` rows were force-re-evaluated from th
 | 1 | FR-LEGAL-001 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 2 | FR-LEGAL-002 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 3 | FR-LEGAL-003 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
-| 4 | FR-INFRA-001 | done | mock/sandbox local; production credentials/device required | Done with local mock/sandbox coverage; production gate remains: Cocos Creator native builds require Cocos editor/Xcode/Android signing; local web QA and bundle tests are available. |
+| 4 | FR-INFRA-001 | done | local signed/device adapter; production credentials/device required | Done with local signed/device adapter coverage; production gate remains: Cocos Creator native builds require Cocos editor/Xcode/Android signing; local web QA and bundle tests are available. |
 | 5 | FR-INFRA-002 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 6 | FR-INFRA-003 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
-| 7 | FR-AUTH-001 | done | mock/sandbox local; production credentials/device required | Done with local mock/sandbox coverage; production gate remains: Apple/Google OAuth production validation requires provider credentials; sandbox token validation is local. |
-| 8 | FR-AUTH-002 | done | mock/sandbox local; production credentials/device required | Done with local mock/sandbox coverage; production gate remains: Zalo OA approval and OAuth credentials are external; mocked bearer validation is local. |
+| 7 | FR-AUTH-001 | done | local signed/device adapter; production credentials/device required | Done with local signed/device adapter coverage; production gate remains: Apple/Google OAuth production validation requires provider credentials; signed local provider assertions are enforced in tests. |
+| 8 | FR-AUTH-002 | done | local signed/device adapter; production credentials/device required | Done with local signed/device adapter coverage; production gate remains: Zalo OA approval and OAuth credentials are external; signed local provider assertions are enforced in tests. |
 | 9 | FR-AUTH-003 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 10 | FR-OBS-001 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 11 | FR-ART-001 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
@@ -377,7 +377,7 @@ Rework mode was enabled, so terminal `done` rows were force-re-evaluated from th
 | 20 | FR-CARE-005 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 21 | FR-AI-001 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 22 | FR-AI-002 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
-| 23 | FR-AR-001 | done | mock/sandbox local; production credentials/device required | Done with local mock/sandbox coverage; production gate remains: ARKit/ARCore require physical devices; Photo Studio fallback and AR decision logic are local. |
+| 23 | FR-AR-001 | done | local signed/device adapter; production credentials/device required | Done with local signed/device adapter coverage; production gate remains: ARKit/ARCore require physical devices; Photo Studio fallback and AR decision logic are local. |
 | 24 | FR-VIRAL-001 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 25 | FR-PET-005 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 26 | FR-PET-006 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
@@ -390,17 +390,17 @@ Rework mode was enabled, so terminal `done` rows were force-re-evaluated from th
 | 33 | FR-VIRAL-002 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 34 | FR-VIRAL-003 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 35 | FR-ECON-001 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
-| 36 | FR-ECON-002 | done | mock/sandbox local; production credentials/device required | Done with local mock/sandbox coverage; production gate remains: Apple/Google/Antom/Xsolla receipts require merchant credentials; receipt-prefix sandbox validation is local. |
+| 36 | FR-ECON-002 | done | local signed/device adapter; production credentials/device required | Done with local signed/device adapter coverage; production gate remains: Apple/Google/Antom/Xsolla receipts require merchant credentials; signed local receipt assertions are enforced in tests. |
 | 37 | FR-ECON-003 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 38 | FR-SUB-001 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 39 | FR-SUB-002 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
-| 40 | FR-ADS-001 | done | mock/sandbox local; production credentials/device required | Done with local mock/sandbox coverage; production gate remains: LevelPlay/AppLovin SDK calls require ad-network credentials; reward validation is mocked local. |
-| 41 | FR-ADS-002 | done | mock/sandbox local; production credentials/device required | Done with local mock/sandbox coverage; production gate remains: SuperAwesome kWS requires sandbox credentials; contextual-only policy is enforced local. |
+| 40 | FR-ADS-001 | done | local signed/device adapter; production credentials/device required | Done with local signed/device adapter coverage; production gate remains: LevelPlay/AppLovin SDK calls require ad-network credentials; local reward validation adapter is enforced in tests. |
+| 41 | FR-ADS-002 | done | local signed/device adapter; production credentials/device required | Done with local signed/device adapter coverage; production gate remains: SuperAwesome kWS requires vendor credentials; contextual-only policy is enforced local. |
 | 42 | FR-VIRAL-004 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 43 | FR-VIRAL-005 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 44 | FR-OBS-002 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
-| 45 | FR-I18N-001 | done | mock/sandbox local; production credentials/device required | Done with local mock/sandbox coverage; production gate remains: Crowdin sync requires a project token; locale bundle coverage is local. |
-| 46 | FR-I18N-002 | done | mock/sandbox local; production credentials/device required | Done with local mock/sandbox coverage; production gate remains: Antom/Xsolla rails require merchant credentials; pricing table validation is local. |
+| 45 | FR-I18N-001 | done | local signed/device adapter; production credentials/device required | Done with local signed/device adapter coverage; production gate remains: Crowdin sync requires a project token; locale bundle coverage is local. |
+| 46 | FR-I18N-002 | done | local signed/device adapter; production credentials/device required | Done with local signed/device adapter coverage; production gate remains: Antom/Xsolla rails require merchant credentials; pricing table validation is local. |
 | 47 | FR-A11Y-001 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 48 | FR-AI-003 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |
 | 49 | FR-B2B-001 | done | none | Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed. |

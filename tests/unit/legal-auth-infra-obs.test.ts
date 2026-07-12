@@ -15,10 +15,11 @@ test('legal service enforces compliance, SDK, branding, and loot-box rules', () 
 
 test('auth service covers Apple, Google, Zalo, parent invites, and fail-closed validation', () => {
   const auth = new AuthService();
-  assert.equal(auth.signIn('apple', 'apple-token-123').provider, 'apple');
-  assert.equal(auth.signIn('google', 'google-token-123').audienceAgeGate, '13+');
-  assert.match(auth.signIn('zalo', 'zalo-token-123').id, /^zalo_/);
+  assert.equal(auth.signIn('apple', auth.createProviderToken('apple', 'apple-user')).provider, 'apple');
+  assert.equal(auth.signIn('google', auth.createProviderToken('google', 'google-user')).audienceAgeGate, '13+');
+  assert.match(auth.signIn('zalo', auth.createProviderToken('zalo', 'zalo-user')).id, /^zalo_/);
   assert.throws(() => auth.signIn('apple', 'short'), /invalid_oauth_token/);
+  assert.throws(() => auth.signIn('google', auth.createProviderToken('apple', 'wrong-provider')), /provider_mismatch/);
   assert.throws(() => auth.createKidInvite('not-an-email'), /parent_email_invalid/);
   const invite = auth.createKidInvite('parent@example.com', 'SuperAwesome kWS');
   assert.equal(invite.code.length, 8);

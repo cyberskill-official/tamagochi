@@ -1,4 +1,48 @@
-Config
-Kind: compliance
-Path: infra/supabase/kids/config.toml
-Verification: unit, fr-acceptance, e2e
+project_id = "tamagochi-kids"
+
+[api]
+enabled = true
+port = 54421
+schemas = ["public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 500
+
+[db]
+port = 54422
+shadow_port = 54420
+major_version = 15
+
+[realtime]
+enabled = false
+
+[studio]
+enabled = true
+port = 54423
+api_url = "http://127.0.0.1:54421"
+
+[inbucket]
+enabled = true
+port = 54424
+smtp_port = 54425
+pop3_port = 54426
+
+[storage]
+enabled = true
+file_size_limit = "10MiB"
+
+[auth]
+enabled = true
+site_url = "http://localhost:4175"
+additional_redirect_urls = ["https://*.vercel.app"]
+jwt_expiry = 1800
+enable_refresh_token_rotation = true
+refresh_token_reuse_interval = 10
+enable_signup = false
+
+[edge_runtime]
+enabled = true
+policy = "per_worker"
+inspector_port = 8084
+
+[functions.safe-harbor-webhook]
+verify_jwt = false

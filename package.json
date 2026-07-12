@@ -14,15 +14,22 @@
     "fr:fresh-audit": "node scripts/fr-zero-touch-revalidate.mjs",
     "fr:check": "node scripts/fr-check.mjs",
     "qa:check": "node scripts/qa-check.mjs",
+    "real:check": "node scripts/real-implementation-check.mjs",
     "web:qa": "node scripts/serve-web-qa.mjs",
     "web:game": "node scripts/serve-web-game.mjs",
-    "verify": "npm test && npm run fr:check && npm run qa:check"
+    "build:vercel": "node scripts/build-vercel-static.mjs",
+    "vercel:deploy": "vercel deploy",
+    "vercel:deploy:prod": "vercel deploy --prod",
+    "supabase:deploy:standard": "node scripts/supabase-deploy.mjs standard",
+    "supabase:deploy:kids": "node scripts/supabase-deploy.mjs kids",
+    "deploy:ready": "npm run verify && npm run build:vercel",
+    "verify": "npm test && npm run fr:check && npm run qa:check && npm run real:check"
   },
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "engines": {
-    "node": ">=24.0.0"
+    "node": "24.x"
   }
 }

@@ -30,7 +30,7 @@ allowed_tools:
 disallowed_tools:
   - "Cross-tenant data access (RLS enforced)"
   - "Tenant_id field omitted on any new table (CI check)"
-  - "Tenant scope bypass for "system" admin user (no superuser path)"
+  - "Tenant scope bypass for \"system\" admin user (no superuser path)"
 risk_if_skipped: "B2B PetOS critical — tenant data isolation is a contractual + regulatory requirement. Without RLS + partition, Techcombank player data could be visible to Viettel admins, etc."
 audience_age_gate: "any"
 ---

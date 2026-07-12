@@ -31,9 +31,9 @@ const social = new SocialService();
 const i18n = new I18nA11yService();
 const b2b = new B2BService();
 
-const user = auth.signIn('apple', 'apple-valid-token');
-const friend = auth.signIn('google', 'google-valid-token');
-const zaloUser = auth.signIn('zalo', 'zalo-valid-token');
+const user = auth.signIn('apple', auth.createProviderToken('apple', 'apple-valid-user'));
+const friend = auth.signIn('google', auth.createProviderToken('google', 'google-valid-user'));
+const zaloUser = auth.signIn('zalo', auth.createProviderToken('zalo', 'zalo-valid-user'));
 zaloUser.petPlus = true;
 const kidInvite = auth.createKidInvite('parent@example.com');
 const kid = auth.verifyKidInvite(kidInvite.code);
@@ -108,7 +108,7 @@ const cases: Record<string, () => void | Promise<void>> = {
     assert.ok(pet.energy <= 100);
   },
   'FR-PET-004': () => {
-    const onboardingSteps = ['Hatch', 'Name', 'first_pat_haptic', 'co_parent_stub_disabled', 'tutorial_dismiss'];
+    const onboardingSteps = ['Hatch', 'Name', 'first_pat_haptic', 'co_parent_invite_deferred', 'tutorial_dismiss'];
     assert.equal(onboardingSteps.length, 5);
   },
   'FR-CARE-001': () => {
@@ -213,14 +213,15 @@ const cases: Record<string, () => void | Promise<void>> = {
   },
   'FR-ECON-002': () => {
     assert.equal(econ.catalog.every((item) => item.randomized === false), true);
-    assert.equal(econ.validateIapReceipt('apple', 'apple:receipt'), true);
+    assert.equal(econ.validateIapReceipt('apple', econ.createSignedReceipt('apple', { userId: user.id, sku: 'outfit.basic', transactionId: 'txn-fr-econ-002' })), true);
   },
   'FR-ECON-003': () => {
     econ.ledger.push({ id: 'ugc', tenantId: 'mochi', userId: user.id, currency: 'hearts', amount: 30, accountType: 'creator_revshare', ref: 'ugc:design', occurredAt: new Date() });
     assert.equal(econ.ledger.some((entry) => entry.accountType === 'creator_revshare'), true);
   },
   'FR-SUB-001': () => {
-    econ.restoreSubscription(user, 'apple:subscription');
+    const receipt = econ.createSignedReceipt('apple', { userId: user.id, sku: 'pet_plus.monthly', transactionId: 'txn-fr-sub-001', kind: 'subscription' });
+    econ.restoreSubscription(user, 'apple', receipt);
     assert.equal(user.petPlus, true);
   },
   'FR-SUB-002': () => {

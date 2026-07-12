@@ -1,4 +1,4 @@
-import { createHash, randomBytes } from 'node:crypto';
+import { createHash, createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
 
 const CROCKFORD = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
 
@@ -8,6 +8,30 @@ export function assert(condition: unknown, message: string): asserts condition {
 
 export function hash(input: string, length = 16): string {
   return createHash('sha256').update(input).digest('hex').slice(0, length);
+}
+
+export function base64UrlEncode(input: string): string {
+  return Buffer.from(input, 'utf8').toString('base64url');
+}
+
+export function base64UrlDecode(input: string): string {
+  return Buffer.from(input, 'base64url').toString('utf8');
+}
+
+export function signPayload(payload: Record<string, unknown>, secret: string): string {
+  const body = base64UrlEncode(JSON.stringify(payload));
+  const signature = createHmac('sha256', secret).update(body).digest('base64url');
+  return `${body}.${signature}`;
+}
+
+export function verifyPayload<T extends Record<string, unknown>>(token: string, secret: string): T {
+  const [body, signature] = token.split('.');
+  assert(Boolean(body && signature), 'signed_token.invalid_shape');
+  const expected = createHmac('sha256', secret).update(body!).digest('base64url');
+  const left = Buffer.from(signature!);
+  const right = Buffer.from(expected);
+  assert(left.length === right.length && timingSafeEqual(left, right), 'signed_token.invalid_signature');
+  return JSON.parse(base64UrlDecode(body!)) as T;
 }
 
 export function ulid(seed = `${Date.now()}:${randomBytes(8).toString('hex')}`): string {

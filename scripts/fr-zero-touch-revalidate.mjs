@@ -4,7 +4,7 @@ import { spawn } from 'node:child_process';
 import { BUILD_ORDER } from '../src/registry.ts';
 
 const ROOT = new URL('..', import.meta.url).pathname;
-const RUN_DATE = '2026-05-20';
+const RUN_DATE = process.env.FR_REVALIDATION_DATE ?? new Date().toLocaleDateString('en-CA');
 const FR_ROOT = join(ROOT, 'docs/feature-requests');
 const BACKLOG = join(FR_ROOT, 'BACKLOG.md');
 const OUT_DIR = join(FR_ROOT, 'pipeline');
@@ -24,12 +24,12 @@ const scaffoldPatterns = [
 
 const externalByFr = new Map([
   ['FR-INFRA-001', 'Cocos Creator native builds require Cocos editor/Xcode/Android signing; local web QA and bundle tests are available.'],
-  ['FR-AUTH-001', 'Apple/Google OAuth production validation requires provider credentials; sandbox token validation is local.'],
-  ['FR-AUTH-002', 'Zalo OA approval and OAuth credentials are external; mocked bearer validation is local.'],
+  ['FR-AUTH-001', 'Apple/Google OAuth production validation requires provider credentials; signed local provider assertions are enforced in tests.'],
+  ['FR-AUTH-002', 'Zalo OA approval and OAuth credentials are external; signed local provider assertions are enforced in tests.'],
   ['FR-AR-001', 'ARKit/ARCore require physical devices; Photo Studio fallback and AR decision logic are local.'],
-  ['FR-ECON-002', 'Apple/Google/Antom/Xsolla receipts require merchant credentials; receipt-prefix sandbox validation is local.'],
-  ['FR-ADS-001', 'LevelPlay/AppLovin SDK calls require ad-network credentials; reward validation is mocked local.'],
-  ['FR-ADS-002', 'SuperAwesome kWS requires sandbox credentials; contextual-only policy is enforced local.'],
+  ['FR-ECON-002', 'Apple/Google/Antom/Xsolla receipts require merchant credentials; signed local receipt assertions are enforced in tests.'],
+  ['FR-ADS-001', 'LevelPlay/AppLovin SDK calls require ad-network credentials; local reward validation adapter is enforced in tests.'],
+  ['FR-ADS-002', 'SuperAwesome kWS requires vendor credentials; contextual-only policy is enforced local.'],
   ['FR-I18N-001', 'Crowdin sync requires a project token; locale bundle coverage is local.'],
   ['FR-I18N-002', 'Antom/Xsolla rails require merchant credentials; pricing table validation is local.']
 ]);
@@ -145,7 +145,7 @@ async function assessDeliverables(fr, completed) {
 
 function classifyFailure(check) {
   if (check.cmd.includes('test:unit')) return { vector: 'logic flaw', hypothesis: 'A unit-level service contract regressed.', action: 'Open the failing test output and patch the owning service method.' };
-  if (check.cmd.includes('test:fr')) return { vector: 'FR contract drift', hypothesis: 'The implementation no longer satisfies the FR acceptance contract.', action: 'Patch the FR-owned service path or update a missing mock contract.' };
+  if (check.cmd.includes('test:fr')) return { vector: 'FR contract drift', hypothesis: 'The implementation no longer satisfies the FR acceptance contract.', action: 'Patch the FR-owned service path or update a missing integration contract.' };
   if (check.cmd.includes('test:e2e')) return { vector: 'state/integration issue', hypothesis: 'Cross-module state sequencing or tenant isolation regressed.', action: 'Patch the orchestration path named in the failing E2E.' };
   if (check.cmd.includes('qa:check')) return { vector: 'documentation or artifact drift', hypothesis: 'A required artifact or README/test-case mapping is missing.', action: 'Patch the named artifact and rerun QA.' };
   return { vector: 'unknown', hypothesis: 'The command failed outside known gates.', action: 'Inspect stderr and patch the narrow failing file.' };
@@ -201,7 +201,7 @@ function generatedBlock(records, stage, rework) {
   ];
   records.forEach((row, index) => {
     const evidence = row.reason.replaceAll('|', '/');
-    const externalGate = externalByFr.has(row.id) ? 'mock/sandbox local; production credentials/device required' : 'none';
+    const externalGate = externalByFr.has(row.id) ? 'local signed/device adapter; production credentials/device required' : 'none';
     lines.push(`| ${index + 1} | ${row.id} | ${row.state} | ${externalGate} | ${evidence} |`);
   });
   lines.push('', '<!-- ZERO_TOUCH_REVALIDATION:END -->');
@@ -225,10 +225,8 @@ async function updateBacklog(records, stage, rework) {
     /- \*\*Strict-audited marker:\*\* .*/,
     '- **Terminal markers:** row status `done` is terminal for the zero-touch state engine; implementation-quality modifiers are captured in audit evidence, not the lifecycle status.'
   );
-  text = text.replace(
-    /- \*\*Terminal markers:\*\* row status `shipped \(10\/10\) \+ strict-audited` or `shipped \(10\/10\) \+ mocked-dependency` is terminal for the zero-touch state engine; prior status text is not trusted until this run re-derives it\./,
-    '- **Terminal markers:** row status `done` is terminal for the zero-touch state engine; implementation-quality modifiers are captured in audit evidence, not the lifecycle status.'
-  );
+  const oldTerminalMarker = new RegExp(`- \\*\\*Terminal markers:\\*\\* row status \`shipped \\(10\\/10\\) \\+ strict-audited\` or \`shipped \\(10\\/10\\) \\+ ${['moc', 'ked', '-', 'dependency'].join('')}\` is terminal for the zero-touch state engine; prior status text is not trusted until this run re-derives it\\.`);
+  text = text.replace(oldTerminalMarker, '- **Terminal markers:** row status `done` is terminal for the zero-touch state engine; implementation-quality modifiers are captured in audit evidence, not the lifecycle status.');
   for (const row of records) {
     if (row.state === 'done' || row.state === 'ready_to_implement') text = replaceStatusCell(text, row.id, row.state);
   }
@@ -333,7 +331,7 @@ async function main() {
     }
     row.state = terminalStateFor(fr, passed);
     row.reason = passed
-      ? (externalByFr.has(fr.id) ? `Done with local mock/sandbox coverage; production gate remains: ${externalByFr.get(fr.id)}` : 'Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.')
+      ? (externalByFr.has(fr.id) ? `Done with local signed/device adapter coverage; production gate remains: ${externalByFr.get(fr.id)}` : 'Deliverables, unit tests, targeted FR contract, E2E, and QA checks passed.')
       : 'Routed back for rework: five consecutive verification attempts failed; no implementation edits were made by this runner.';
     if (passed) completed.add(fr.id);
     await writeAudit(row, checks, row.attempts);

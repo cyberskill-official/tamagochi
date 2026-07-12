@@ -7,7 +7,7 @@
   "records": [
     {
       "id": "FR-LEGAL-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/legal/FR-LEGAL-001-coppa-pdpl-baseline.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/legal/FR-LEGAL-001-coppa-pdpl-baseline/spec.md",
       "title": "COPPA-2025 + Vietnam PDPL 2026 compliance baseline (DPO + DPIA + A05 + Safe Harbor vendor)",
       "module": "LEGAL",
       "phase": "P0",
@@ -37,7 +37,7 @@
     },
     {
       "id": "FR-LEGAL-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/legal/FR-LEGAL-002-loot-box-free-policy.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/legal/FR-LEGAL-002-loot-box-free-policy/spec.md",
       "title": "Loot-box-free / deterministic-only randomisation policy (Belgium / NL / EU posture)",
       "module": "LEGAL",
       "phase": "P0",
@@ -60,7 +60,7 @@
     },
     {
       "id": "FR-LEGAL-003",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/legal/FR-LEGAL-003-apple-kids-google-families.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/legal/FR-LEGAL-003-apple-kids-google-families/spec.md",
       "title": "Apple Kids Category + Google Play Families declarations + contextual-ad gate + parental external-link gate",
       "module": "LEGAL",
       "phase": "P0",
@@ -85,7 +85,7 @@
     },
     {
       "id": "FR-INFRA-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/infra/FR-INFRA-001-cocos-creator-scaffold.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/infra/FR-INFRA-001-cocos-creator-scaffold/spec.md",
       "title": "Cocos Creator 3.x + TypeScript project scaffold (iOS / Android / WebGL)",
       "module": "INFRA",
       "phase": "P0",
@@ -122,7 +122,7 @@
     },
     {
       "id": "FR-INFRA-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/infra/FR-INFRA-002-colyseus-realtime-server.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/infra/FR-INFRA-002-colyseus-realtime-server/spec.md",
       "title": "Colyseus Node/TS stateful real-time room server (AWS Singapore + presence + handler scaffold)",
       "module": "INFRA",
       "phase": "P0",
@@ -161,7 +161,7 @@
     },
     {
       "id": "FR-INFRA-003",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/infra/FR-INFRA-003-supabase-baseline.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/infra/FR-INFRA-003-supabase-baseline/spec.md",
       "title": "Supabase Postgres + Auth + Storage + Edge Functions baseline (RLS + tenant partition + KMS backups)",
       "module": "INFRA",
       "phase": "P0",
@@ -195,7 +195,7 @@
     },
     {
       "id": "FR-AUTH-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/auth/FR-AUTH-001-apple-google-supabase.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/auth/FR-AUTH-001-apple-google-supabase/spec.md",
       "title": "Apple Sign-In + Google Sign-In via Supabase Auth + Cocos native bridge",
       "module": "AUTH",
       "phase": "P0",
@@ -224,7 +224,7 @@
     },
     {
       "id": "FR-AUTH-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/auth/FR-AUTH-002-zalo-signin.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/auth/FR-AUTH-002-zalo-signin/spec.md",
       "title": "Zalo Sign-In (VN-mandatory) — Zalo OA SDK + Zalo OAuth Bearer + Supabase external provider",
       "module": "AUTH",
       "phase": "P0",
@@ -253,7 +253,7 @@
     },
     {
       "id": "FR-AUTH-003",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/auth/FR-AUTH-003-kid-invite-code.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/auth/FR-AUTH-003-kid-invite-code/spec.md",
       "title": "Under-13 SKU invite-code flow + PRIVO / SuperAwesome kWS Safe Harbor parental consent gate",
       "module": "AUTH",
       "phase": "P0",
@@ -285,7 +285,7 @@
     },
     {
       "id": "FR-OBS-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/obs/FR-OBS-001-analytics-attribution-error-tracking.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/obs/FR-OBS-001-analytics-attribution-error-tracking/spec.md",
       "title": "Observability baseline — GameAnalytics + Mixpanel + AppsFlyer + Sentry + Better Stack (kids SKU restricted)",
       "module": "OBS",
       "phase": "P0",
@@ -318,7 +318,7 @@
     },
     {
       "id": "FR-ART-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/art/FR-ART-001-spine-2d-pipeline.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/art/FR-ART-001-spine-2d-pipeline/spec.md",
       "title": "Spine 2D pet skeleton pipeline (20-anim contract) + Lottie UI + Howler.js audio",
       "module": "ART",
       "phase": "P1",
@@ -353,7 +353,7 @@
     },
     {
       "id": "FR-PET-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-001-pet-entity-hatch.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-001-pet-entity-hatch/spec.md",
       "title": "Pet entity schema (Postgres + Colyseus state) + hatch flow + naming with content-safety filter",
       "module": "PET",
       "phase": "P1",
@@ -386,7 +386,7 @@
     },
     {
       "id": "FR-PET-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-002-evolution-stages.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-002-evolution-stages/spec.md",
       "title": "Pet evolution stages (egg → baby → teen → adult) + wall-clock-resistant age timer + stage-gated unlocks",
       "module": "PET",
       "phase": "P1",
@@ -413,7 +413,7 @@
     },
     {
       "id": "FR-PET-003",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-003-stat-bar-model.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-003-stat-bar-model/spec.md",
       "title": "Stat-bar model (hunger / cleanliness / happiness / energy) with stage-aware decay + offline reconciliation",
       "module": "PET",
       "phase": "P1",
@@ -442,7 +442,7 @@
     },
     {
       "id": "FR-PET-004",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-004-onboarding-90sec.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-004-onboarding-90sec/spec.md",
       "title": "90-second onboarding flow (Hatch → Name → first pat → optional co-parent stub → tutorial dismiss)",
       "module": "PET",
       "phase": "P1",
@@ -473,7 +473,7 @@
     },
     {
       "id": "FR-CARE-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/care/FR-CARE-001-feed-action.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/care/FR-CARE-001-feed-action/spec.md",
       "title": "Feed action — server-authoritative consumable spend + hunger restore + Spine eat anim + cooldown",
       "module": "CARE",
       "phase": "P1",
@@ -500,7 +500,7 @@
     },
     {
       "id": "FR-CARE-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/care/FR-CARE-002-clean-action.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/care/FR-CARE-002-clean-action/spec.md",
       "title": "Clean/bath action — soap consumable + cleanliness restore + bubble particle + analytics",
       "module": "CARE",
       "phase": "P1",
@@ -524,7 +524,7 @@
     },
     {
       "id": "FR-CARE-003",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/care/FR-CARE-003-hug-action.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/care/FR-CARE-003-hug-action/spec.md",
       "title": "Hug/pet action — happiness restore + haptic + Spine care_pet anim + 24h soft cap",
       "module": "CARE",
       "phase": "P1",
@@ -545,7 +545,7 @@
     },
     {
       "id": "FR-CARE-004",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/care/FR-CARE-004-mini-game-framework.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/care/FR-CARE-004-mini-game-framework/spec.md",
       "title": "Mini-game framework — Cocos scene loader contract + 4 stock games + server-validated soft-currency payout",
       "module": "CARE",
       "phase": "P1",
@@ -576,7 +576,7 @@
     },
     {
       "id": "FR-CARE-005",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/care/FR-CARE-005-streak-forgiveness-tokens.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/care/FR-CARE-005-streak-forgiveness-tokens/spec.md",
       "title": "Streak system with forgiveness tokens + Cozy Hour weekly window + ethical no-FOMO copy",
       "module": "CARE",
       "phase": "P1",
@@ -602,7 +602,7 @@
     },
     {
       "id": "FR-AI-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/ai/FR-AI-001-llm-pet-personality.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/ai/FR-AI-001-llm-pet-personality/spec.md",
       "title": "LLM pet personality — Claude Haiku primary + Gemini Flash fallback + persona YAML + 20-event memory + cost cap",
       "module": "AI",
       "phase": "P1",
@@ -634,7 +634,7 @@
     },
     {
       "id": "FR-AI-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/ai/FR-AI-002-content-safety-classifier.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/ai/FR-AI-002-content-safety-classifier/spec.md",
       "title": "Content safety classifier (OpenAI Moderation primary + Azure fallback) + kids-SKU scripted dialogue trees",
       "module": "AI",
       "phase": "P1",
@@ -662,7 +662,7 @@
     },
     {
       "id": "FR-AR-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/ar/FR-AR-001-bedroom-cam.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/ar/FR-AR-001-bedroom-cam/spec.md",
       "title": "Bedroom Cam — ARKit/ARCore plane detection + Spine pet placement + 9:16 video capture with watermark",
       "module": "AR",
       "phase": "P1",
@@ -689,7 +689,7 @@
     },
     {
       "id": "FR-VIRAL-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/viral/FR-VIRAL-001-tiktok-export.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/viral/FR-VIRAL-001-tiktok-export/spec.md",
       "title": "TikTok-native vertical video export — 1080×1920 6s clip + watermark + trending audio + one-tap share",
       "module": "VIRAL",
       "phase": "P1",
@@ -712,7 +712,7 @@
     },
     {
       "id": "FR-PET-005",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-005-multi-pet-inventory.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-005-multi-pet-inventory/spec.md",
       "title": "Multi-pet inventory — 3 slots free, 10 slots Pet+ with entitlement check stubs",
       "module": "PET",
       "phase": "P2",
@@ -736,7 +736,7 @@
     },
     {
       "id": "FR-PET-006",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-006-five-species-rarity.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-006-five-species-rarity/spec.md",
       "title": "5 launch species (Mochi/Pengu/Bao/Fluffit/Tako) × 5 rarity tiers, all earnable (no real-money random pulls)",
       "module": "PET",
       "phase": "P2",
@@ -762,7 +762,7 @@
     },
     {
       "id": "FR-PET-007",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-007-breeding-deterministic.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-007-breeding-deterministic/spec.md",
       "title": "Breeding system — two adult pets → child with deterministic trait inheritance + 24h incubation + revealed appearance",
       "module": "PET",
       "phase": "P2",
@@ -786,7 +786,7 @@
     },
     {
       "id": "FR-PET-008",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-008-permadeath-lite-grandma.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/pet/FR-PET-008-permadeath-lite-grandma/spec.md",
       "title": "Permadeath-Lite — 7-day neglect → grandma_house + free 3-day daily-ritual rescue (no real-money revival)",
       "module": "PET",
       "phase": "P2",
@@ -809,7 +809,7 @@
     },
     {
       "id": "FR-SOCIAL-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/social/FR-SOCIAL-001-friend-graph.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/social/FR-SOCIAL-001-friend-graph/spec.md",
       "title": "Friend graph — invite codes + accept/reject + blocklist + Colyseus presence (kids: invite-only, no name search)",
       "module": "SOCIAL",
       "phase": "P2",
@@ -834,7 +834,7 @@
     },
     {
       "id": "FR-SOCIAL-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/social/FR-SOCIAL-002-petpair-coparent.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/social/FR-SOCIAL-002-petpair-coparent/spec.md",
       "title": "PetPair co-parent mode — two phones share one pet + receipt push + break-up screen on one-sided care",
       "module": "SOCIAL",
       "phase": "P2",
@@ -862,7 +862,7 @@
     },
     {
       "id": "FR-SOCIAL-003",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/social/FR-SOCIAL-003-trust-trade-window.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/social/FR-SOCIAL-003-trust-trade-window/spec.md",
       "title": "Trust-trade window — both-sides-show confirm + server-authoritative atomic swap + rate-limit + no off-platform",
       "module": "SOCIAL",
       "phase": "P2",
@@ -885,7 +885,7 @@
     },
     {
       "id": "FR-SOCIAL-004",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/social/FR-SOCIAL-004-pet-wedding-ceremony.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/social/FR-SOCIAL-004-pet-wedding-ceremony/spec.md",
       "title": "Pet Wedding / Best Friend Ceremony — synchronous 2-player mini-event + married cosmetic + auto-rendered share clip",
       "module": "SOCIAL",
       "phase": "P2",
@@ -907,7 +907,7 @@
     },
     {
       "id": "FR-VIRAL-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/viral/FR-VIRAL-002-daily-drama.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/viral/FR-VIRAL-002-daily-drama/spec.md",
       "title": "Daily Drama — procedural micro-events + 6s auto-rendered share clip + hashtag prefill + 1/day/pet cap",
       "module": "VIRAL",
       "phase": "P2",
@@ -928,7 +928,7 @@
     },
     {
       "id": "FR-VIRAL-003",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/viral/FR-VIRAL-003-generative-pet-at-adoption.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/viral/FR-VIRAL-003-generative-pet-at-adoption/spec.md",
       "title": "Generative pet at adoption — text-prompt OR selfie → one-of-one Spine palette + safety denylist",
       "module": "VIRAL",
       "phase": "P2",
@@ -951,7 +951,7 @@
     },
     {
       "id": "FR-ECON-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/econ/FR-ECON-001-currency-ledger.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/econ/FR-ECON-001-currency-ledger/spec.md",
       "title": "Currency ledger — soft Coins + premium Hearts + server-authoritative double-entry + anti-cheat ban",
       "module": "ECON",
       "phase": "P3",
@@ -979,7 +979,7 @@
     },
     {
       "id": "FR-ECON-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/econ/FR-ECON-002-iap-catalogue.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/econ/FR-ECON-002-iap-catalogue/spec.md",
       "title": "IAP catalogue — outfits + room decor + premium species (direct purchase only) + VN MoMo/ZaloPay/VNPay/ViettelPay via Antom",
       "module": "ECON",
       "phase": "P3",
@@ -1006,7 +1006,7 @@
     },
     {
       "id": "FR-ECON-003",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/econ/FR-ECON-003-pet-couture-ugc-revshare.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/econ/FR-ECON-003-pet-couture-ugc-revshare/spec.md",
       "title": "Pet Couture UGC — in-app outfit designer + Trust & Safety review + 30% creator rev-share (Roblox UGC playbook)",
       "module": "ECON",
       "phase": "P3",
@@ -1029,7 +1029,7 @@
     },
     {
       "id": "FR-SUB-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/sub/FR-SUB-001-pet-plus-subscription.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/sub/FR-SUB-001-pet-plus-subscription/spec.md",
       "title": "Pet+ subscription — $4.99/mo or $39.99/yr (VN ₫99K/mo or ₫799K/yr) + entitlement service + restore-purchase + grace period",
       "module": "SUB",
       "phase": "P3",
@@ -1057,7 +1057,7 @@
     },
     {
       "id": "FR-SUB-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/sub/FR-SUB-002-family-tier.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/sub/FR-SUB-002-family-tier/spec.md",
       "title": "Family tier ($9.99/mo; VN ₫199K/mo) — up to 5 child profiles + parental dashboard + screen-time/spend caps + content filter",
       "module": "SUB",
       "phase": "P3",
@@ -1080,7 +1080,7 @@
     },
     {
       "id": "FR-ADS-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/ads/FR-ADS-001-rewarded-video.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/ads/FR-ADS-001-rewarded-video/spec.md",
       "title": "Rewarded video — LevelPlay (IronSource) + AppLovin MAX waterfall + no interstitials + daily cap",
       "module": "ADS",
       "phase": "P3",
@@ -1104,7 +1104,7 @@
     },
     {
       "id": "FR-ADS-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/ads/FR-ADS-002-kws-contextual-kid-gate.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/ads/FR-ADS-002-kws-contextual-kid-gate/spec.md",
       "title": "Under-13 SKU SuperAwesome kWS contextual-only ad gate — no behavioural ads ever",
       "module": "ADS",
       "phase": "P3",
@@ -1125,7 +1125,7 @@
     },
     {
       "id": "FR-VIRAL-004",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/viral/FR-VIRAL-004-battle-pass.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/viral/FR-VIRAL-004-battle-pass/spec.md",
       "title": "Battle pass — $4.99 / 4 weeks · ~40 tiers · free + premium track · daily/weekly objectives · carry-over rules",
       "module": "VIRAL",
       "phase": "P3",
@@ -1146,7 +1146,7 @@
     },
     {
       "id": "FR-VIRAL-005",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/viral/FR-VIRAL-005-push-notifications.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/viral/FR-VIRAL-005-push-notifications/spec.md",
       "title": "Push notifications — FCM + APNS via Supabase Edge Functions + sleep-hour respect + frequency caps + COPPA restrictions",
       "module": "VIRAL",
       "phase": "P3",
@@ -1173,7 +1173,7 @@
     },
     {
       "id": "FR-OBS-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/obs/FR-OBS-002-anti-cheat-ledger-audit.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/obs/FR-OBS-002-anti-cheat-ledger-audit/spec.md",
       "title": "Anti-cheat + server-authoritative ledger audit — message signing + rate-limit + impossible-state ban + daily reconciliation",
       "module": "OBS",
       "phase": "P4",
@@ -1198,7 +1198,7 @@
     },
     {
       "id": "FR-I18N-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/i18n/FR-I18N-001-localization-pipeline.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/i18n/FR-I18N-001-localization-pipeline/spec.md",
       "title": "Localization pipeline — Crowdin + 9-language launch + diacritics-safe font fallback + RTL stub",
       "module": "I18N",
       "phase": "P4",
@@ -1225,7 +1225,7 @@
     },
     {
       "id": "FR-I18N-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/i18n/FR-I18N-002-vn-soft-launch-payments.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/i18n/FR-I18N-002-vn-soft-launch-payments/spec.md",
       "title": "VN soft-launch payment rails — MoMo/ZaloPay/VNPay/ViettelPay via Antom + PH GCash + ID DANA via Xsolla",
       "module": "I18N",
       "phase": "P4",
@@ -1250,7 +1250,7 @@
     },
     {
       "id": "FR-A11Y-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/a11y/FR-A11Y-001-wcag-aa-baseline.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/a11y/FR-A11Y-001-wcag-aa-baseline/spec.md",
       "title": "WCAG-AA baseline — 4.5:1 contrast + reduce-motion + colour-blind palette + OpenDyslexic + VoiceOver/TalkBack labels",
       "module": "A11Y",
       "phase": "P4",
@@ -1275,7 +1275,7 @@
     },
     {
       "id": "FR-AI-003",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/ai/FR-AI-003-personality-v2.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/ai/FR-AI-003-personality-v2/spec.md",
       "title": "AI personality v2 — selfie-aware reactions + name-aware memory + multi-pet sibling awareness (13+ only)",
       "module": "AI",
       "phase": "P4",
@@ -1296,7 +1296,7 @@
     },
     {
       "id": "FR-B2B-001",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/b2b/FR-B2B-001-multi-tenant-client.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/b2b/FR-B2B-001-multi-tenant-client/spec.md",
       "title": "Multi-tenant Cocos client — tenant slug at boot + theme bundle (palette + logo + Spine + CMS) via Cloudflare R2",
       "module": "B2B",
       "phase": "P4",
@@ -1321,7 +1321,7 @@
     },
     {
       "id": "FR-B2B-002",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/b2b/FR-B2B-002-tenant-partition.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/b2b/FR-B2B-002-tenant-partition/spec.md",
       "title": "Tenant partition — tenant_id on every table + Supabase RLS + Colyseus per-tenant rooms + per-tenant rate-limit",
       "module": "B2B",
       "phase": "P4",
@@ -1342,7 +1342,7 @@
     },
     {
       "id": "FR-B2B-003",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/b2b/FR-B2B-003-petos-console.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/b2b/FR-B2B-003-petos-console/spec.md",
       "title": "PetOS console — Next.js admin app for tenant operators · theme upload + quest CMS + KPI dashboard + entitlement tier config",
       "module": "B2B",
       "phase": "P4",
@@ -1368,7 +1368,7 @@
     },
     {
       "id": "FR-B2B-004",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/b2b/FR-B2B-004-techcombank-reference.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/b2b/FR-B2B-004-techcombank-reference/spec.md",
       "title": "Techcombank reference tenant — junior account pet + savings-quest mini-game + financial-literacy + Techcombank SSO bridge",
       "module": "B2B",
       "phase": "P4",
@@ -1392,7 +1392,7 @@
     },
     {
       "id": "FR-B2B-005",
-      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/b2b/FR-B2B-005-viettel-reference.md",
+      "file": "/Users/stephencheng/Projects/CyberSkill/tamagochi/docs/feature-requests/b2b/FR-B2B-005-viettel-reference/spec.md",
       "title": "Viettel reference tenant — top-up triggers pet feed + daily-login data-cost reduction + Pet-of-Viettel mascot + Viettel SSO + SIM-binding",
       "module": "B2B",
       "phase": "P4",

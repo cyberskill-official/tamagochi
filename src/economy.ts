@@ -1,8 +1,20 @@
 import type { Currency, LedgerEntry, TenantSlug, UserProfile } from './types.ts';
-import { assert, ulid } from './utils.ts';
+import { assert, signPayload, ulid, verifyPayload } from './utils.ts';
+
+type ReceiptPlatform = 'apple' | 'google' | 'antom';
+
+interface SignedReceiptPayload {
+  platform: ReceiptPlatform;
+  userId: string;
+  sku: string;
+  transactionId: string;
+  exp: string;
+  kind: 'consumable' | 'subscription';
+}
 
 export class EconomyService {
   readonly ledger: LedgerEntry[] = [];
+  private readonly receiptSecret = 'tamagochi-local-receipt-signing-v2';
   readonly catalog = [
     { sku: 'outfit.basic', kind: 'outfit', usd: 0.99, vnd: 29000, randomized: false },
     { sku: 'room.cozy', kind: 'room_decor', usd: 2.99, vnd: 79000, randomized: false },
@@ -30,13 +42,36 @@ export class EconomyService {
     return this.balance(user.id, currency, user.tenantId);
   }
 
-  validateIapReceipt(platform: 'apple' | 'google' | 'antom', receipt: string): true {
-    assert(receipt.startsWith(`${platform}:`), 'econ.receipt_invalid');
+  createSignedReceipt(platform: ReceiptPlatform, input: { userId: string; sku: string; transactionId: string; kind?: SignedReceiptPayload['kind']; expiresAt?: Date }): string {
+    assert(input.userId.length > 0, 'econ.receipt_user_required');
+    assert(input.sku.length > 0, 'econ.receipt_sku_required');
+    assert(input.transactionId.length > 0, 'econ.receipt_transaction_required');
+    return signPayload({
+      platform,
+      userId: input.userId,
+      sku: input.sku,
+      transactionId: input.transactionId,
+      kind: input.kind ?? 'consumable',
+      exp: (input.expiresAt ?? new Date(Date.now() + 30 * 60_000)).toISOString()
+    }, this.receiptSecret);
+  }
+
+  parseIapReceipt(platform: ReceiptPlatform, receipt: string): SignedReceiptPayload {
+    const payload = verifyPayload<SignedReceiptPayload>(receipt, this.receiptSecret);
+    assert(payload.platform === platform, 'econ.receipt_platform_mismatch');
+    assert(new Date(payload.exp).getTime() > Date.now(), 'econ.receipt_expired');
+    return payload;
+  }
+
+  validateIapReceipt(platform: ReceiptPlatform, receipt: string): true {
+    this.parseIapReceipt(platform, receipt);
     return true;
   }
 
-  restoreSubscription(user: UserProfile, receipt: string): UserProfile {
-    this.validateIapReceipt(receipt.startsWith('google:') ? 'google' : 'apple', receipt);
+  restoreSubscription(user: UserProfile, platform: Extract<ReceiptPlatform, 'apple' | 'google'>, receipt: string): UserProfile {
+    const payload = this.parseIapReceipt(platform, receipt);
+    assert(payload.userId === user.id, 'econ.receipt_user_mismatch');
+    assert(payload.kind === 'subscription', 'econ.receipt_not_subscription');
     user.petPlus = true;
     return user;
   }

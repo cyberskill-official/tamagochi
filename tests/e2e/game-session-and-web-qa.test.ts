@@ -37,3 +37,28 @@ test('E2E-007 web QA console serves live browser-ready artifact', async () => {
     child.kill();
   }
 });
+
+test('E2E-008 playable web game exposes gamified grove UI', async () => {
+  const port = 4178;
+  const child = spawn(process.execPath, ['scripts/serve-web-game.mjs'], {
+    cwd: new URL('../..', import.meta.url).pathname,
+    env: { ...process.env, PORT: String(port) },
+    stdio: ['ignore', 'pipe', 'pipe']
+  });
+  await once(child.stdout, 'data');
+  try {
+    const html = await fetch(`http://localhost:${port}`).then((res) => res.text());
+    const css = await fetch(`http://localhost:${port}/styles.css`).then((res) => res.text());
+    const js = await fetch(`http://localhost:${port}/game.js`).then((res) => res.text());
+    assert.match(html, /Grove Quest Care Loop/);
+    assert.match(html, /adventure-board/);
+    assert.match(html, /quest-notifier/);
+    assert.match(html, /mini-map/);
+    assert.match(css, /--maple-sky/);
+    assert.match(css, /\.map-player/);
+    assert.match(js, /function activeQuest/);
+    assert.match(js, /function progression/);
+  } finally {
+    child.kill();
+  }
+});
