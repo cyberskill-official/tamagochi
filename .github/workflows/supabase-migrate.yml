@@ -1,3 +1,6 @@
+# TASK-INFRA scaffold placeholder.
+# Live Supabase project deploy needs SUPABASE_* secrets + environment gates.
+# Keep this as a valid workflow_dispatch-only gate so push never fails on stubs.
 name: Supabase Deploy
 
 on:
@@ -13,9 +16,8 @@ on:
           - kids
 
 jobs:
-  deploy:
+  scaffold-gate:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.target == 'kids' && 'supabase-kids' || 'supabase-standard' }}
     steps:
       - uses: actions/checkout@v7
 
@@ -26,12 +28,8 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run verify
-
-      - name: Deploy Supabase target
-        run: npm run supabase:deploy:${{ inputs.target }}
-        env:
-          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-          SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
-          SUPABASE_KIDS_PROJECT_REF: ${{ secrets.SUPABASE_KIDS_PROJECT_REF }}
-          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+      - name: Verify repo contracts (no live Supabase deploy secrets required)
+        run: |
+          npm run verify
+          echo "Supabase deploy to '${{ inputs.target }}' is a production gate."
+          echo "Secrets + environments must be configured before a real migrate."
