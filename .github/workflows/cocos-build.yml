@@ -1,3 +1,36 @@
-generated_for: TASK-INFRA-001
-status: shipped
-path: .github/workflows/cocos-build.yml
+# TASK-INFRA-001 scaffold placeholder.
+# Native Cocos Creator builds need editor/Xcode/Android signing (production gate).
+# Keep this file as a valid workflow so GitHub does not treat a stub as a broken run.
+name: Cocos Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Build target
+        required: true
+        default: webgl
+        type: choice
+        options:
+          - webgl
+          - ios
+          - android
+
+jobs:
+  scaffold-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24.18.0
+          cache: npm
+
+      - run: npm ci
+
+      - name: Verify repo contracts (no native Cocos editor in CI)
+        run: |
+          npm run verify
+          echo "Cocos native build for '${{ inputs.target }}' is a production gate."
+          echo "Local web QA / bundle tests are covered by npm run verify."

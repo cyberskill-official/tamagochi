@@ -13,7 +13,25 @@ on:
         type: boolean
 
 jobs:
+  # Always verify + build static site on main. Vercel publish is optional —
+  # missing VERCEL_* secrets must not red-X the branch.
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24.18.0
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run deploy:ready
+
   deploy:
+    needs: build
+    if: ${{ secrets.VERCEL_TOKEN != '' && secrets.VERCEL_ORG_ID != '' && secrets.VERCEL_PROJECT_ID != '' }}
     runs-on: ubuntu-latest
     environment: ${{ github.event_name == 'workflow_dispatch' && inputs.production && 'production' || 'preview' }}
     steps:
