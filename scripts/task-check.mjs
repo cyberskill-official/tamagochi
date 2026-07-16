@@ -14,7 +14,7 @@ function parseFrontmatter(text) {
 }
 
 function parseScalar(frontmatter, key) {
-  return frontmatter.match(new RegExp(`^${key}:\\s*\"?([^\"\\n]+)\"?`, 'm'))?.[1]?.trim();
+  return frontmatter.match(new RegExp(`^${key}:\\s*"?([^"\\n]+)"?`, 'm'))?.[1]?.trim();
 }
 
 function parseList(frontmatter, key) {
@@ -34,33 +34,61 @@ function parseList(frontmatter, key) {
   return out;
 }
 
-async function listFrFiles() {
+/**
+ * CyberOS task layout (post FR→TASK migration):
+ *   docs/tasks/<module>/TASK-<ID>-slug/{spec.md,audit.md}
+ * Legacy flat layout still accepted:
+ *   docs/tasks/<module>/TASK-*.md + TASK-*.audit.md
+ */
+async function listTaskSpecs() {
   const folders = await fs.readdir(FR_ROOT, { withFileTypes: true });
-  const files = [];
+  const specs = [];
   for (const folder of folders) {
     if (!folder.isDirectory()) continue;
-    const dir = join(FR_ROOT, folder.name);
-    for (const file of await fs.readdir(dir)) {
-      if (/^TASK-.*\.md$/.test(file) && !file.endsWith('.audit.md')) files.push(join(dir, file));
+    if (folder.name.startsWith('.') || folder.name === 'pipeline' || folder.name === '_audits') continue;
+    const moduleDir = join(FR_ROOT, folder.name);
+    for (const entry of await fs.readdir(moduleDir, { withFileTypes: true })) {
+      // New layout: TASK-* directory with spec.md
+      if (entry.isDirectory() && /^TASK-/.test(entry.name)) {
+        const specPath = join(moduleDir, entry.name, 'spec.md');
+        const auditPath = join(moduleDir, entry.name, 'audit.md');
+        try {
+          await fs.access(specPath);
+          specs.push({ specPath, auditPath, kind: 'dir' });
+        } catch {
+          // incomplete task dir — skip
+        }
+        continue;
+      }
+      // Legacy layout: TASK-*.md (not audit)
+      if (entry.isFile() && /^TASK-.*\.md$/.test(entry.name) && !entry.name.endsWith('.audit.md')) {
+        const specPath = join(moduleDir, entry.name);
+        const auditPath = specPath.replace(/\.md$/, '.audit.md');
+        specs.push({ specPath, auditPath, kind: 'file' });
+      }
     }
   }
-  return files.sort();
+  return specs.sort((a, b) => a.specPath.localeCompare(b.specPath));
 }
 
-const frFiles = await listFrFiles();
-if (frFiles.length !== BUILD_ORDER.length) fail(`task file count ${frFiles.length} did not match build order ${BUILD_ORDER.length}`);
+const taskSpecs = await listTaskSpecs();
+if (taskSpecs.length !== BUILD_ORDER.length) {
+  fail(`task file count ${taskSpecs.length} did not match build order ${BUILD_ORDER.length}`);
+}
 
 const seen = new Set();
 let materialized = 0;
-for (const file of frFiles) {
-  const text = await fs.readFile(file, 'utf8');
+for (const { specPath, auditPath } of taskSpecs) {
+  const text = await fs.readFile(specPath, 'utf8');
   const fm = parseFrontmatter(text);
   const id = parseScalar(fm, 'id');
+  if (!id) fail(`Missing id in ${specPath}`);
   if (!BUILD_ORDER.includes(id)) fail(`Unexpected task id ${id}`);
   if (parseScalar(fm, 'status') !== 'done') fail(`${id} is not done`);
   if (parseScalar(fm, 'shipped') !== '2026-05-17') fail(`${id} missing shipped date`);
-  const auditPath = file.replace(/\.md$/, '.audit.md');
-  const audit = await fs.readFile(auditPath, 'utf8');
+  const audit = await fs.readFile(auditPath, 'utf8').catch(() => {
+    fail(`${id} missing audit at ${auditPath}`);
+  });
   if (!/score_post_revision_2: 10\/10/.test(audit)) fail(`${id} audit not 10/10`);
   const paths = [...new Set([...parseList(fm, 'new_files'), ...parseList(fm, 'modified_files')])];
   for (const rel of paths) {
@@ -92,4 +120,4 @@ const implementationLog = await fs.readFile(join(FR_ROOT, 'IMPLEMENTATION_LOG.md
 const logRows = implementationLog.split('\n').filter((line) => /^\| \d+ \| TASK-/.test(line));
 if (logRows.length !== 53) fail(`Implementation log rows ${logRows.length} != 53`);
 
-console.log(`task check passed: ${frFiles.length} tasks done, ${materialized} declared file references present.`);
+console.log(`task check passed: ${taskSpecs.length} tasks done, ${materialized} declared file references present.`);
