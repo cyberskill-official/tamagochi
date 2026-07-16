@@ -7,14 +7,13 @@ on:
   workflow_dispatch:
     inputs:
       production:
-        description: Deploy to production
+        description: Deploy to production (requires VERCEL_* secrets)
         required: true
         default: false
         type: boolean
 
 jobs:
-  # Always verify + build static site on main. Vercel publish is optional —
-  # missing VERCEL_* secrets must not red-X the branch.
+  # Always verify + build the static site on main.
   build:
     runs-on: ubuntu-latest
     steps:
@@ -29,11 +28,12 @@ jobs:
 
       - run: npm run deploy:ready
 
+  # Vercel publish only on manual dispatch (secrets must be set in the repo).
   deploy:
     needs: build
-    if: ${{ secrets.VERCEL_TOKEN != '' && secrets.VERCEL_ORG_ID != '' && secrets.VERCEL_PROJECT_ID != '' }}
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
-    environment: ${{ github.event_name == 'workflow_dispatch' && inputs.production && 'production' || 'preview' }}
+    environment: ${{ inputs.production && 'production' || 'preview' }}
     steps:
       - uses: actions/checkout@v7
 
@@ -47,19 +47,19 @@ jobs:
       - run: npm run deploy:ready
 
       - name: Pull Vercel project settings
-        run: npx vercel@54.1.0 pull --yes --environment=${{ github.event_name == 'workflow_dispatch' && inputs.production && 'production' || 'preview' }} --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel@54.1.0 pull --yes --environment=${{ inputs.production && 'production' || 'preview' }} --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Build with Vercel
-        run: npx vercel@54.1.0 build ${{ github.event_name == 'workflow_dispatch' && inputs.production && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel@54.1.0 build ${{ inputs.production && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Deploy prebuilt artifact
-        run: npx vercel@54.1.0 deploy --prebuilt ${{ github.event_name == 'workflow_dispatch' && inputs.production && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel@54.1.0 deploy --prebuilt ${{ inputs.production && '--prod' || '' }} --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
