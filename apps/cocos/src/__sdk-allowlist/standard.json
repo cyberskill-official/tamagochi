@@ -1,5 +1,5 @@
 {
-  "frId": "FR-AR-001",
+  "taskId": "TASK-AR-001",
   "area": "AR, sharing, and live-ops deliverable",
   "status": "concrete-deliverable",
   "path": "apps/cocos/src/__sdk-allowlist/standard.json",

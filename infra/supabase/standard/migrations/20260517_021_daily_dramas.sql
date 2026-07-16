@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_021_daily_dramas.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_021_daily_dramas.sql
 create table if not exists public.t_021_daily_dramas (
   id text primary key,
   tenant_id text not null default 'mochi',

@@ -1,4 +1,4 @@
 PushTokenBridge
 Kind: media
 Path: apps/cocos/native/android/PushTokenBridge.kt
-Verification: unit, fr-acceptance, e2e
+Verification: unit, task-acceptance, e2e

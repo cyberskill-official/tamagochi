@@ -3,8 +3,8 @@
 **Version:** 1.0.0  
 **Date:** 2026-05-17  
 **Owner:** Stephen Cheng, CyberSkill  
-**Status:** Shipped requirements baseline for 53 feature requests  
-**Source of truth:** `docs/feature-requests/BACKLOG.md` and individual `FR-*.md` files
+**Status:** Shipped requirements baseline for 53 tasks  
+**Source of truth:** `docs/tasks/BACKLOG.md` and individual `TASK-*.md` files
 
 ## 1. Product Summary
 
@@ -169,8 +169,8 @@ The game must feel warm, expressive, and safe. The business must remain regulato
 ## 8. Release Gates
 
 1. `npm run verify` must pass.
-2. All FRs in `docs/feature-requests/BACKLOG.md` must be `shipped (10/10)`.
-3. `docs/testing/TEST_CASES.md` must cover every FR in `src/registry.ts`.
+2. All tasks in `docs/tasks/BACKLOG.md` must be `shipped (10/10)`.
+3. `docs/testing/TEST_CASES.md` must cover every task in `src/registry.ts`.
 4. Unit tests must cover every domain service.
 5. End-to-end tests must cover adult, kid, social, monetization, and B2B tenant flows.
 6. Compliance documents in `docs/legal/` must remain present.
@@ -178,4 +178,4 @@ The game must feel warm, expressive, and safe. The business must remain regulato
 
 ## 9. Traceability
 
-Detailed requirement-to-test mapping lives in `docs/testing/TEST_CASES.md`. The implementation log lives in `docs/feature-requests/IMPLEMENTATION_LOG.md`. Automated FR status and file-reference verification lives in `scripts/fr-check.mjs`.
+Detailed requirement-to-test mapping lives in `docs/testing/TEST_CASES.md`. The implementation log lives in `docs/tasks/IMPLEMENTATION_LOG.md`. Automated task status and file-reference verification lives in `scripts/task-check.mjs`.

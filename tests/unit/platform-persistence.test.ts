@@ -18,7 +18,7 @@ test('file-backed platform persists gameplay, ledger, events, and queued social 
     await platform.grantCoins(user, 120, 'unit:persistence:grant');
     await platform.restorePetPlus(user, 'apple', 'pet_plus.monthly', 'txn-persist-001');
     const publish = await platform.queueSocialPost(user, pet.id, {
-      frId: 'FR-VIRAL-001',
+      taskId: 'TASK-VIRAL-001',
       platform: 'tiktok',
       assetUrl: 'https://cdn.tamagochi.app/pets/mochi-first-care.mp4',
       caption: 'Mochi made it through first care.',

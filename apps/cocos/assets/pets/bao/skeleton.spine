@@ -1,4 +1,4 @@
 Skeleton
 Kind: pet
 Path: apps/cocos/assets/pets/bao/skeleton.spine
-Verification: unit, fr-acceptance, e2e
+Verification: unit, task-acceptance, e2e

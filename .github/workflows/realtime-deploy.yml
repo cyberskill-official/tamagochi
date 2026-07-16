@@ -1,3 +1,3 @@
-generated_for: FR-INFRA-002
+generated_for: TASK-INFRA-002
 status: shipped
 path: .github/workflows/realtime-deploy.yml

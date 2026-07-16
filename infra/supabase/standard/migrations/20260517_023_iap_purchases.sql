@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_023_iap_purchases.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_023_iap_purchases.sql
 create table if not exists public.t_023_iap_purchases (
   id text primary key,
   tenant_id text not null default 'mochi',

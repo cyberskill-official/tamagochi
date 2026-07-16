@@ -1,8 +1,8 @@
 # Tamagochi
 
-Tamagochi is CyberSkill's cross-platform 2D animated companion game and PetOS white-label B2B engine. The project is organized around 53 audited feature requests covering compliance, infrastructure, auth, pet lifecycle, care loops, AI safety, AR/social sharing, social play, monetization, localization, accessibility, observability, and multi-tenant B2B.
+Tamagochi is CyberSkill's cross-platform 2D animated companion game and PetOS white-label B2B engine. The project is organized around 53 audited tasks covering compliance, infrastructure, auth, pet lifecycle, care loops, AI safety, AR/social sharing, social play, monetization, localization, accessibility, observability, and multi-tenant B2B.
 
-This repository is currently an executable product-contract baseline: it contains domain services, local QA app, generated-but-hardened app/API/infra deliverables, feature-request specs, product docs, SRS, QA matrix, unit tests, FR acceptance tests, E2E journeys, and verification scripts.
+This repository is currently an executable product-contract baseline: it contains domain services, local QA app, generated-but-hardened app/API/infra deliverables, task specs, product docs, SRS, QA matrix, unit tests, task acceptance tests, E2E journeys, and verification scripts.
 
 ## 1. What Is In This Repo
 
@@ -11,14 +11,14 @@ This repository is currently an executable product-contract baseline: it contain
 | `src/` | Deterministic TypeScript domain services for product logic and policies |
 | `tests/unit/` | Service-level unit coverage |
 | `tests/e2e/` | Cross-module product journeys and local QA console checks |
-| `tests/fr-acceptance.test.ts` | One executable acceptance contract per shipped FR |
+| `tests/task-acceptance.test.ts` | One executable acceptance contract per shipped task |
 | `apps/web-qa/` | Browser-based QA console for live local verification |
 | `apps/cocos/` | Cocos client deliverable surface and component contracts |
 | `apps/api/` | API/module deliverable surface |
 | `apps/realtime/` | Realtime room deliverable surface |
 | `apps/petos-console/` | PetOS console deliverable surface |
 | `infra/supabase/` | Supabase migration and edge-function deliverables |
-| `docs/feature-requests/` | FR specs, backlog, implementation log, one-by-one audit |
+| `docs/tasks/` | task specs, backlog, implementation log, one-by-one audit |
 | `docs/PRD.md` | Product Requirements Document |
 | `docs/SRS.md` | Software Requirements Specification |
 | `docs/testing/TEST_CASES.md` | Full test-case and traceability matrix |
@@ -60,9 +60,9 @@ This runs:
 
 ```bash
 npm run test:unit
-npm run test:fr
+npm run test:task
 npm run test:e2e
-npm run fr:check
+npm run task:check
 npm run qa:check
 ```
 
@@ -70,9 +70,9 @@ Expected result:
 
 ```text
 12 unit tests passed
-54 FR acceptance tests passed
+54 task acceptance tests passed
 7 E2E tests passed
-FR check passed
+task check passed
 QA check passed
 ```
 
@@ -97,9 +97,9 @@ Use the buttons in this order:
 3. Run Social + Trade Flow
 4. Run Monetization Flow
 5. Run PetOS Tenant Flow
-6. Run All FR Journeys
+6. Run All task Journeys
 
-The page should show `Passing`, 53 shipped FRs, compliance gates, scenario evidence, and the manual social-post queue.
+The page should show `Passing`, 53 shipped tasks, compliance gates, scenario evidence, and the manual social-post queue.
 
 ## 4.1 Run The Playable Local Game
 
@@ -150,13 +150,13 @@ Covers:
 - social/trade/ceremony;
 - localization/accessibility/B2B.
 
-### FR Acceptance Tests
+### task Acceptance Tests
 
 ```bash
-npm run test:fr
+npm run test:task
 ```
 
-Covers every FR in `src/registry.ts`. If a new FR is added, this suite must gain a matching acceptance case.
+Covers every task in `src/registry.ts`. If a new task is added, this suite must gain a matching acceptance case.
 
 ### End-To-End Tests
 
@@ -174,17 +174,17 @@ Covers:
 6. Game-session orchestrator across all journeys.
 7. Web QA console serving browser-ready assets.
 
-### FR Consistency Check
+### task Consistency Check
 
 ```bash
-npm run fr:check
+npm run task:check
 ```
 
 Validates:
 
-- 53 FR source files exist;
-- every FR frontmatter is `status: shipped`;
-- every FR has `shipped: 2026-05-17`;
+- 53 task source files exist;
+- every task frontmatter is `status: shipped`;
+- every task has `shipped: 2026-05-17`;
 - every audit file has `score_post_revision_2: 10/10`;
 - every declared file reference exists;
 - backlog and manifest are synchronized.
@@ -206,64 +206,64 @@ Validates:
 - package scripts are wired;
 - no generated placeholder markers remain.
 
-## 6. One-By-One FR Audit Workflow
+## 6. One-By-One task Audit Workflow
 
 Generate the strict task manifest before processing:
 
 ```bash
-npm run fr:manifest
+npm run task:manifest
 ```
 
 This writes:
 
 ```text
-docs/feature-requests/pipeline/TASK_MANIFEST.md
-docs/feature-requests/pipeline/task-manifest.json
+docs/tasks/pipeline/TASK_MANIFEST.md
+docs/tasks/pipeline/task-manifest.json
 ```
 
 Run the conditional one-by-one audit pipeline:
 
 ```bash
-npm run fr:audit
+npm run task:audit
 ```
 
-The pipeline scans each FR in build order, marks `[Unimplemented, Implemented-Pending-Audit, Blocked, Completed]`, writes the manifest after each state change, and creates one raw-output audit report per FR in:
+The pipeline scans each task in build order, marks `[Unimplemented, Implemented-Pending-Audit, Blocked, Completed]`, writes the manifest after each state change, and creates one raw-output audit report per task in:
 
 ```text
-docs/feature-requests/pipeline/audits/
+docs/tasks/pipeline/audits/
 ```
 
-Each completed FR must pass:
+Each completed task must pass:
 
 ```bash
 npm run test:unit
-npm run test:fr -- --test-name-pattern <FR-ID>
+npm run test:task -- --test-name-pattern <TASK-ID>
 npm run test:e2e
-npm run fr:check
+npm run task:check
 npm run qa:check
 ```
 
 When prior backlog status labels are stale, run the fresh zero-touch revalidation path instead:
 
 ```bash
-npm run fr:fresh-audit
+npm run task:fresh-audit
 ```
 
-This ignores existing status cells, writes a pre-flight edge-case matrix, re-derives each FR state from declared deliverables and tests, updates `BACKLOG.md` after every FR, writes raw per-FR reports to `docs/feature-requests/pipeline/fresh-audits/`, and finishes with Node's coverage report.
+This ignores existing status cells, writes a pre-flight edge-case matrix, re-derives each task state from declared deliverables and tests, updates `BACKLOG.md` after every task, writes raw per-FR reports to `docs/tasks/pipeline/fresh-audits/`, and finishes with Node's coverage report.
 
 Run:
 
 ```bash
-node scripts/fr-audit-one-by-one.mjs
+node scripts/task-audit-one-by-one.mjs
 ```
 
 Output:
 
 ```text
-docs/feature-requests/IMPLEMENTATION_AUDIT_2026-05-18.md
+docs/tasks/IMPLEMENTATION_AUDIT_2026-05-18.md
 ```
 
-The audit table lists all FRs in dependency/build order with:
+The audit table lists all tasks in dependency/build order with:
 
 - deliverable check;
 - automated verification;
@@ -278,8 +278,8 @@ Read in this order:
 1. `docs/PRD.md` for product goals, personas, scope, success metrics, and release gates.
 2. `docs/SRS.md` for software interfaces, data models, error handling, and verification requirements.
 3. `docs/testing/TEST_CASES.md` for full test-case traceability.
-4. `docs/feature-requests/BACKLOG.md` for the shipped FR index.
-5. `docs/feature-requests/IMPLEMENTATION_AUDIT_2026-05-18.md` for the one-by-one implementation audit.
+4. `docs/tasks/BACKLOG.md` for the shipped task index.
+5. `docs/tasks/IMPLEMENTATION_AUDIT_2026-05-18.md` for the one-by-one implementation audit.
 
 ## 8. Social Platform Manual Posting
 
@@ -336,7 +336,7 @@ Then run:
 
 ```bash
 npm run test:unit
-npm run test:fr
+npm run test:task
 ```
 
 Rules that must not be weakened:
@@ -386,7 +386,7 @@ Then run:
 
 ```bash
 npm run test:e2e
-npm run fr:check
+npm run task:check
 ```
 
 Tenant rules:
@@ -400,7 +400,7 @@ Tenant rules:
 
 ### Local Contract Baseline
 
-Use this repo to validate product logic and FR traceability:
+Use this repo to validate product logic and task traceability:
 
 ```bash
 npm run verify
@@ -460,15 +460,15 @@ These cannot be fully completed without external credentials/devices:
 
 Track these in the one-by-one implementation audit before production release.
 
-## 11. Adding A New FR
+## 11. Adding A New task
 
-1. Add the FR markdown under `docs/feature-requests/<module>/`.
-2. Add it to `docs/feature-requests/BACKLOG.md`.
+1. Add the task markdown under `docs/tasks/<module>/`.
+2. Add it to `docs/tasks/BACKLOG.md`.
 3. Add an audit file with `score_post_revision_2: 10/10`.
-4. Add the FR ID to `src/registry.ts`.
+4. Add the task ID to `src/registry.ts`.
 5. Implement the domain/service/UI/infra deliverable.
 6. Add unit tests.
-7. Add FR acceptance coverage.
+7. Add task acceptance coverage.
 8. Add E2E coverage if it crosses modules.
 9. Update `docs/testing/TEST_CASES.md`.
 10. Run:
@@ -479,17 +479,17 @@ npm run verify
 
 ## 12. Troubleshooting
 
-### `fr:check` fails
+### `task:check` fails
 
-Usually means a new FR file, audit file, declared file path, backlog row, or manifest count is out of sync.
+Usually means a new task file, audit file, declared file path, backlog row, or manifest count is out of sync.
 
 Fix:
 
 ```bash
-npm run fr:check
+npm run task:check
 ```
 
-Read the error message and update the specific FR/backlog/artifact.
+Read the error message and update the specific task/backlog/artifact.
 
 ### `qa:check` fails
 
@@ -536,10 +536,10 @@ npm run verify
 
 As of 2026-05-18:
 
-- 53 FRs shipped.
+- 53 tasks shipped.
 - Placeholder markers removed.
 - PRD/SRS/test matrix present.
-- Unit, FR acceptance, and E2E suites wired.
+- Unit, task acceptance, and E2E suites wired.
 - Web QA console available locally.
 - Social content schedule prepared for manual posting.
 

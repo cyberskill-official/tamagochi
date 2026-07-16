@@ -1,5 +1,5 @@
 {
-  "frId": "MULTI-FR",
+  "taskId": "MULTI-FR",
   "area": "Infrastructure deliverable",
   "status": "concrete-deliverable",
   "path": "apps/cocos/project.json",

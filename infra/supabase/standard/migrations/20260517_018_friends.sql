@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_018_friends.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_018_friends.sql
 create table if not exists public.t_018_friends (
   id text primary key,
   tenant_id text not null default 'mochi',

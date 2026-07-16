@@ -1,0 +1,30 @@
+{
+  "fr_id": "TASK-VIRAL-002",
+  "status": "mocked-dependency",
+  "reason": "Platform API keys are not present in local config; use the in-code socialPublishStub contract.",
+  "scheduled_for": "2026-05-21T19:30:00+07:00",
+  "platforms": ["tiktok", "instagram_reels"],
+  "copy": "Today's drama: Mochi tried to eat homework. We are negotiating snacks. #mochilife #cozypet",
+  "asset": {
+    "url": "https://cdn.tamagochi.app/social/fr-viral-002-daily-drama.mp4",
+    "format": "video/mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration_seconds": 6,
+    "watermark": "tamagochi.app"
+  },
+  "http_request": {
+    "method": "POST",
+    "url": "https://social-publisher.local/tiktok/posts",
+    "headers": {
+      "authorization": "Bearer <platform-api-key>",
+      "content-type": "application/json"
+    },
+    "body": {
+      "asset_url": "https://cdn.tamagochi.app/social/fr-viral-002-daily-drama.mp4",
+      "caption": "Today's drama: Mochi tried to eat homework. We are negotiating snacks. #mochilife #cozypet",
+      "scheduled_for": "2026-05-21T19:30:00+07:00",
+      "daily_cap_checked": true
+    }
+  }
+}

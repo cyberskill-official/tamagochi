@@ -3,11 +3,11 @@
 **Version:** 1.0.0  
 **Date:** 2026-05-17  
 **Status:** Executable contract baseline  
-**Related documents:** `docs/PRD.md`, `docs/testing/TEST_CASES.md`, `docs/feature-requests/BACKLOG.md`
+**Related documents:** `docs/PRD.md`, `docs/testing/TEST_CASES.md`, `docs/tasks/BACKLOG.md`
 
 ## 1. Purpose
 
-This SRS describes the software behavior, interfaces, data models, non-functional requirements, and verification expectations for Tamagochi and PetOS. It converts the 53 shipped feature requests into implementation-level requirements that can be tested locally and expanded into production services.
+This SRS describes the software behavior, interfaces, data models, non-functional requirements, and verification expectations for Tamagochi and PetOS. It converts the 53 shipped tasks into implementation-level requirements that can be tested locally and expanded into production services.
 
 ## 2. System Overview
 
@@ -19,8 +19,8 @@ The system is a TypeScript monorepo with these logical layers:
 | API/domain | Auth, pet lifecycle, care, economy, subscriptions, ads, AI, B2B | `src/*.ts` services |
 | Realtime | Tenant-scoped rooms and social interactions | `src/infra.ts`, `src/social.ts` |
 | Data/RLS | Supabase-style tables, migrations, tenant partition assumptions | `infra/supabase/**`, `src/b2b.ts` |
-| QA | Unit, FR acceptance, E2E, FR file verification | `tests/**`, `scripts/fr-check.mjs` |
-| Docs | Product, spec, compliance, testing, feature requests | `docs/**` |
+| QA | Unit, task acceptance, E2E, task file verification | `tests/**`, `scripts/task-check.mjs` |
+| Docs | Product, spec, compliance, testing, tasks | `docs/**` |
 
 ## 3. External Interfaces
 
@@ -129,7 +129,7 @@ Invariants:
 
 ## 5. Functional Requirements
 
-Functional requirements are represented by the 53 shipped FRs. The authoritative list and shipped status live in `docs/feature-requests/BACKLOG.md`. The acceptance test suite `tests/fr-acceptance.test.ts` must include one test entry for each FR ID in `src/registry.ts`.
+Functional requirements are represented by the 53 shipped tasks. The authoritative list and shipped status live in `docs/tasks/BACKLOG.md`. The acceptance test suite `tests/task-acceptance.test.ts` must include one test entry for each task ID in `src/registry.ts`.
 
 ## 6. Non-Functional Requirements
 
@@ -147,8 +147,8 @@ Functional requirements are represented by the 53 shipped FRs. The authoritative
 ## 7. Architecture Requirements
 
 1. Domain services must be deterministic and directly unit-testable.
-2. Generated scaffold files must remain present for every `new_files` and `modified_files` entry in FR frontmatter.
-3. `scripts/fr-check.mjs` must fail if an FR is not shipped, lacks a 10/10 audit, or declares a missing file.
+2. Generated scaffold files must remain present for every `new_files` and `modified_files` entry in task frontmatter.
+3. `scripts/task-check.mjs` must fail if an task is not shipped, lacks a 10/10 audit, or declares a missing file.
 4. `scripts/qa-check.mjs` must fail if PRD, SRS, or test-case documentation is missing or no unit/E2E tests exist.
 5. Any future production API layer must wrap the same domain invariants rather than duplicating policy checks in controllers.
 
@@ -157,9 +157,9 @@ Functional requirements are represented by the 53 shipped FRs. The authoritative
 | Suite | Command | Purpose |
 |---|---|---|
 | Unit | `npm run test:unit` | Service-level branch and invariant coverage |
-| FR acceptance | `npm run test:fr` | One automated contract per shipped FR |
+| task acceptance | `npm run test:task` | One automated contract per shipped task |
 | End-to-end | `npm run test:e2e` | Cross-module product journeys |
-| FR docs/files | `npm run fr:check` | FR status, audit, backlog, declared file coverage |
+| task docs/files | `npm run task:check` | task status, audit, backlog, declared file coverage |
 | QA docs | `npm run qa:check` | PRD/SRS/test-case/test-suite presence |
 | Full verification | `npm run verify` | All of the above |
 
@@ -175,4 +175,4 @@ Functional requirements are represented by the 53 shipped FRs. The authoritative
 
 ## 10. Requirement Traceability
 
-Detailed traceability is maintained in `docs/testing/TEST_CASES.md`. It maps every FR to unit, acceptance, E2E, and manual/regression coverage.
+Detailed traceability is maintained in `docs/testing/TEST_CASES.md`. It maps every task to unit, acceptance, E2E, and manual/regression coverage.

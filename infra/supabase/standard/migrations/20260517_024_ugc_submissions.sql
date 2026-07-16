@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_024_ugc_submissions.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_024_ugc_submissions.sql
 create table if not exists public.t_024_ugc_submissions (
   id text primary key,
   tenant_id text not null default 'mochi',

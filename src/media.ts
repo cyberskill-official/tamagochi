@@ -4,7 +4,7 @@ import { assert, hash, hasBlockedText, sameUtcDay } from './utils.ts';
 export type SocialPlatform = 'tiktok' | 'instagram_reels' | 'youtube_shorts' | 'x' | 'threads';
 
 export interface SocialPublishInput {
-  frId: string;
+  taskId: string;
   platform: SocialPlatform;
   assetUrl: string;
   caption: string;
@@ -68,7 +68,7 @@ export class MediaService {
       'content-type': 'application/json'
     };
     const body = {
-      fr_id: input.frId,
+      task_id: input.taskId,
       asset_url: input.assetUrl,
       caption: input.caption,
       scheduled_for: input.scheduledFor

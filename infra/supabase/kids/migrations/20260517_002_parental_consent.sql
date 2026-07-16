@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/kids/migrations/20260517_002_parental_consent.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/kids/migrations/20260517_002_parental_consent.sql
 create table if not exists public.t_002_parental_consent (
   id text primary key,
   tenant_id text not null default 'mochi',

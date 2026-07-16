@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_030_anticheat.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_030_anticheat.sql
 create table if not exists public.t_030_anticheat (
   id text primary key,
   tenant_id text not null default 'mochi',

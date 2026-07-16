@@ -1,11 +1,11 @@
 # CyberOS Layer-1 Memory Protocol — AGENTS.md (tamagochi edition)
 
 Version: 2.0.0 · Spec status: Normative · Project: `cyberskill/tamagochi`
-Companion files (informative): `docs/Tamagotchi-Style Virtual Pet Game - Strategic Implementation Plan.md` (input plan), `feature-request-audit` skill (per-FR playbook), `docs/feature-requests/BACKLOG.md` (active backlog), `docs/feature-requests/SESSION_PROGRESS.md` (authoring trace), `docs/feature-requests/MANIFEST.json` (per-module FR counters).
+Companion files (informative): `docs/Tamagotchi-Style Virtual Pet Game - Strategic Implementation Plan.md` (input plan), `task-audit` skill (per-FR playbook), `docs/tasks/BACKLOG.md` (active backlog), `docs/tasks/SESSION_PROGRESS.md` (authoring trace), `docs/tasks/MANIFEST.json` (per-module task counters).
 
 The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, NOT RECOMMENDED, MAY, and OPTIONAL in this document are to be interpreted as described in BCP 14 (RFC 2119, RFC 8174) when, and only when, they appear in all capitals.
 
-**Project framing.** The tamagochi repository delivers a cross-platform 2D animated multi-pet virtual-pet game (Cocos Creator 3.x → iOS, Android, WebGL) with a Colyseus + Supabase backend, plus a multi-tenant B2B white-label engine ("PetOS by CyberSkill") layered on the same codebase. The input plan in `docs/Tamagotchi-Style Virtual Pet Game - Strategic Implementation Plan.md` defines 5 capability phases (P0 Foundation → P4 Scale & PetOS B2B) across 17 modules. Total ~51 authored FRs at 10/10. This AGENTS.md governs how feature requests for that plan are authored, audited, and shipped under the Layer-1 BRAIN protocol — scoped to this project's own `<memory-root>/`.
+**Project framing.** The tamagochi repository delivers a cross-platform 2D animated multi-pet virtual-pet game (Cocos Creator 3.x → iOS, Android, WebGL) with a Colyseus + Supabase backend, plus a multi-tenant B2B white-label engine ("PetOS by CyberSkill") layered on the same codebase. The input plan in `docs/Tamagotchi-Style Virtual Pet Game - Strategic Implementation Plan.md` defines 5 capability phases (P0 Foundation → P4 Scale & PetOS B2B) across 17 modules. Total ~51 authored tasks at 10/10. This AGENTS.md governs how tasks for that plan are authored, audited, and shipped under the Layer-1 BRAIN protocol — scoped to this project's own `<memory-root>/`.
 
 ---
 
@@ -80,7 +80,7 @@ Read-only operations MAY skip steps 3–4 if they accept stale-up-to-last-HEAD c
 
 §3.5  `delete(path, "tombstone")` is the default. The body file is replaced with a tombstone stub; the meta sidecar is retained with `state: "tombstoned"`.
 
-§3.6  `delete(path, "purge")` is reserved for COPPA-2025 (US), GDPR Article 17 (EU), and Vietnam PDPL Law 91/2025/QH15 + Decree 356/2025/ND-CP right-to-erasure compliance. It MUST be gated by an explicit chat-turn approval (§16.2) AND a non-empty `reason`. The fact of purge is itself a ledger leaf and is not itself erasable. Under-13 erasure requests follow the Safe Harbor escalation path defined in `docs/feature-requests/legal/FR-LEGAL-001-*.md`.
+§3.6  `delete(path, "purge")` is reserved for COPPA-2025 (US), GDPR Article 17 (EU), and Vietnam PDPL Law 91/2025/QH15 + Decree 356/2025/ND-CP right-to-erasure compliance. It MUST be gated by an explicit chat-turn approval (§16.2) AND a non-empty `reason`. The fact of purge is itself a ledger leaf and is not itself erasable. Under-13 erasure requests follow the Safe Harbor escalation path defined in `docs/tasks/legal/TASK-LEGAL-001-*.md`.
 
 ---
 
@@ -193,7 +193,7 @@ At the end of any session that touched the BRAIN, the agent SHALL report:
 
 ## §14  Cross-agent interop
 
-§14.1  A consumer that does not adopt the ledger MUST obey the cross-agent subset documented in `feature-request-audit` skill. It MUST NOT write to `audit/`, `HEAD`, or `.lock` directly. All chain-touching operations route through the canonical writer.
+§14.1  A consumer that does not adopt the ledger MUST obey the cross-agent subset documented in `task-audit` skill. It MUST NOT write to `audit/`, `HEAD`, or `.lock` directly. All chain-touching operations route through the canonical writer.
 
 §14.2  **Cross-BRAIN merge.** Each imported memory MUST become a fresh `put` row on the local chain whose `extra.imported_from` identifies the source store fingerprint and whose `extra.foreign_chain` records the source record's chain hash. The import block MUST be bracketed by a `session.start` and `session.end` audit row on the local chain. Idempotent re-import is RECOMMENDED via `manifest.imports.<fingerprint>.last_imported_seq`.
 
@@ -239,4 +239,4 @@ At the end of any session that touched the BRAIN, the agent SHALL report:
 
 ---
 
-**End of normative spec.** Per-FR authoring procedure: `feature-request-audit` skill. Active backlog and phase index: `docs/feature-requests/BACKLOG.md`.
+**End of normative spec.** Per-FR authoring procedure: `task-audit` skill. Active backlog and phase index: `docs/tasks/BACKLOG.md`.

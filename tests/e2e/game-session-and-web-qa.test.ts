@@ -30,8 +30,8 @@ test('E2E-007 web QA console serves live browser-ready artifact', async () => {
     const html = await fetch(`http://localhost:${port}`).then((res) => res.text());
     const js = await fetch(`http://localhost:${port}/app.js`).then((res) => res.text());
     assert.match(html, /Tamagochi QA Console/);
-    assert.match(html, /Run All FR Journeys/);
-    assert.match(js, /FR-B2B-005/);
+    assert.match(html, /Run All task Journeys/);
+    assert.match(js, /TASK-B2B-005/);
     assert.match(js, /standard-player-flow/);
   } finally {
     child.kill();

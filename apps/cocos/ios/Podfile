@@ -1,2 +1,2 @@
 platform :ios, '15.0'
-# FR-INFRA-001 shipped iOS pod scaffold
+# TASK-INFRA-001 shipped iOS pod scaffold

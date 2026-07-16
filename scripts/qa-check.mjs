@@ -18,12 +18,12 @@ async function requireFile(path, includes = []) {
 }
 
 await requireFile('README.md', ['Quick Start', 'Run The Live QA Console', 'Deployment Strategy']);
-await requireFile('docs/PRD.md', ['Tamagochi Product Requirements Document', '53 feature requests', 'Release Gates']);
+await requireFile('docs/PRD.md', ['Tamagochi Product Requirements Document', '53 tasks', 'Release Gates']);
 await requireFile('docs/SRS.md', ['Software Requirements Specification', 'External Interfaces', 'Verification Requirements']);
 const testCases = await requireFile('docs/testing/TEST_CASES.md', ['Coverage Matrix', 'E2E-001', 'TC-053']);
 await requireFile('docs/marketing/SOCIAL_CONTENT_SCHEDULE.md', ['Weekly Manual Schedule', 'Manual Posting Checklist']);
-await requireFile('docs/feature-requests/IMPLEMENTATION_AUDIT_2026-05-18.md', ['Per-FR Audit Table', 'External Deployment Gates']);
-await requireFile('apps/web-qa/index.html', ['Tamagochi QA Console', 'Run All FR Journeys']);
+await requireFile('docs/tasks/IMPLEMENTATION_AUDIT_2026-05-18.md', ['Per-FR Audit Table', 'External Deployment Gates']);
+await requireFile('apps/web-qa/index.html', ['Tamagochi QA Console', 'Run All task Journeys']);
 await requireFile('apps/web-game/index.html', ['Grove Quest Care Loop', 'virtual pet device', 'pet care controls']);
 
 for (const id of BUILD_ORDER) {
@@ -36,7 +36,7 @@ if (unitFiles.length < 3) fail('Expected at least 3 unit test files');
 if (e2eFiles.length < 2) fail('Expected at least 2 E2E test files');
 
 const packageJson = JSON.parse(await fs.readFile(join(ROOT, 'package.json'), 'utf8'));
-for (const script of ['test:unit', 'test:fr', 'test:e2e', 'fr:manifest', 'fr:audit', 'fr:check', 'qa:check', 'web:qa', 'web:game', 'verify']) {
+for (const script of ['test:unit', 'test:task', 'test:e2e', 'task:manifest', 'task:audit', 'task:check', 'qa:check', 'web:qa', 'web:game', 'verify']) {
   if (!packageJson.scripts?.[script]) fail(`package.json missing script ${script}`);
 }
 

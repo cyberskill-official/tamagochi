@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_034_petos_console.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_034_petos_console.sql
 create table if not exists public.t_034_petos_console (
   id text primary key,
   tenant_id text not null default 'mochi',

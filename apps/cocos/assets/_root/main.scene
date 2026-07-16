@@ -1,5 +1,5 @@
 {
-  "frId": "FR-AI-001",
+  "taskId": "TASK-AI-001",
   "area": "AI and content-safety deliverable",
   "status": "concrete-deliverable",
   "path": "apps/cocos/assets/_root/main.scene",

@@ -181,10 +181,10 @@ export class TamagochiPlatform {
     return { user: updated, receipt };
   }
 
-  async queueSocialPost(user: UserProfile, petId: string, input: Omit<SocialPublishInput, 'frId'> & { frId?: string }): Promise<Awaited<ReturnType<MediaService['publishSocial']>>> {
+  async queueSocialPost(user: UserProfile, petId: string, input: Omit<SocialPublishInput, 'taskId'> & { taskId?: string }): Promise<Awaited<ReturnType<MediaService['publishSocial']>>> {
     const pet = this.pets.requireOwnedPet(user, petId);
     const publishInput: SocialPublishInput = {
-      frId: input.frId ?? 'FR-VIRAL-001',
+      taskId: input.taskId ?? 'TASK-VIRAL-001',
       platform: input.platform,
       assetUrl: input.assetUrl,
       caption: input.caption,

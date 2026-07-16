@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_017_grandma_rescues.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_017_grandma_rescues.sql
 create table if not exists public.t_017_grandma_rescues (
   id text primary key,
   tenant_id text not null default 'mochi',

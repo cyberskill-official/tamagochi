@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_019_trades.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_019_trades.sql
 create table if not exists public.t_019_trades (
   id text primary key,
   tenant_id text not null default 'mochi',

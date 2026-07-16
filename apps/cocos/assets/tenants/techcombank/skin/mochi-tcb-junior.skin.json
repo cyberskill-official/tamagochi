@@ -1,5 +1,5 @@
 {
-  "frId": "MULTI-FR",
+  "taskId": "MULTI-FR",
   "area": "PetOS tenant deliverable",
   "status": "concrete-deliverable",
   "path": "apps/cocos/assets/tenants/techcombank/skin/mochi-tcb-junior.skin.json",

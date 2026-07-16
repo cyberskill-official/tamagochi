@@ -1,5 +1,5 @@
 {
-  "frId": "FR-I18N-001",
+  "taskId": "TASK-I18N-001",
   "area": "Localization and accessibility deliverable",
   "status": "concrete-deliverable",
   "path": "apps/cocos/assets/i18n/{en,vi,id,th,pt-BR,es-LATAM,ja,ko,zh-Hant}/*.json",

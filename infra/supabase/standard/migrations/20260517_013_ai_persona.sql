@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_013_ai_persona.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_013_ai_persona.sql
 create table if not exists public.t_013_ai_persona (
   id text primary key,
   tenant_id text not null default 'mochi',

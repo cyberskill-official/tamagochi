@@ -1,0 +1,29 @@
+{
+  "fr_id": "TASK-VIRAL-004",
+  "status": "mocked-dependency",
+  "reason": "Platform API keys are not present in local config; use the in-code socialPublishStub contract.",
+  "scheduled_for": "2026-05-25T12:30:00+07:00",
+  "platforms": ["threads", "x"],
+  "copy": "This week's Cozy Hour objective: play one memory match and hug your pet before quiet hours.",
+  "asset": {
+    "url": "https://cdn.tamagochi.app/social/fr-viral-004-battle-pass.png",
+    "format": "image/png",
+    "width": 1080,
+    "height": 1350,
+    "watermark": "tamagochi.app"
+  },
+  "http_request": {
+    "method": "POST",
+    "url": "https://social-publisher.local/threads/posts",
+    "headers": {
+      "authorization": "Bearer <platform-api-key>",
+      "content-type": "application/json"
+    },
+    "body": {
+      "asset_url": "https://cdn.tamagochi.app/social/fr-viral-004-battle-pass.png",
+      "caption": "This week's Cozy Hour objective: play one memory match and hug your pet before quiet hours.",
+      "scheduled_for": "2026-05-25T12:30:00+07:00",
+      "no_paid_random_language": true
+    }
+  }
+}

@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_002_tenant_partition.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_002_tenant_partition.sql
 create table if not exists public.t_002_tenant_partition (
   id text primary key,
   tenant_id text not null default 'mochi',

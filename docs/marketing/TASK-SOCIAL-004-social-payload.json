@@ -1,0 +1,30 @@
+{
+  "fr_id": "TASK-SOCIAL-004",
+  "status": "mocked-dependency",
+  "reason": "Platform API keys are not present in local config; use the in-code socialPublishStub contract.",
+  "scheduled_for": "2026-05-24T20:00:00+07:00",
+  "platforms": ["tiktok", "youtube_shorts"],
+  "copy": "Two tiny companions, one very serious best-friend ceremony. #mochilife #petcaregame",
+  "asset": {
+    "url": "https://cdn.tamagochi.app/social/fr-social-004-ceremony.mp4",
+    "format": "video/mp4",
+    "width": 1080,
+    "height": 1920,
+    "duration_seconds": 6,
+    "watermark": "tamagochi.app"
+  },
+  "http_request": {
+    "method": "POST",
+    "url": "https://social-publisher.local/tiktok/posts",
+    "headers": {
+      "authorization": "Bearer <platform-api-key>",
+      "content-type": "application/json"
+    },
+    "body": {
+      "asset_url": "https://cdn.tamagochi.app/social/fr-social-004-ceremony.mp4",
+      "caption": "Two tiny companions, one very serious best-friend ceremony. #mochilife #petcaregame",
+      "scheduled_for": "2026-05-24T20:00:00+07:00",
+      "no_child_pii_verified": true
+    }
+  }
+}

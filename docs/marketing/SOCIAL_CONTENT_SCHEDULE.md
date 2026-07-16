@@ -2,7 +2,7 @@
 
 **Timezone:** Asia/Ho_Chi_Minh  
 **Owner:** Founder / UA lead  
-**Purpose:** Manual-post package for social-platform-related FRs: FR-VIRAL-001, FR-VIRAL-002, FR-VIRAL-003, FR-SOCIAL-002, FR-SOCIAL-004, FR-VIRAL-004, FR-VIRAL-005.
+**Purpose:** Manual-post package for social-platform-related tasks: TASK-VIRAL-001, TASK-VIRAL-002, TASK-VIRAL-003, TASK-SOCIAL-002, TASK-SOCIAL-004, TASK-VIRAL-004, TASK-VIRAL-005.
 
 ## Posting Principles
 
@@ -14,13 +14,13 @@
 
 ## Weekly Manual Schedule
 
-| Day | Time | Platform | FR tie | Asset | Caption |
+| Day | Time | Platform | task tie | Asset | Caption |
 |---|---:|---|---|---|---|
-| Tuesday | 19:30 | TikTok + Reels + Shorts | FR-VIRAL-001 | 6-sec hatch-to-AR vertical clip | "Mochi’s first tiny floor adventure. Hatch, name, care, repeat. #mochilife #virtualpet" |
-| Thursday | 19:30 | TikTok + Reels | FR-VIRAL-002 | Daily Drama clip | "Today’s drama: Mochi tried to eat homework. We are negotiating snacks. #mochilife #cozypet" |
-| Saturday | 10:00 | TikTok + Reels + X | FR-SOCIAL-002 | PetPair co-parent receipt capture | "When your friend feeds Mochi while you sleep. Co-parenting, but make it cozy. #virtualpet" |
-| Sunday | 20:00 | TikTok + Shorts | FR-SOCIAL-004 | Wedding / best-friend ceremony clip | "Two tiny companions, one very serious ceremony. #mochilife #petcaregame" |
-| Monday | 12:30 | Threads + X | FR-VIRAL-004 | Battle pass objective screenshot | "This week’s Cozy Hour objective: play one memory match and hug your pet before quiet hours." |
+| Tuesday | 19:30 | TikTok + Reels + Shorts | TASK-VIRAL-001 | 6-sec hatch-to-AR vertical clip | "Mochi’s first tiny floor adventure. Hatch, name, care, repeat. #mochilife #virtualpet" |
+| Thursday | 19:30 | TikTok + Reels | TASK-VIRAL-002 | Daily Drama clip | "Today’s drama: Mochi tried to eat homework. We are negotiating snacks. #mochilife #cozypet" |
+| Saturday | 10:00 | TikTok + Reels + X | TASK-SOCIAL-002 | PetPair co-parent receipt capture | "When your friend feeds Mochi while you sleep. Co-parenting, but make it cozy. #virtualpet" |
+| Sunday | 20:00 | TikTok + Shorts | TASK-SOCIAL-004 | Wedding / best-friend ceremony clip | "Two tiny companions, one very serious ceremony. #mochilife #petcaregame" |
+| Monday | 12:30 | Threads + X | TASK-VIRAL-004 | Battle pass objective screenshot | "This week’s Cozy Hour objective: play one memory match and hug your pet before quiet hours." |
 
 ## Launch Week Content Pack
 

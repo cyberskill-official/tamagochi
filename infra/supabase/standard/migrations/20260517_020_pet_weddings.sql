@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_020_pet_weddings.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_020_pet_weddings.sql
 create table if not exists public.t_020_pet_weddings (
   id text primary key,
   tenant_id text not null default 'mochi',

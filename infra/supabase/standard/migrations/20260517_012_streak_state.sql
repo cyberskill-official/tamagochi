@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_012_streak_state.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_012_streak_state.sql
 create table if not exists public.t_012_streak_state (
   id text primary key,
   tenant_id text not null default 'mochi',

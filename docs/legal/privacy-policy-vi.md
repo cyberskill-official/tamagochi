@@ -14,4 +14,4 @@ This compliance artifact documents the operational behavior, policy boundary, an
 
 ## Verification
 
-Covered by the strict FR pipeline, unit tests, FR acceptance tests, E2E journeys, and QA console smoke checks.
+Covered by the strict task pipeline, unit tests, task acceptance tests, E2E journeys, and QA console smoke checks.

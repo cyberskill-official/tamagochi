@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_010_care_actions.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_010_care_actions.sql
 create table if not exists public.t_010_care_actions (
   id text primary key,
   tenant_id text not null default 'mochi',

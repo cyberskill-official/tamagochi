@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_031_payment_methods.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_031_payment_methods.sql
 create table if not exists public.t_031_payment_methods (
   id text primary key,
   tenant_id text not null default 'mochi',

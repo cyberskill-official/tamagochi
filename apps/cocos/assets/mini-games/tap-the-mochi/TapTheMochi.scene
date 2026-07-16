@@ -1,5 +1,5 @@
 {
-  "frId": "MULTI-FR",
+  "taskId": "MULTI-FR",
   "area": "Daily care loop deliverable",
   "status": "concrete-deliverable",
   "path": "apps/cocos/assets/mini-games/tap-the-mochi/TapTheMochi.scene",

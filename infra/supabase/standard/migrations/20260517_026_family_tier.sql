@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_026_family_tier.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_026_family_tier.sql
 create table if not exists public.t_026_family_tier (
   id text primary key,
   tenant_id text not null default 'mochi',

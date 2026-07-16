@@ -35,9 +35,9 @@ test('media service covers AR fallback, vertical export, daily cap, generated pa
   assert.throws(() => media.generatePetPalette({ prompt: 'explicit pattern', user: user('u1') }), /prompt_rejected/);
   const publishedRequests: Array<Record<string, unknown>> = [];
   const publish = await media.publishSocial({
-    frId: 'FR-VIRAL-001',
+    taskId: 'TASK-VIRAL-001',
     platform: 'tiktok',
-    assetUrl: 'https://cdn.tamagochi.app/social/fr-viral-001.mp4',
+    assetUrl: 'https://cdn.tamagochi.app/social/task-viral-001.mp4',
     caption: 'Mochi first tiny floor adventure. #mochilife #virtualpet',
     scheduledFor: '2026-05-19T19:30:00+07:00',
     accessToken: 'tok_live_queue_1234567890'
@@ -49,10 +49,10 @@ test('media service covers AR fallback, vertical export, daily cap, generated pa
   });
   assert.equal(publish.mode, 'queued');
   assert.equal(publish.platformPostId, 'post_123');
-  assert.equal(publish.request.body.fr_id, 'FR-VIRAL-001');
+  assert.equal(publish.request.body.task_id, 'TASK-VIRAL-001');
   assert.equal(publishedRequests.length, 1);
-  await assert.rejects(() => media.publishSocial({ frId: 'FR-VIRAL-001', platform: 'tiktok', assetUrl: 'file://clip.mp4', caption: 'bad', scheduledFor: '2026-05-19T19:30:00+07:00', accessToken: 'tok_live_queue_1234567890' }, { async post() { return { status: 202, id: 'unused' }; } }), /https_required/);
-  await assert.rejects(() => media.publishSocial({ frId: 'FR-VIRAL-001', platform: 'tiktok', assetUrl: 'https://cdn.tamagochi.app/social/fr-viral-001.mp4', caption: 'x', scheduledFor: '2026-05-19T19:30:00+07:00', accessToken: 'short' }, { async post() { return { status: 202, id: 'unused' }; } }), /access_token_required/);
+  await assert.rejects(() => media.publishSocial({ taskId: 'TASK-VIRAL-001', platform: 'tiktok', assetUrl: 'file://clip.mp4', caption: 'bad', scheduledFor: '2026-05-19T19:30:00+07:00', accessToken: 'tok_live_queue_1234567890' }, { async post() { return { status: 202, id: 'unused' }; } }), /https_required/);
+  await assert.rejects(() => media.publishSocial({ taskId: 'TASK-VIRAL-001', platform: 'tiktok', assetUrl: 'https://cdn.tamagochi.app/social/task-viral-001.mp4', caption: 'x', scheduledFor: '2026-05-19T19:30:00+07:00', accessToken: 'short' }, { async post() { return { status: 202, id: 'unused' }; } }), /access_token_required/);
   assert.equal(media.pushAllowed({ localHour: 12, sentToday: 2, under13: false }), true);
   assert.equal(media.pushAllowed({ localHour: 12, sentToday: 1, under13: true }), false);
 });

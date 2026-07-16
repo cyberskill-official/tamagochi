@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/kids/migrations/20260517_001_invite_codes.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/kids/migrations/20260517_001_invite_codes.sql
 create table if not exists public.t_001_invite_codes (
   id text primary key,
   tenant_id text not null default 'mochi',

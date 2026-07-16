@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_009_onboarding_state.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/standard/migrations/20260517_009_onboarding_state.sql
 create table if not exists public.t_009_onboarding_state (
   id text primary key,
   tenant_id text not null default 'mochi',

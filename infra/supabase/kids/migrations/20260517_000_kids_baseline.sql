@@ -1,4 +1,4 @@
--- FR-INFRA-001 concrete migration for infra/supabase/kids/migrations/20260517_000_kids_baseline.sql
+-- TASK-INFRA-001 concrete migration for infra/supabase/kids/migrations/20260517_000_kids_baseline.sql
 create table if not exists public.t_000_kids_baseline (
   id text primary key,
   tenant_id text not null default 'mochi',

@@ -1,5 +1,5 @@
 {
-  "frId": "FR-INFRA-001",
+  "taskId": "TASK-INFRA-001",
   "area": "Authentication and identity deliverable",
   "status": "concrete-deliverable",
   "path": "infra/grafana/dashboards/auth-funnel.json",
