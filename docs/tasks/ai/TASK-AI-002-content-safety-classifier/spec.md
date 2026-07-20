@@ -208,18 +208,7 @@ export class ScriptedDialogueTree {
 
 ## §4 — Acceptance criteria
 
-**AC1.** Safe text → `{ ok: true }`. Verified.
-**AC2.** Vulgar text → `{ ok: false, reason: 'profanity' }`. Verified.
-**AC3.** Phone number in text → blocked with reason 'pii'. Verified.
-**AC4.** Under-13 audience → always returns `{ ok: false, reason: 'kids_require_scripted' }`. Verified.
-**AC5.** Vendor switch — OpenAI down → Azure used. Verified with mocked adapters.
-**AC6.** Both vendors down → fail-closed. Verified.
-**AC7.** Cache hit returns cached result without vendor call. Verified.
-**AC8.** Scripted tree returns 30+ phrases per trigger per stage per locale (EN + VI). Verified by counting JSON entries.
-**AC9.** DPO review queue captures severity ≥ 0.5 blocks. Verified.
-**AC10.** Rate-limit 1000/min enforced. Verified.
-**AC11.** Latency P95 ≤ 300ms. Verified by load test (Sentry).
-**AC12.** Sexual/minors category triggers at 0.1 (not 0.5). Verified by spec test.
+**AC1.** Safe text → `{ ok: true }`. Verified. **AC2.** Vulgar text → `{ ok: false, reason: 'profanity' }`. Verified. **AC3.** Phone number in text → blocked with reason 'pii'. Verified. **AC4.** Under-13 audience → always returns `{ ok: false, reason: 'kids_require_scripted' }`. Verified. **AC5.** Vendor switch — OpenAI down → Azure used. Verified with mocked adapters. **AC6.** Both vendors down → fail-closed. Verified. **AC7.** Cache hit returns cached result without vendor call. Verified. **AC8.** Scripted tree returns 30+ phrases per trigger per stage per locale (EN + VI). Verified by counting JSON entries. **AC9.** DPO review queue captures severity ≥ 0.5 blocks. Verified. **AC10.** Rate-limit 1000/min enforced. Verified. **AC11.** Latency P95 ≤ 300ms. Verified by load test (Sentry). **AC12.** Sexual/minors category triggers at 0.1 (not 0.5). Verified by spec test.
 
 ---
 
@@ -273,9 +262,7 @@ export class OpenAIModerationAdapter {
 
 ## §7 — Dependencies
 
-**External:** OpenAI Moderation API, Azure AI Content Safety API.
-**Internal:** TASK-AI-001 (caller), TASK-LEGAL-001 (DPO + audience policy), TASK-AUTH-003 (kid-SKU detection).
-**Blocks:** TASK-VIRAL-002, TASK-VIRAL-003, TASK-AI-003.
+**External:** OpenAI Moderation API, Azure AI Content Safety API. **Internal:** TASK-AI-001 (caller), TASK-LEGAL-001 (DPO + audience policy), TASK-AUTH-003 (kid-SKU detection). **Blocks:** TASK-VIRAL-002, TASK-VIRAL-003, TASK-AI-003.
 
 ---
 

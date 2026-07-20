@@ -1,12 +1,6 @@
 # TASK-ADS-002 Fresh Zero-Touch Audit
 
-**Derived state:** done
-**Reason:** Done with local signed/device adapter coverage; production gate remains: SuperAwesome kWS requires vendor credentials; contextual-only policy is enforced local.
-**Attempts:** 1
-**Deliverables checked:** 6
-**Missing deliverables:** 0
-**Scaffold deliverables:** 0
-**External production gate:** SuperAwesome kWS requires vendor credentials; contextual-only policy is enforced local.
+**Derived state:** done **Reason:** Done with local signed/device adapter coverage; production gate remains: SuperAwesome kWS requires vendor credentials; contextual-only policy is enforced local. **Attempts:** 1 **Deliverables checked:** 6 **Missing deliverables:** 0 **Scaffold deliverables:** 0 **External production gate:** SuperAwesome kWS requires vendor credentials; contextual-only policy is enforced local.
 
 ## Raw Terminal Results
 
@@ -147,4 +141,3 @@ QA check passed: README, PRD, SRS, social schedule, 53 test-case mappings, 3 uni
 
 exit_code=0
 ```
-

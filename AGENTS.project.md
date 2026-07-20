@@ -1,7 +1,6 @@
 # CyberOS Layer-1 Memory Protocol — AGENTS.md (tamagochi edition)
 
-Version: 2.0.0 · Spec status: Normative · Project: `cyberskill/tamagochi`
-Companion files (informative): `docs/Tamagotchi-Style Virtual Pet Game - Strategic Implementation Plan.md` (input plan), `task-audit` skill (per-FR playbook), `docs/tasks/BACKLOG.md` (active backlog), `docs/tasks/SESSION_PROGRESS.md` (authoring trace), `docs/tasks/MANIFEST.json` (per-module task counters).
+Version: 2.0.0 · Spec status: Normative · Project: `cyberskill/tamagochi` Companion files (informative): `docs/Tamagotchi-Style Virtual Pet Game - Strategic Implementation Plan.md` (input plan), `task-audit` skill (per-FR playbook), `docs/tasks/BACKLOG.md` (active backlog), `docs/tasks/SESSION_PROGRESS.md` (authoring trace), `docs/tasks/MANIFEST.json` (per-module task counters).
 
 The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RECOMMENDED, NOT RECOMMENDED, MAY, and OPTIONAL in this document are to be interpreted as described in BCP 14 (RFC 2119, RFC 8174) when, and only when, they appear in all capitals.
 

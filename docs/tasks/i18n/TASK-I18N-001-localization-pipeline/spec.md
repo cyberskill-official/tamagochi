@@ -179,18 +179,7 @@ for (const l of locales) {
 
 ## §4 — Acceptance criteria
 
-**AC1.** All 9 locales have bundles. Verified.
-**AC2.** Keys registry exists with all UI keys. Verified.
-**AC3.** EN coverage 100% (CI). Verified.
-**AC4.** VI diacritics render correctly (snapshot). Verified.
-**AC5.** ICU MessageFormat plurals work in JA + KO. Verified.
-**AC6.** Missing-key fallback to EN with audit emission. Verified.
-**AC7.** Locale detection chain works. Verified.
-**AC8.** Font fallback for each locale. Verified.
-**AC9.** Crowdin sync round-trip. Verified.
-**AC10.** Server-side `i18n.t()` returns localised string. Verified.
-**AC11.** Tenant-override key resolution. Verified.
-**AC12.** RTL stub returns correct boolean. Verified.
+**AC1.** All 9 locales have bundles. Verified. **AC2.** Keys registry exists with all UI keys. Verified. **AC3.** EN coverage 100% (CI). Verified. **AC4.** VI diacritics render correctly (snapshot). Verified. **AC5.** ICU MessageFormat plurals work in JA + KO. Verified. **AC6.** Missing-key fallback to EN with audit emission. Verified. **AC7.** Locale detection chain works. Verified. **AC8.** Font fallback for each locale. Verified. **AC9.** Crowdin sync round-trip. Verified. **AC10.** Server-side `i18n.t()` returns localised string. Verified. **AC11.** Tenant-override key resolution. Verified. **AC12.** RTL stub returns correct boolean. Verified.
 
 ---
 
@@ -240,9 +229,7 @@ export function getFontStack(locale: string): string[] {
 
 ## §7 — Dependencies
 
-**External:** Crowdin account; Noto Sans font family.
-**Internal:** TASK-INFRA-001 (Cocos asset bundle), TASK-AUTH-001 (region_of_record), TASK-OBS-001 (missing-key event).
-**Blocks:** TASK-I18N-002 (payment localisation), TASK-A11Y-001 (locale-aware A11Y).
+**External:** Crowdin account; Noto Sans font family. **Internal:** TASK-INFRA-001 (Cocos asset bundle), TASK-AUTH-001 (region_of_record), TASK-OBS-001 (missing-key event). **Blocks:** TASK-I18N-002 (payment localisation), TASK-A11Y-001 (locale-aware A11Y).
 
 ---
 

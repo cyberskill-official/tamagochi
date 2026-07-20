@@ -205,20 +205,7 @@ create policy "mini_game_sessions self" on public.mini_game_sessions for select 
 
 ## §4 — Acceptance criteria
 
-**AC1.** `POST /v1/mini-games/start` returns `session_id` + `seed` + `started_at`. Verified.
-**AC2.** `POST /v1/mini-games/finish` with valid replay matches client_score → 200 with `coin_payout`. Verified.
-**AC3.** Score mismatch (client claims 100 but server replay computes 50) → 422 + `security.mini-game.score-mismatch` event. Verified.
-**AC4.** Per-session cap enforced — client claims 50 Coins on Tap-the-Mochi (cap 30) → payout capped at 30. Verified.
-**AC5.** Per-day per-pet cap enforced (90 Coins/day on Tap-the-Mochi). Verified.
-**AC6.** Stage-locked: mini-game on egg/grandma → 403. Verified.
-**AC7.** Re-finish of same session_id → 409. Verified.
-**AC8.** Timeout: session not finished within durationMs+30s → auto-finished with score 0. Verified.
-**AC9.** Stat effects: win → cleanliness -3, happiness +20, energy -10; loss → cleanliness -2, happiness +5, energy -8. Verified.
-**AC10.** Cooldown 60s between starts. Verified.
-**AC11.** Per-game bundle ≤ 2 MB. Verified via `assert-bundle-budget`.
-**AC12.** Co-parent broadcast `pet.mini_game.played` works. Verified.
-**AC13.** Kids SKU has no leaderboard surface. Verified by Playwright.
-**AC14.** A11Y: each game playable with single-tap + audio cues. Verified.
+**AC1.** `POST /v1/mini-games/start` returns `session_id` + `seed` + `started_at`. Verified. **AC2.** `POST /v1/mini-games/finish` with valid replay matches client_score → 200 with `coin_payout`. Verified. **AC3.** Score mismatch (client claims 100 but server replay computes 50) → 422 + `security.mini-game.score-mismatch` event. Verified. **AC4.** Per-session cap enforced — client claims 50 Coins on Tap-the-Mochi (cap 30) → payout capped at 30. Verified. **AC5.** Per-day per-pet cap enforced (90 Coins/day on Tap-the-Mochi). Verified. **AC6.** Stage-locked: mini-game on egg/grandma → 403. Verified. **AC7.** Re-finish of same session_id → 409. Verified. **AC8.** Timeout: session not finished within durationMs+30s → auto-finished with score 0. Verified. **AC9.** Stat effects: win → cleanliness -3, happiness +20, energy -10; loss → cleanliness -2, happiness +5, energy -8. Verified. **AC10.** Cooldown 60s between starts. Verified. **AC11.** Per-game bundle ≤ 2 MB. Verified via `assert-bundle-budget`. **AC12.** Co-parent broadcast `pet.mini_game.played` works. Verified. **AC13.** Kids SKU has no leaderboard surface. Verified by Playwright. **AC14.** A11Y: each game playable with single-tap + audio cues. Verified.
 
 ---
 
@@ -285,9 +272,7 @@ export class MiniGameAntiCheat {
 
 ## §7 — Dependencies
 
-**External:** Cocos asset bundle infra (TASK-INFRA-001).
-**Internal:** TASK-INFRA-002 (Colyseus broadcast), TASK-PET-003 (stat apply for win/loss), TASK-ART-001 (per-game assets follow art contract).
-**Blocks:** TASK-CARE-005 (streak system reads mini-game wins), TASK-VIRAL-002 (Daily Drama micro-events), TASK-B2B-004 (Techcombank financial-literacy mini-game extends framework).
+**External:** Cocos asset bundle infra (TASK-INFRA-001). **Internal:** TASK-INFRA-002 (Colyseus broadcast), TASK-PET-003 (stat apply for win/loss), TASK-ART-001 (per-game assets follow art contract). **Blocks:** TASK-CARE-005 (streak system reads mini-game wins), TASK-VIRAL-002 (Daily Drama micro-events), TASK-B2B-004 (Techcombank financial-literacy mini-game extends framework).
 
 ---
 

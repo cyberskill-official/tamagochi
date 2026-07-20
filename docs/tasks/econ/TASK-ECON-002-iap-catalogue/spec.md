@@ -214,18 +214,7 @@ create policy "iap self" on public.iap_purchases for select using (user_id = aut
 
 ## §4 — Acceptance criteria
 
-**AC1.** Apple receipt validation works (mocked App Store Server API). Verified.
-**AC2.** Google receipt validation works. Verified.
-**AC3.** Antom VN receipt validation. Verified.
-**AC4.** Duplicate transaction_id idempotent. Verified.
-**AC5.** Stale receipt (>7 days) rejected. Verified.
-**AC6.** Hearts grant on successful purchase. Verified.
-**AC7.** Item grant atomic with Hearts. Verified.
-**AC8.** Refund webhook revokes entitlement. Verified.
-**AC9.** IAP UI suppressed during onboarding (Apple guideline). Verified.
-**AC10.** No randomised pulls in catalogue. Verified by `lint-iap-catalogue` (TASK-LEGAL-002 §1.11).
-**AC11.** Family Sharing approval honoured. Verified.
-**AC12.** VN localised pricing. Verified.
+**AC1.** Apple receipt validation works (mocked App Store Server API). Verified. **AC2.** Google receipt validation works. Verified. **AC3.** Antom VN receipt validation. Verified. **AC4.** Duplicate transaction_id idempotent. Verified. **AC5.** Stale receipt (>7 days) rejected. Verified. **AC6.** Hearts grant on successful purchase. Verified. **AC7.** Item grant atomic with Hearts. Verified. **AC8.** Refund webhook revokes entitlement. Verified. **AC9.** IAP UI suppressed during onboarding (Apple guideline). Verified. **AC10.** No randomised pulls in catalogue. Verified by `lint-iap-catalogue` (TASK-LEGAL-002 §1.11). **AC11.** Family Sharing approval honoured. Verified. **AC12.** VN localised pricing. Verified.
 
 ---
 
@@ -281,9 +270,7 @@ export class AppleReceiptValidator {
 
 ## §7 — Dependencies
 
-**External:** Apple App Store Server API; Google Play Developer API; Antom MoR; Stripe (B2B web).
-**Internal:** TASK-ECON-001 (ledger), TASK-LEGAL-002 (catalogue lint), TASK-PET-006 (premium species), TASK-LEGAL-003 (Family Sharing), TASK-INFRA-003 (Postgres).
-**Blocks:** TASK-ECON-003 (UGC rev-share), TASK-SUB-001 (Pet+ subscription), TASK-VIRAL-004 (battle pass).
+**External:** Apple App Store Server API; Google Play Developer API; Antom MoR; Stripe (B2B web). **Internal:** TASK-ECON-001 (ledger), TASK-LEGAL-002 (catalogue lint), TASK-PET-006 (premium species), TASK-LEGAL-003 (Family Sharing), TASK-INFRA-003 (Postgres). **Blocks:** TASK-ECON-003 (UGC rev-share), TASK-SUB-001 (Pet+ subscription), TASK-VIRAL-004 (battle pass).
 
 ---
 

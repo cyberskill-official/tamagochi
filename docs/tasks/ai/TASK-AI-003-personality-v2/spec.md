@@ -164,18 +164,7 @@ create table public.user_selfie_reference (
 
 ## §4 — Acceptance criteria
 
-**AC1.** Kids SKU rejected for v2. Verified.
-**AC2.** Name in dialogue when opted-in. Verified.
-**AC3.** Sibling pet referenced when owned. Verified.
-**AC4.** Selfie delta computed in-memory (no storage). Verified.
-**AC5.** Birthday triggers special line. Verified.
-**AC6.** Name redacted in shareable content. Verified.
-**AC7.** Pet+ event memory 40 events. Verified.
-**AC8.** Fallback to v1 on failure. Verified.
-**AC9.** Anti-affinity deterministic. Verified.
-**AC10.** Settings selfie toggle works + parental gate. Verified.
-**AC11.** Personality traits evolve over time. Verified.
-**AC12.** Tenant can disable v2. Verified.
+**AC1.** Kids SKU rejected for v2. Verified. **AC2.** Name in dialogue when opted-in. Verified. **AC3.** Sibling pet referenced when owned. Verified. **AC4.** Selfie delta computed in-memory (no storage). Verified. **AC5.** Birthday triggers special line. Verified. **AC6.** Name redacted in shareable content. Verified. **AC7.** Pet+ event memory 40 events. Verified. **AC8.** Fallback to v1 on failure. Verified. **AC9.** Anti-affinity deterministic. Verified. **AC10.** Settings selfie toggle works + parental gate. Verified. **AC11.** Personality traits evolve over time. Verified. **AC12.** Tenant can disable v2. Verified.
 
 ---
 
@@ -228,9 +217,7 @@ export class SelfieContextService {
 
 ## §7 — Dependencies
 
-**External:** Same as TASK-AI-001 (Claude Haiku, Gemini Flash).
-**Internal:** TASK-AI-001 (LLM router), TASK-AI-002 (safety), TASK-PET-005 (multi-pet), TASK-AUTH-003 (kids exclusion).
-**Blocks:** none.
+**External:** Same as TASK-AI-001 (Claude Haiku, Gemini Flash). **Internal:** TASK-AI-001 (LLM router), TASK-AI-002 (safety), TASK-PET-005 (multi-pet), TASK-AUTH-003 (kids exclusion). **Blocks:** none.
 
 ---
 

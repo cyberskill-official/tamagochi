@@ -168,18 +168,7 @@ export class BreakupWatchService {
 
 ## §4 — Acceptance criteria
 
-**AC1.** Invite → accept flow end-to-end. Verified.
-**AC2.** Cross-SKU invite returns 403. Verified.
-**AC3.** Co-parent feed action emits `source=co_parent_remote`. Verified.
-**AC4.** Both clients receive receipt push (sleep-respected). Verified.
-**AC5.** Break-up screen surfaces on 3-day one-sided care. Verified by fake-clock.
-**AC6.** Owner remove unilateral. Verified.
-**AC7.** Pet stays with owner on end. Verified.
-**AC8.** Co-parent cannot rename/breed/trade. Verified.
-**AC9.** Receipt push 4/day cap → digest. Verified.
-**AC10.** PetRoom maxClients=2 enforced. Verified.
-**AC11.** Cross-tenant rejected. Verified.
-**AC12.** TikTok share button surfaces on break-up moment. Verified.
+**AC1.** Invite → accept flow end-to-end. Verified. **AC2.** Cross-SKU invite returns 403. Verified. **AC3.** Co-parent feed action emits `source=co_parent_remote`. Verified. **AC4.** Both clients receive receipt push (sleep-respected). Verified. **AC5.** Break-up screen surfaces on 3-day one-sided care. Verified by fake-clock. **AC6.** Owner remove unilateral. Verified. **AC7.** Pet stays with owner on end. Verified. **AC8.** Co-parent cannot rename/breed/trade. Verified. **AC9.** Receipt push 4/day cap → digest. Verified. **AC10.** PetRoom maxClients=2 enforced. Verified. **AC11.** Cross-tenant rejected. Verified. **AC12.** TikTok share button surfaces on break-up moment. Verified.
 
 ---
 
@@ -232,9 +221,7 @@ export class BreakupScreenUi extends Component {
 
 ## §7 — Dependencies
 
-**External:** Push notification system (TASK-VIRAL-005).
-**Internal:** TASK-SOCIAL-001 (friend graph), TASK-CARE-001/002/003 (care actions with source attribution), TASK-INFRA-002 (Colyseus PetRoom maxClients=2), TASK-VIRAL-001 (break-up share moment).
-**Blocks:** TASK-SOCIAL-003 (trade needs co-parent presence model), TASK-SOCIAL-004 (wedding builds on co-parent).
+**External:** Push notification system (TASK-VIRAL-005). **Internal:** TASK-SOCIAL-001 (friend graph), TASK-CARE-001/002/003 (care actions with source attribution), TASK-INFRA-002 (Colyseus PetRoom maxClients=2), TASK-VIRAL-001 (break-up share moment). **Blocks:** TASK-SOCIAL-003 (trade needs co-parent presence model), TASK-SOCIAL-004 (wedding builds on co-parent).
 
 ---
 

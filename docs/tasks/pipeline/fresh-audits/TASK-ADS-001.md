@@ -1,12 +1,6 @@
 # TASK-ADS-001 Fresh Zero-Touch Audit
 
-**Derived state:** done
-**Reason:** Done with local signed/device adapter coverage; production gate remains: LevelPlay/AppLovin SDK calls require ad-network credentials; local reward validation adapter is enforced in tests.
-**Attempts:** 1
-**Deliverables checked:** 9
-**Missing deliverables:** 0
-**Scaffold deliverables:** 0
-**External production gate:** LevelPlay/AppLovin SDK calls require ad-network credentials; local reward validation adapter is enforced in tests.
+**Derived state:** done **Reason:** Done with local signed/device adapter coverage; production gate remains: LevelPlay/AppLovin SDK calls require ad-network credentials; local reward validation adapter is enforced in tests. **Attempts:** 1 **Deliverables checked:** 9 **Missing deliverables:** 0 **Scaffold deliverables:** 0 **External production gate:** LevelPlay/AppLovin SDK calls require ad-network credentials; local reward validation adapter is enforced in tests.
 
 ## Raw Terminal Results
 
@@ -147,4 +141,3 @@ QA check passed: README, PRD, SRS, social schedule, 53 test-case mappings, 3 uni
 
 exit_code=0
 ```
-

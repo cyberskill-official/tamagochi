@@ -1,8 +1,6 @@
 # Tamagochi — task Authoring Session Progress
 
-**Owner:** Stephen Cheng
-**Workflow:** `task-audit` skill (project-local; loop-to-10/10 master rule per §12)
-**Phase model:** capability-gated, not time-based (user directive 2026-05-17)
+**Owner:** Stephen Cheng **Workflow:** `task-audit` skill (project-local; loop-to-10/10 master rule per §12) **Phase model:** capability-gated, not time-based (user directive 2026-05-17)
 
 This file is the authoring trace. Update each time an task is created, audited, revised, or accepted.
 
@@ -78,8 +76,7 @@ Author each task completely, audit it via companion `.audit.md`, loop revise unt
 - P3 Monetization & Live-Ops — pending (9 tasks).
 - P4 Scale & PetOS B2B — pending (10 tasks).
 
-**Next task on resume:** **TASK-PET-005** (multi-pet inventory). Build order:
-`TASK-PET-005 → TASK-PET-006 → TASK-PET-007 → TASK-PET-008 → TASK-SOCIAL-001..004 → TASK-VIRAL-002..003`.
+**Next task on resume:** **TASK-PET-005** (multi-pet inventory). Build order: `TASK-PET-005 → TASK-PET-006 → TASK-PET-007 → TASK-PET-008 → TASK-SOCIAL-001..004 → TASK-VIRAL-002..003`.
 
 Per user directive 2026-05-17 session 4: "continue remaining tasks one by one ... just pause when need my decisions." Run drained P1 completely; resumes at TASK-PET-005 on next "continue".
 

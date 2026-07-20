@@ -150,18 +150,7 @@ create policy "ad_views self" on public.ad_views for select using (user_id = aut
 
 ## §4 — Acceptance criteria
 
-**AC1.** Rewarded view request returns view_id. Verified.
-**AC2.** SSV validates + grants Coins. Verified.
-**AC3.** Pet+ user request returns 403. Verified.
-**AC4.** Kids SKU returns 403. Verified.
-**AC5.** Daily cap 8 enforced. Verified.
-**AC6.** Session cap 3 enforced. Verified.
-**AC7.** 5-min cooldown enforced. Verified.
-**AC8.** SSV signature forgery rejected. Verified.
-**AC9.** Replay of same view_id no double-grant. Verified.
-**AC10.** No personalised ads by default (consent default contextual). Verified.
-**AC11.** No ads during onboarding. Verified.
-**AC12.** AppLovin fallback on LevelPlay failure. Verified.
+**AC1.** Rewarded view request returns view_id. Verified. **AC2.** SSV validates + grants Coins. Verified. **AC3.** Pet+ user request returns 403. Verified. **AC4.** Kids SKU returns 403. Verified. **AC5.** Daily cap 8 enforced. Verified. **AC6.** Session cap 3 enforced. Verified. **AC7.** 5-min cooldown enforced. Verified. **AC8.** SSV signature forgery rejected. Verified. **AC9.** Replay of same view_id no double-grant. Verified. **AC10.** No personalised ads by default (consent default contextual). Verified. **AC11.** No ads during onboarding. Verified. **AC12.** AppLovin fallback on LevelPlay failure. Verified.
 
 ---
 
@@ -212,9 +201,7 @@ export class LevelPlayValidator {
 
 ## §7 — Dependencies
 
-**External:** LevelPlay (IronSource); AppLovin MAX SDK.
-**Internal:** TASK-ECON-001 ledger, TASK-LEGAL-003 SKU + ad policy, TASK-SUB-001 (Pet+ ad-free).
-**Blocks:** TASK-ADS-002 (kids contextual gate).
+**External:** LevelPlay (IronSource); AppLovin MAX SDK. **Internal:** TASK-ECON-001 ledger, TASK-LEGAL-003 SKU + ad policy, TASK-SUB-001 (Pet+ ad-free). **Blocks:** TASK-ADS-002 (kids contextual gate).
 
 ---
 

@@ -203,18 +203,7 @@ create policy "ar self" on public.ar_sessions for select using (user_id = auth.u
 
 ## §4 — Acceptance criteria
 
-**AC1.** Standard SKU on AR-capable iOS surfaces AR session. Verified by Detox + AR test fixture.
-**AC2.** Non-AR-capable device falls back to Photo Studio. Verified.
-**AC3.** Kids SKU has AR entry-point hidden. Verified by Playwright.
-**AC4.** Plane detection finds horizontal plane in test fixture. Verified by Detox.
-**AC5.** Pet placement triggers `ar_greet` animation. Verified.
-**AC6.** Video capture 15s max. Verified.
-**AC7.** Watermark visible bottom-right of captured video. Verified by inspecting output frame.
-**AC8.** Video saved to camera roll with consent. Verified.
-**AC9.** Stage-locked: AR on baby pet returns 403 + UX redirects. Verified.
-**AC10.** Pre-record consent screen shown once per device. Verified by Detox.
-**AC11.** AR fps ≥ 30 on baseline emulator. Verified.
-**AC12.** No camera serial / IMU id sent to server. Verified by network proxy inspection.
+**AC1.** Standard SKU on AR-capable iOS surfaces AR session. Verified by Detox + AR test fixture. **AC2.** Non-AR-capable device falls back to Photo Studio. Verified. **AC3.** Kids SKU has AR entry-point hidden. Verified by Playwright. **AC4.** Plane detection finds horizontal plane in test fixture. Verified by Detox. **AC5.** Pet placement triggers `ar_greet` animation. Verified. **AC6.** Video capture 15s max. Verified. **AC7.** Watermark visible bottom-right of captured video. Verified by inspecting output frame. **AC8.** Video saved to camera roll with consent. Verified. **AC9.** Stage-locked: AR on baby pet returns 403 + UX redirects. Verified. **AC10.** Pre-record consent screen shown once per device. Verified by Detox. **AC11.** AR fps ≥ 30 on baseline emulator. Verified. **AC12.** No camera serial / IMU id sent to server. Verified by network proxy inspection.
 
 ---
 
@@ -269,9 +258,7 @@ class ARCoreBridge(private val ctx: Context) {
 
 ## §7 — Dependencies
 
-**External:** ARKit (iOS 15+); ARCore (Google Play Services for AR); AVAssetWriter (iOS); MediaCodec (Android).
-**Internal:** TASK-INFRA-001 (Cocos scaffold), TASK-PET-002 (stage gate), TASK-ART-001 (Spine `ar_greet`).
-**Blocks:** TASK-VIRAL-001 (TikTok export pipeline reads AR video file URI).
+**External:** ARKit (iOS 15+); ARCore (Google Play Services for AR); AVAssetWriter (iOS); MediaCodec (Android). **Internal:** TASK-INFRA-001 (Cocos scaffold), TASK-PET-002 (stage gate), TASK-ART-001 (Spine `ar_greet`). **Blocks:** TASK-VIRAL-001 (TikTok export pipeline reads AR video file URI).
 
 ---
 

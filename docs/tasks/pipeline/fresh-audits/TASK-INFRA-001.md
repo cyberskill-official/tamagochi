@@ -1,12 +1,6 @@
 # TASK-INFRA-001 Fresh Zero-Touch Audit
 
-**Derived state:** done
-**Reason:** Done with local signed/device adapter coverage; production gate remains: Cocos Creator native builds require Cocos editor/Xcode/Android signing; local web QA and bundle tests are available.
-**Attempts:** 1
-**Deliverables checked:** 22
-**Missing deliverables:** 0
-**Scaffold deliverables:** 0
-**External production gate:** Cocos Creator native builds require Cocos editor/Xcode/Android signing; local web QA and bundle tests are available.
+**Derived state:** done **Reason:** Done with local signed/device adapter coverage; production gate remains: Cocos Creator native builds require Cocos editor/Xcode/Android signing; local web QA and bundle tests are available. **Attempts:** 1 **Deliverables checked:** 22 **Missing deliverables:** 0 **Scaffold deliverables:** 0 **External production gate:** Cocos Creator native builds require Cocos editor/Xcode/Android signing; local web QA and bundle tests are available.
 
 ## Raw Terminal Results
 
@@ -147,4 +141,3 @@ QA check passed: README, PRD, SRS, social schedule, 53 test-case mappings, 3 uni
 
 exit_code=0
 ```
-

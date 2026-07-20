@@ -197,18 +197,7 @@ $$;
 
 ## §4 — Acceptance criteria
 
-**AC1.** Full 4-phase flow (offer → lock → confirm → swap) works. Verified.
-**AC2.** Both-sides-show identical content on lock + confirm. Verified by Colyseus state broadcast inspection.
-**AC3.** Atomic swap rolls back on race condition. Verified by chaos test forcing ownership change mid-swap.
-**AC4.** 5-min timeout on each phase. Verified.
-**AC5.** Cross-SKU/tenant rejected. Verified.
-**AC6.** Adult-only enforced. Verified.
-**AC7.** First-pet trade rejected. Verified.
-**AC8.** Per-user 10/day + per-pair 3/7d enforced. Verified.
-**AC9.** Cancel before confirm works; after confirm impossible. Verified.
-**AC10.** No real-money fees in path. Verified.
-**AC11.** Disconnect pauses timeout. Verified.
-**AC12.** Audit row + analytics events all emit. Verified.
+**AC1.** Full 4-phase flow (offer → lock → confirm → swap) works. Verified. **AC2.** Both-sides-show identical content on lock + confirm. Verified by Colyseus state broadcast inspection. **AC3.** Atomic swap rolls back on race condition. Verified by chaos test forcing ownership change mid-swap. **AC4.** 5-min timeout on each phase. Verified. **AC5.** Cross-SKU/tenant rejected. Verified. **AC6.** Adult-only enforced. Verified. **AC7.** First-pet trade rejected. Verified. **AC8.** Per-user 10/day + per-pair 3/7d enforced. Verified. **AC9.** Cancel before confirm works; after confirm impossible. Verified. **AC10.** No real-money fees in path. Verified. **AC11.** Disconnect pauses timeout. Verified. **AC12.** Audit row + analytics events all emit. Verified.
 
 ---
 
@@ -255,9 +244,7 @@ export class TradeRoom extends _BaseTenantRoom {
 
 ## §7 — Dependencies
 
-**External:** Postgres atomic transaction; Colyseus.
-**Internal:** TASK-PET-005 (slot check), TASK-PET-008 (status check), TASK-SOCIAL-001 (friend check), TASK-INFRA-002 (TradeRoom), TASK-INFRA-003 (Supabase).
-**Blocks:** none.
+**External:** Postgres atomic transaction; Colyseus. **Internal:** TASK-PET-005 (slot check), TASK-PET-008 (status check), TASK-SOCIAL-001 (friend check), TASK-INFRA-002 (TradeRoom), TASK-INFRA-003 (Supabase). **Blocks:** none.
 
 ---
 

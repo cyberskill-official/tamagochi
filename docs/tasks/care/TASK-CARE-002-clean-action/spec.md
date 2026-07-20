@@ -155,18 +155,7 @@ async clean(u: AuthedUser, petId: string, soapId: 'basic'|'premium', idempKey: s
 
 ## §4 — Acceptance criteria
 
-**AC1.** Clean basic on cleanliness=20 returns 200 with cleanliness_after=80.
-**AC2.** Stage-locked for egg / grandma_house → 403.
-**AC3.** Clean at cleanliness=100 → 422.
-**AC4.** Cooldown enforced (10 min basic / 20 min premium).
-**AC5.** Energy decrement on clean: -5.
-**AC6.** Rate-limit 30/hr.
-**AC7.** Cross-owner attempt → 403.
-**AC8.** Idempotent on repeat key.
-**AC9.** Bubble particles cap at 30 (6 under reduce-motion). Verified by Cocos test.
-**AC10.** `pet.cleaned` broadcast over PetRoom.
-**AC11.** Animation handshake — Cocos rejects unsigned token.
-**AC12.** Audit row written with action='clean' + correct deltas.
+**AC1.** Clean basic on cleanliness=20 returns 200 with cleanliness_after=80. **AC2.** Stage-locked for egg / grandma_house → 403. **AC3.** Clean at cleanliness=100 → 422. **AC4.** Cooldown enforced (10 min basic / 20 min premium). **AC5.** Energy decrement on clean: -5. **AC6.** Rate-limit 30/hr. **AC7.** Cross-owner attempt → 403. **AC8.** Idempotent on repeat key. **AC9.** Bubble particles cap at 30 (6 under reduce-motion). Verified by Cocos test. **AC10.** `pet.cleaned` broadcast over PetRoom. **AC11.** Animation handshake — Cocos rejects unsigned token. **AC12.** Audit row written with action='clean' + correct deltas.
 
 ---
 
@@ -231,9 +220,7 @@ export function installCleanHandler(room: PetRoom, svc: CleanService) {
 
 ## §7 — Dependencies
 
-**External:** Redis (cooldown); Cocos Particle2D runtime.
-**Internal:** TASK-CARE-001 (template), TASK-PET-003 (stat apply + clean_premium action key needs adding to TASK-PET-003 §3.2 stat-config), TASK-ART-001 (care_clean animation), TASK-INFRA-002 (Colyseus broadcast).
-**Blocks:** TASK-CARE-005 (streak detection reads care_actions), TASK-VIRAL-002 (Daily Drama can reference clean events).
+**External:** Redis (cooldown); Cocos Particle2D runtime. **Internal:** TASK-CARE-001 (template), TASK-PET-003 (stat apply + clean_premium action key needs adding to TASK-PET-003 §3.2 stat-config), TASK-ART-001 (care_clean animation), TASK-INFRA-002 (Colyseus broadcast). **Blocks:** TASK-CARE-005 (streak detection reads care_actions), TASK-VIRAL-002 (Daily Drama can reference clean events).
 
 ---
 

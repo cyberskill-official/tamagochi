@@ -240,11 +240,7 @@ This is genuinely the area most likely to kill the company if mishandled.
 
 ## PART 9 — Roadmap & Milestones
 
-**Phase 0 — Validation (months 1–2, ~$15K):** Founder + 1 designer + 1 dev build a playable Cocos prototype with one pet, AR placement, AI dialogue. 500 closed-beta testers. Measure 7-day retention.
-**Phase 1 — MVP (months 3–6, ~$120K):** 5 pets, co-parent mode, breeding, 4 mini-games, IAP + sub plumbing, MoMo/ZaloPay. Hire 4 core staff. Target: feature-complete TestFlight build, 5K waitlist.
-**Phase 2 — Soft launch VN + PH + ID (months 6–9, ~$120K incl. $40K UA):** Live-ops cadence weekly. Target: 100K downloads, D7≥18%, ARPDAU≥$0.05, sub conv ≥3%.
-**Phase 3 — Global launch (months 9–12, ~$200K incl. $150K UA):** iOS+Android+Web; English/JA/KO/ES-LATAM/PT-BR/ID/TH localised. PR push. Target: 1M downloads, top-10 in 3+ countries in casual/simulation.
-**Phase 4 — Scale + B2B (Year 2, $1–2M raised or revenue-funded):** Hire BD lead. Land 2 anchor B2B tenants (target one bank + one telco). Multi-tenant infra build-out. Launch "PetOS by CyberSkill" white-label brand. Target Y2 revenue: $1.5–4M (consumer + B2B blended).
+**Phase 0 — Validation (months 1–2, ~$15K):** Founder + 1 designer + 1 dev build a playable Cocos prototype with one pet, AR placement, AI dialogue. 500 closed-beta testers. Measure 7-day retention. **Phase 1 — MVP (months 3–6, ~$120K):** 5 pets, co-parent mode, breeding, 4 mini-games, IAP + sub plumbing, MoMo/ZaloPay. Hire 4 core staff. Target: feature-complete TestFlight build, 5K waitlist. **Phase 2 — Soft launch VN + PH + ID (months 6–9, ~$120K incl. $40K UA):** Live-ops cadence weekly. Target: 100K downloads, D7≥18%, ARPDAU≥$0.05, sub conv ≥3%. **Phase 3 — Global launch (months 9–12, ~$200K incl. $150K UA):** iOS+Android+Web; English/JA/KO/ES-LATAM/PT-BR/ID/TH localised. PR push. Target: 1M downloads, top-10 in 3+ countries in casual/simulation. **Phase 4 — Scale + B2B (Year 2, $1–2M raised or revenue-funded):** Hire BD lead. Land 2 anchor B2B tenants (target one bank + one telco). Multi-tenant infra build-out. Launch "PetOS by CyberSkill" white-label brand. Target Y2 revenue: $1.5–4M (consumer + B2B blended).
 
 **Success metrics dashboard:** DAU/MAU ≥ 25%, D1≥45% / D7≥18% / D30≥7%, ARPDAU $0.05→$0.15, sub conversion 3–5%, CPI < $1.50 blended, **3+ TikTok videos per week from organic users**.
 

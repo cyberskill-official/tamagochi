@@ -161,18 +161,7 @@ create table public.tenant_quests (
 
 ## §4 — Acceptance criteria
 
-**AC1.** Operator can log in via SSO. Verified.
-**AC2.** Theme upload signed validation. Verified.
-**AC3.** Quest CMS create/edit/delete. Verified.
-**AC4.** KPIs render per range. Verified.
-**AC5.** Operator can't access other tenant. Verified.
-**AC6.** Audit log captures actions. Verified.
-**AC7.** DSR export atomic + signed. Verified.
-**AC8.** Multi-operator roles enforced. Verified.
-**AC9.** 2FA mandatory for writes. Verified.
-**AC10.** Staging preview works. Verified.
-**AC11.** DPO review enforced for kids tenants. Verified.
-**AC12.** Bulk rate-limit. Verified.
+**AC1.** Operator can log in via SSO. Verified. **AC2.** Theme upload signed validation. Verified. **AC3.** Quest CMS create/edit/delete. Verified. **AC4.** KPIs render per range. Verified. **AC5.** Operator can't access other tenant. Verified. **AC6.** Audit log captures actions. Verified. **AC7.** DSR export atomic + signed. Verified. **AC8.** Multi-operator roles enforced. Verified. **AC9.** 2FA mandatory for writes. Verified. **AC10.** Staging preview works. Verified. **AC11.** DPO review enforced for kids tenants. Verified. **AC12.** Bulk rate-limit. Verified.
 
 ---
 
@@ -215,9 +204,7 @@ export async function ssoHandshake(provider: 'google' | 'apple' | 'saml'): Promi
 
 ## §7 — Dependencies
 
-**External:** Apple/Google SSO; Next.js hosting (Vercel or Cloudflare).
-**Internal:** TASK-B2B-001 (manifest base), TASK-B2B-002 (tenant partition), TASK-AUTH-001 (auth), TASK-OBS-001 (per-tenant analytics), TASK-LEGAL-001 (DPO).
-**Blocks:** TASK-B2B-004/005.
+**External:** Apple/Google SSO; Next.js hosting (Vercel or Cloudflare). **Internal:** TASK-B2B-001 (manifest base), TASK-B2B-002 (tenant partition), TASK-AUTH-001 (auth), TASK-OBS-001 (per-tenant analytics), TASK-LEGAL-001 (DPO). **Blocks:** TASK-B2B-004/005.
 
 ---
 

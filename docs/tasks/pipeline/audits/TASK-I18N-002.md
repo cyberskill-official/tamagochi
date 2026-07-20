@@ -1,10 +1,6 @@
 # TASK-I18N-002 Strict Audit Report
 
-**State:** Completed
-**Reason:** Completed with mock/sandbox validation; production gate: Antom/Xsolla rails require merchant credentials. Pricing table validation is local.
-**Deliverables checked:** 10
-**Missing deliverables:** 0
-**Scaffold deliverables:** 0
+**State:** Completed **Reason:** Completed with mock/sandbox validation; production gate: Antom/Xsolla rails require merchant credentials. Pricing table validation is local. **Deliverables checked:** 10 **Missing deliverables:** 0 **Scaffold deliverables:** 0
 
 ## Raw Terminal Results
 
@@ -156,4 +152,3 @@ QA check passed: README, PRD, SRS, social schedule, 53 test-case mappings, 3 uni
 
 exit_code=0
 ```
-

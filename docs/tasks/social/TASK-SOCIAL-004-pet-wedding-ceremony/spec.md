@@ -158,18 +158,7 @@ create index on public.pets (married_to);
 
 ## §4 — Acceptance criteria
 
-**AC1.** Propose → accept → ceremony → complete end-to-end. Verified.
-**AC2.** Both pets receive married_to. Verified.
-**AC3.** 12s share clip rendered with watermark + hashtag. Verified.
-**AC4.** Cross-SKU rejected. Verified.
-**AC5.** Adult-only enforced. Verified.
-**AC6.** 30-day cooldown enforced. Verified.
-**AC7.** Disconnect mid-ceremony pauses; resumable within 24h. Verified.
-**AC8.** Divorce removes badges. Verified.
-**AC9.** No real-money fee. Verified.
-**AC10.** AI vows opt-in respects TASK-AI-002. Verified.
-**AC11.** Reduce-motion mode caps confetti. Verified.
-**AC12.** Audit + analytics emit. Verified.
+**AC1.** Propose → accept → ceremony → complete end-to-end. Verified. **AC2.** Both pets receive married_to. Verified. **AC3.** 12s share clip rendered with watermark + hashtag. Verified. **AC4.** Cross-SKU rejected. Verified. **AC5.** Adult-only enforced. Verified. **AC6.** 30-day cooldown enforced. Verified. **AC7.** Disconnect mid-ceremony pauses; resumable within 24h. Verified. **AC8.** Divorce removes badges. Verified. **AC9.** No real-money fee. Verified. **AC10.** AI vows opt-in respects TASK-AI-002. Verified. **AC11.** Reduce-motion mode caps confetti. Verified. **AC12.** Audit + analytics emit. Verified.
 
 ---
 
@@ -214,9 +203,7 @@ export class WeddingRoom extends _BaseTenantRoom {
 
 ## §7 — Dependencies
 
-**External:** None new.
-**Internal:** TASK-SOCIAL-002 (presence model), TASK-VIRAL-001 (export pipeline), TASK-ART-001 (wedding_pose), TASK-AI-001+002 (optional vows).
-**Blocks:** none.
+**External:** None new. **Internal:** TASK-SOCIAL-002 (presence model), TASK-VIRAL-001 (export pipeline), TASK-ART-001 (wedding_pose), TASK-AI-001+002 (optional vows). **Blocks:** none.
 
 ---
 

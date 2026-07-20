@@ -145,18 +145,7 @@ create policy "kids ad self" on public.kids_ad_views for select using (user_id =
 
 ## §4 — Acceptance criteria
 
-**AC1.** Kids SKU rewarded works via kWS. Verified.
-**AC2.** 13+ SKU request to kid endpoint returns 403. Verified.
-**AC3.** Parental ad-disabled returns 403. Verified.
-**AC4.** First 10 min of session ad-free. Verified.
-**AC5.** Cap 3/day enforced. Verified.
-**AC6.** Cap 2/session enforced. Verified.
-**AC7.** Cooldown 10 min enforced. Verified.
-**AC8.** kWS SSV grants 30 Coins. Verified.
-**AC9.** No LevelPlay/AppLovin SDK in kids binary (TASK-LEGAL-003 §1.10 inspection). Verified.
-**AC10.** kWS account separated from 13+. Verified.
-**AC11.** Replay protection. Verified.
-**AC12.** Audit retention 7-year. Verified.
+**AC1.** Kids SKU rewarded works via kWS. Verified. **AC2.** 13+ SKU request to kid endpoint returns 403. Verified. **AC3.** Parental ad-disabled returns 403. Verified. **AC4.** First 10 min of session ad-free. Verified. **AC5.** Cap 3/day enforced. Verified. **AC6.** Cap 2/session enforced. Verified. **AC7.** Cooldown 10 min enforced. Verified. **AC8.** kWS SSV grants 30 Coins. Verified. **AC9.** No LevelPlay/AppLovin SDK in kids binary (TASK-LEGAL-003 §1.10 inspection). Verified. **AC10.** kWS account separated from 13+. Verified. **AC11.** Replay protection. Verified. **AC12.** Audit retention 7-year. Verified.
 
 ---
 
@@ -209,9 +198,7 @@ export class KwsWebhookController {
 
 ## §7 — Dependencies
 
-**External:** SuperAwesome kWS SDK + Ad Network.
-**Internal:** TASK-ADS-001 (template), TASK-AUTH-003 (kids SKU detection), TASK-ECON-001 (ledger), TASK-SUB-002 (parental disable).
-**Blocks:** none.
+**External:** SuperAwesome kWS SDK + Ad Network. **Internal:** TASK-ADS-001 (template), TASK-AUTH-003 (kids SKU detection), TASK-ECON-001 (ledger), TASK-SUB-002 (parental disable). **Blocks:** none.
 
 ---
 

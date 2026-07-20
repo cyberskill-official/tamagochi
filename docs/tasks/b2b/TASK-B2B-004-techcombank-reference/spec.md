@@ -139,18 +139,7 @@ export class SavingsTriggerService {
 
 ## §4 — Acceptance criteria
 
-**AC1.** TCB SSO flow + parental consent works. Verified.
-**AC2.** Pet branded with TCB palette + mascot. Verified.
-**AC3.** Savings webhook triggers quest progress. Verified.
-**AC4.** Financial-literacy quiz mini-game functions. Verified.
-**AC5.** Per-account-holder unique pet. Verified.
-**AC6.** No real-money out from pet. Verified.
-**AC7.** Singapore residency for TCB data. Verified.
-**AC8.** No cross-tenant trade with consumer. Verified.
-**AC9.** Per-account audit 10-year. Verified.
-**AC10.** Quest CMS managed by TCB operator. Verified.
-**AC11.** DPO review enforced. Verified.
-**AC12.** Per-tenant analytics workspace. Verified.
+**AC1.** TCB SSO flow + parental consent works. Verified. **AC2.** Pet branded with TCB palette + mascot. Verified. **AC3.** Savings webhook triggers quest progress. Verified. **AC4.** Financial-literacy quiz mini-game functions. Verified. **AC5.** Per-account-holder unique pet. Verified. **AC6.** No real-money out from pet. Verified. **AC7.** Singapore residency for TCB data. Verified. **AC8.** No cross-tenant trade with consumer. Verified. **AC9.** Per-account audit 10-year. Verified. **AC10.** Quest CMS managed by TCB operator. Verified. **AC11.** DPO review enforced. Verified. **AC12.** Per-tenant analytics workspace. Verified.
 
 ---
 
@@ -193,9 +182,7 @@ export class SavingsQuestLogic implements MiniGameContract {
 
 ## §7 — Dependencies
 
-**External:** Techcombank API + SSO; Techcombank Vietnamese corporate identity.
-**Internal:** TASK-B2B-001 (manifest), TASK-B2B-002 (partition), TASK-B2B-003 (console), TASK-CARE-004 (mini-game framework), TASK-AUTH-003 (kids consent), TASK-LEGAL-001 (DPO + residency).
-**Blocks:** none.
+**External:** Techcombank API + SSO; Techcombank Vietnamese corporate identity. **Internal:** TASK-B2B-001 (manifest), TASK-B2B-002 (partition), TASK-B2B-003 (console), TASK-CARE-004 (mini-game framework), TASK-AUTH-003 (kids consent), TASK-LEGAL-001 (DPO + residency). **Blocks:** none.
 
 ---
 

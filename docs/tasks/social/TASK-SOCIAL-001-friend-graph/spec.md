@@ -200,18 +200,7 @@ create policy "blocklist self" on public.friend_blocklist for select using (bloc
 
 ## §4 — Acceptance criteria
 
-**AC1.** Code generation + redemption flow end-to-end. Verified.
-**AC2.** Self-redemption returns 422. Verified.
-**AC3.** Cross-SKU redemption returns 403. Verified.
-**AC4.** Cross-tenant blocked. Verified.
-**AC5.** Accept flips both rows to accepted. Verified.
-**AC6.** Reject silently drops (no notification). Verified by spy on notification.
-**AC7.** 100-friend limit + Pet+ 500 enforced. Verified.
-**AC8.** 7-day re-add cooldown after remove. Verified.
-**AC9.** Kids SKU no name search — endpoint returns 403. Verified.
-**AC10.** Display_name alias on kids SKU. Verified.
-**AC11.** Presence broadcast via Colyseus. Verified by integration test.
-**AC12.** Blocklist prevents redemption. Verified.
+**AC1.** Code generation + redemption flow end-to-end. Verified. **AC2.** Self-redemption returns 422. Verified. **AC3.** Cross-SKU redemption returns 403. Verified. **AC4.** Cross-tenant blocked. Verified. **AC5.** Accept flips both rows to accepted. Verified. **AC6.** Reject silently drops (no notification). Verified by spy on notification. **AC7.** 100-friend limit + Pet+ 500 enforced. Verified. **AC8.** 7-day re-add cooldown after remove. Verified. **AC9.** Kids SKU no name search — endpoint returns 403. Verified. **AC10.** Display_name alias on kids SKU. Verified. **AC11.** Presence broadcast via Colyseus. Verified by integration test. **AC12.** Blocklist prevents redemption. Verified.
 
 ---
 
@@ -273,9 +262,7 @@ export class FriendsService {
 
 ## §7 — Dependencies
 
-**External:** Colyseus RedisPresence (TASK-INFRA-002).
-**Internal:** TASK-AUTH-003 (kid SKU separation), TASK-LEGAL-001 (DSR + alias), TASK-SUB-002 (Pet+ limit raise).
-**Blocks:** TASK-SOCIAL-002/003/004.
+**External:** Colyseus RedisPresence (TASK-INFRA-002). **Internal:** TASK-AUTH-003 (kid SKU separation), TASK-LEGAL-001 (DSR + alias), TASK-SUB-002 (Pet+ limit raise). **Blocks:** TASK-SOCIAL-002/003/004.
 
 ---
 

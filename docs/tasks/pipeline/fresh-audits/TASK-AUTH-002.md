@@ -1,12 +1,6 @@
 # TASK-AUTH-002 Fresh Zero-Touch Audit
 
-**Derived state:** done
-**Reason:** Done with local signed/device adapter coverage; production gate remains: Zalo OA approval and OAuth credentials are external; signed local provider assertions are enforced in tests.
-**Attempts:** 1
-**Deliverables checked:** 14
-**Missing deliverables:** 0
-**Scaffold deliverables:** 0
-**External production gate:** Zalo OA approval and OAuth credentials are external; signed local provider assertions are enforced in tests.
+**Derived state:** done **Reason:** Done with local signed/device adapter coverage; production gate remains: Zalo OA approval and OAuth credentials are external; signed local provider assertions are enforced in tests. **Attempts:** 1 **Deliverables checked:** 14 **Missing deliverables:** 0 **Scaffold deliverables:** 0 **External production gate:** Zalo OA approval and OAuth credentials are external; signed local provider assertions are enforced in tests.
 
 ## Raw Terminal Results
 
@@ -147,4 +141,3 @@ QA check passed: README, PRD, SRS, social schedule, 53 test-case mappings, 3 uni
 
 exit_code=0
 ```
-

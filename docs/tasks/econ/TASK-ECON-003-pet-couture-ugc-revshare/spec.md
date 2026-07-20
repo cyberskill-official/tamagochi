@@ -176,18 +176,7 @@ create table public.ugc_sales (
 
 ## §4 — Acceptance criteria
 
-**AC1.** Submission flow: 50 Coins debit, row inserted with pending_review. Verified.
-**AC2.** Content safety on name + description. Verified.
-**AC3.** T&S review approves/rejects. Verified by mock review.
-**AC4.** Marketplace lists approved items only. Verified.
-**AC5.** Buy: 70% to platform sink, 30% to creator revshare. Verified.
-**AC6.** Creator payout requires 10,000 Coin minimum + 100:1 conversion. Verified.
-**AC7.** 50,000/month creator cap enforced. Verified.
-**AC8.** Kids SKU forbidden. Verified.
-**AC9.** Body/face slots forbidden. Verified.
-**AC10.** Rejection: 3 resubmission cap. Verified.
-**AC11.** DSR export works. Verified.
-**AC12.** Audit retention 7-year. Verified.
+**AC1.** Submission flow: 50 Coins debit, row inserted with pending_review. Verified. **AC2.** Content safety on name + description. Verified. **AC3.** T&S review approves/rejects. Verified by mock review. **AC4.** Marketplace lists approved items only. Verified. **AC5.** Buy: 70% to platform sink, 30% to creator revshare. Verified. **AC6.** Creator payout requires 10,000 Coin minimum + 100:1 conversion. Verified. **AC7.** 50,000/month creator cap enforced. Verified. **AC8.** Kids SKU forbidden. Verified. **AC9.** Body/face slots forbidden. Verified. **AC10.** Rejection: 3 resubmission cap. Verified. **AC11.** DSR export works. Verified. **AC12.** Audit retention 7-year. Verified.
 
 ---
 
@@ -238,9 +227,7 @@ export class RevshareService {
 
 ## §7 — Dependencies
 
-**External:** Manual T&S review process (post-launch hire).
-**Internal:** TASK-ECON-001 (ledger with creator_revshare account), TASK-ECON-002 (Hearts grants), TASK-AI-002 (content safety), TASK-ART-001 (Spine slot system), TASK-AUTH-003 (kids SKU).
-**Blocks:** none.
+**External:** Manual T&S review process (post-launch hire). **Internal:** TASK-ECON-001 (ledger with creator_revshare account), TASK-ECON-002 (Hearts grants), TASK-AI-002 (content safety), TASK-ART-001 (Spine slot system), TASK-AUTH-003 (kids SKU). **Blocks:** none.
 
 ---
 

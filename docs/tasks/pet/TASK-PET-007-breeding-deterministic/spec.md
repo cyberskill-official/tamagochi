@@ -218,18 +218,7 @@ create policy "breeding self" on public.pending_breeding_offspring for select us
 
 ## §4 — Acceptance criteria
 
-**AC1.** Breeding two adult Mochi pets produces deterministic offspring (same inputs = same output). Verified by property-test.
-**AC2.** Self-breeding rejected. Verified.
-**AC3.** Non-adult breeding rejected. Verified.
-**AC4.** 7-day cooldown enforced. Verified by fake-clock test.
-**AC5.** Pet+ -50% cooldown. Verified.
-**AC6.** Cross-tenant blocked. Verified.
-**AC7.** 24h incubation honoured; auto-hatch fires via scheduled task. Verified.
-**AC8.** Slot-full grace 48h applied. Verified.
-**AC9.** Idempotent breeding. Verified.
-**AC10.** Receipt written per TASK-LEGAL-002. Verified.
-**AC11.** Tier inheritance 80/15/5 distribution over 10k iterations. Verified by statistical test.
-**AC12.** Palette XOR computed correctly. Verified.
+**AC1.** Breeding two adult Mochi pets produces deterministic offspring (same inputs = same output). Verified by property-test. **AC2.** Self-breeding rejected. Verified. **AC3.** Non-adult breeding rejected. Verified. **AC4.** 7-day cooldown enforced. Verified by fake-clock test. **AC5.** Pet+ -50% cooldown. Verified. **AC6.** Cross-tenant blocked. Verified. **AC7.** 24h incubation honoured; auto-hatch fires via scheduled task. Verified. **AC8.** Slot-full grace 48h applied. Verified. **AC9.** Idempotent breeding. Verified. **AC10.** Receipt written per TASK-LEGAL-002. Verified. **AC11.** Tier inheritance 80/15/5 distribution over 10k iterations. Verified by statistical test. **AC12.** Palette XOR computed correctly. Verified.
 
 ---
 
@@ -305,9 +294,7 @@ export class IncubatorService {
 
 ## §7 — Dependencies
 
-**External:** Scheduled function (pg_cron) for incubator tick.
-**Internal:** TASK-PET-005 (slot check), TASK-PET-006 (species + tier model), TASK-LEGAL-002 (receipts), TASK-ECON-001 (Coin spend), TASK-AUTH-001 (JWT).
-**Blocks:** TASK-VIRAL-003 (generative pet at adoption — parallel path).
+**External:** Scheduled function (pg_cron) for incubator tick. **Internal:** TASK-PET-005 (slot check), TASK-PET-006 (species + tier model), TASK-LEGAL-002 (receipts), TASK-ECON-001 (Coin spend), TASK-AUTH-001 (JWT). **Blocks:** TASK-VIRAL-003 (generative pet at adoption — parallel path).
 
 ---
 

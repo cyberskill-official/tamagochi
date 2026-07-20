@@ -1,10 +1,6 @@
 # Tamagochi — Task Backlog
 
-**Owner:** Stephen Cheng (Founder, CyberSkill) · **Status:** v1.0.2 — rework mode; zero-touch revalidation coverage-passed, 2026-05-21
-**Source of truth:** the markdown files in this folder. This index is regenerated when tasks land or change status.
-**Source plan:** [`../Tamagotchi-Style Virtual Pet Game - Strategic Implementation Plan.md`](../Tamagotchi-Style%20Virtual%20Pet%20Game%20-%20Strategic%20Implementation%20Plan.md)
-**Authoring playbook:** `task-audit` skill (see task skills) (project-local)
-**Implementation log:** [`IMPLEMENTATION_LOG.md`](IMPLEMENTATION_LOG.md) — all tasks shipped in locked build order on 2026-05-17
+**Owner:** Stephen Cheng (Founder, CyberSkill) · **Status:** v1.0.2 — rework mode; zero-touch revalidation coverage-passed, 2026-05-21 **Source of truth:** the markdown files in this folder. This index is regenerated when tasks land or change status. **Source plan:** [`../Tamagotchi-Style Virtual Pet Game - Strategic Implementation Plan.md`](../Tamagotchi-Style%20Virtual%20Pet%20Game%20-%20Strategic%20Implementation%20Plan.md) **Authoring playbook:** `task-audit` skill (see task skills) (project-local) **Implementation log:** [`IMPLEMENTATION_LOG.md`](IMPLEMENTATION_LOG.md) — all tasks shipped in locked build order on 2026-05-17
 
 ---
 
@@ -348,10 +344,7 @@ When adding a new task:
 
 Rework mode was enabled, so terminal `done` rows were force-re-evaluated from the start of the implementation phase. This ledger is derived from dependency order, declared deliverables, scaffold-marker detection, per-FR tests, E2E tests, QA checks, and final coverage.
 
-**Stage:** coverage-passed
-**Summary:** done: 53
-**Edge-case matrix:** [EDGE_CASE_MATRIX_2026-05-21.md](EDGE_CASE_MATRIX_2026-05-21.md)
-**Raw reports:** [pipeline/fresh-audits/](pipeline/fresh-audits/)
+**Stage:** coverage-passed **Summary:** done: 53 **Edge-case matrix:** [EDGE_CASE_MATRIX_2026-05-21.md](EDGE_CASE_MATRIX_2026-05-21.md) **Raw reports:** [pipeline/fresh-audits/](pipeline/fresh-audits/)
 
 | # | TASK-ID | Derived state | External gate | Evidence |
 |---:|---|---|---|---|

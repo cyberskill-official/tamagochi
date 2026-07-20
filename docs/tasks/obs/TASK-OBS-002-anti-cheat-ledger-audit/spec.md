@@ -209,18 +209,7 @@ create table public.dpo_review_queue (
 
 ## §4 — Acceptance criteria
 
-**AC1.** Negative stat triggers flag +1. Verified.
-**AC2.** HMAC forgery triggers flag +20. Verified.
-**AC3.** Flag score 30 in 24h → red ban. Verified.
-**AC4.** Banned account cannot sign in. Verified.
-**AC5.** Appeal endpoint creates DPO review row. Verified.
-**AC6.** DPO false-positive reverses ban + resets flags. Verified.
-**AC7.** Ledger drift > 0.1% pages on-call. Verified.
-**AC8.** Cross-tenant suspicion sharing anonymized. Verified.
-**AC9.** Per-tenant ban scope respected. Verified.
-**AC10.** Grafana dashboard renders. Verified.
-**AC11.** 7-year retention for kids tenant. Verified.
-**AC12.** Sentry alert SLA < 5min for critical events. Verified.
+**AC1.** Negative stat triggers flag +1. Verified. **AC2.** HMAC forgery triggers flag +20. Verified. **AC3.** Flag score 30 in 24h → red ban. Verified. **AC4.** Banned account cannot sign in. Verified. **AC5.** Appeal endpoint creates DPO review row. Verified. **AC6.** DPO false-positive reverses ban + resets flags. Verified. **AC7.** Ledger drift > 0.1% pages on-call. Verified. **AC8.** Cross-tenant suspicion sharing anonymized. Verified. **AC9.** Per-tenant ban scope respected. Verified. **AC10.** Grafana dashboard renders. Verified. **AC11.** 7-year retention for kids tenant. Verified. **AC12.** Sentry alert SLA < 5min for critical events. Verified.
 
 ---
 
@@ -275,9 +264,7 @@ export class BanDecisionService {
 
 ## §7 — Dependencies
 
-**External:** Sentry, Grafana.
-**Internal:** TASK-ECON-001 (ledger drift), TASK-INFRA-002 (HMAC, rate-limit), TASK-AUTH-001 (ban gate at sign-in), TASK-PET-008 (grandma archive), TASK-LEGAL-001 (DPO + audit).
-**Blocks:** TASK-B2B-002 (B2B tenants depend on anti-cheat SLA).
+**External:** Sentry, Grafana. **Internal:** TASK-ECON-001 (ledger drift), TASK-INFRA-002 (HMAC, rate-limit), TASK-AUTH-001 (ban gate at sign-in), TASK-PET-008 (grandma archive), TASK-LEGAL-001 (DPO + audit). **Blocks:** TASK-B2B-002 (B2B tenants depend on anti-cheat SLA).
 
 ---
 

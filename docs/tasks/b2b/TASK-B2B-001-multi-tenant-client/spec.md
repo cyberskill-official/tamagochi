@@ -157,18 +157,7 @@ create table public.tenants (
 
 ## §4 — Acceptance criteria
 
-**AC1.** Slug resolution via bundle ID + hostname. Verified.
-**AC2.** Manifest fetch returns valid config. Verified.
-**AC3.** Theme bundle ≤ 4 MB enforced. Verified.
-**AC4.** Contract animations preserved post-override. Verified.
-**AC5.** Per-tenant rate-limit budget separate. Verified.
-**AC6.** Tenant locale override resolves. Verified.
-**AC7.** Tenant disable shows UX. Verified.
-**AC8.** Bundle signature verified. Verified.
-**AC9.** Per-tenant analytics workspace separated. Verified.
-**AC10.** Slug format constraint enforced. Verified.
-**AC11.** Migration path documented. Verified.
-**AC12.** Audit retention per tenant. Verified.
+**AC1.** Slug resolution via bundle ID + hostname. Verified. **AC2.** Manifest fetch returns valid config. Verified. **AC3.** Theme bundle ≤ 4 MB enforced. Verified. **AC4.** Contract animations preserved post-override. Verified. **AC5.** Per-tenant rate-limit budget separate. Verified. **AC6.** Tenant locale override resolves. Verified. **AC7.** Tenant disable shows UX. Verified. **AC8.** Bundle signature verified. Verified. **AC9.** Per-tenant analytics workspace separated. Verified. **AC10.** Slug format constraint enforced. Verified. **AC11.** Migration path documented. Verified. **AC12.** Audit retention per tenant. Verified.
 
 ---
 
@@ -217,9 +206,7 @@ export class TenantThemeLoader {
 
 ## §7 — Dependencies
 
-**External:** Cloudflare R2; tenant DPA agreements.
-**Internal:** TASK-INFRA-001 (asset bundle loader + tenant slug), TASK-ART-001 (Spine skin contract), TASK-I18N-001 (locale overrides).
-**Blocks:** TASK-B2B-002/003/004/005.
+**External:** Cloudflare R2; tenant DPA agreements. **Internal:** TASK-INFRA-001 (asset bundle loader + tenant slug), TASK-ART-001 (Spine skin contract), TASK-I18N-001 (locale overrides). **Blocks:** TASK-B2B-002/003/004/005.
 
 ---
 

@@ -203,18 +203,7 @@ $$;
 
 ## §4 — Acceptance criteria
 
-**AC1.** Spend reduces balance by exact amount + writes 2 ledger rows. Verified.
-**AC2.** Concurrent spend (parallel calls) cannot overdraw. Verified by chaos test.
-**AC3.** Insufficient balance raises `econ.insufficient_balance`. Verified.
-**AC4.** Coins ↔ Hearts conversion blocked. Verified.
-**AC5.** Hearts grant via non-IAP source rejected. Verified.
-**AC6.** Cross-tenant ledger query returns 0 rows (RLS). Verified.
-**AC7.** Daily Coin earn cap (500 free / 1500 Pet+) enforced. Verified.
-**AC8.** Daily reconciliation detects 0.1% drift. Verified by chaos test injecting drift.
-**AC9.** Negative amount rejected. Verified.
-**AC10.** Cached balance staleness ≤ 5 sec. Verified by latency test.
-**AC11.** History endpoint returns DSR-exportable CSV. Verified.
-**AC12.** Audit retention 7-year kid / 2-year standard. Verified.
+**AC1.** Spend reduces balance by exact amount + writes 2 ledger rows. Verified. **AC2.** Concurrent spend (parallel calls) cannot overdraw. Verified by chaos test. **AC3.** Insufficient balance raises `econ.insufficient_balance`. Verified. **AC4.** Coins ↔ Hearts conversion blocked. Verified. **AC5.** Hearts grant via non-IAP source rejected. Verified. **AC6.** Cross-tenant ledger query returns 0 rows (RLS). Verified. **AC7.** Daily Coin earn cap (500 free / 1500 Pet+) enforced. Verified. **AC8.** Daily reconciliation detects 0.1% drift. Verified by chaos test injecting drift. **AC9.** Negative amount rejected. Verified. **AC10.** Cached balance staleness ≤ 5 sec. Verified by latency test. **AC11.** History endpoint returns DSR-exportable CSV. Verified. **AC12.** Audit retention 7-year kid / 2-year standard. Verified.
 
 ---
 
@@ -269,9 +258,7 @@ export class ReconciliationService {
 
 ## §7 — Dependencies
 
-**External:** Postgres SERIALIZABLE + advisory locks.
-**Internal:** TASK-INFRA-003 (Supabase + tenant), TASK-INFRA-002 (anti-cheat path).
-**Blocks:** TASK-ECON-002 IAP (grants Hearts), TASK-ECON-003 UGC rev-share, TASK-SUB-001 (Pet+ subscription perks), TASK-ADS-001 (rewarded video payout), TASK-VIRAL-004 (battle pass).
+**External:** Postgres SERIALIZABLE + advisory locks. **Internal:** TASK-INFRA-003 (Supabase + tenant), TASK-INFRA-002 (anti-cheat path). **Blocks:** TASK-ECON-002 IAP (grants Hearts), TASK-ECON-003 UGC rev-share, TASK-SUB-001 (Pet+ subscription perks), TASK-ADS-001 (rewarded video payout), TASK-VIRAL-004 (battle pass).
 
 ---
 

@@ -156,18 +156,7 @@ export function ensureContrast(fg: string, bg: string, threshold = 4.5): boolean
 
 ## §4 — Acceptance criteria
 
-**AC1.** All text contrast ≥ 4.5:1 verified by CI. Verified.
-**AC2.** Tap targets ≥ 44pt standard / 88pt kids. Verified.
-**AC3.** Reduce-motion detected from OS. Verified.
-**AC4.** Reduce-motion applied across 10 documented paths. Verified.
-**AC5.** Colour-blind presets render correctly. Verified by visual regression.
-**AC6.** OpenDyslexic font toggle works. Verified.
-**AC7.** VoiceOver labels present on every interactive node. Verified by accessibility tree dump.
-**AC8.** No content flashing > 3Hz. Verified.
-**AC9.** Captions on AI dialogue. Verified.
-**AC10.** UI tolerates 30% text expansion. Verified by simulator.
-**AC11.** Kids SKU 1.3× base font. Verified.
-**AC12.** Settings accessibility screen functional. Verified.
+**AC1.** All text contrast ≥ 4.5:1 verified by CI. Verified. **AC2.** Tap targets ≥ 44pt standard / 88pt kids. Verified. **AC3.** Reduce-motion detected from OS. Verified. **AC4.** Reduce-motion applied across 10 documented paths. Verified. **AC5.** Colour-blind presets render correctly. Verified by visual regression. **AC6.** OpenDyslexic font toggle works. Verified. **AC7.** VoiceOver labels present on every interactive node. Verified by accessibility tree dump. **AC8.** No content flashing > 3Hz. Verified. **AC9.** Captions on AI dialogue. Verified. **AC10.** UI tolerates 30% text expansion. Verified by simulator. **AC11.** Kids SKU 1.3× base font. Verified. **AC12.** Settings accessibility screen functional. Verified.
 
 ---
 
@@ -214,9 +203,7 @@ describe('TASK-A11Y-001 — WCAG-AA', () => {
 
 ## §7 — Dependencies
 
-**External:** OpenDyslexic font; iOS UIAccessibility; Android AccessibilityManager.
-**Internal:** TASK-INFRA-001 (Cocos scene), TASK-ART-001 (animation reduce-motion path), TASK-PET-003 (stat-bar colour-blind), TASK-I18N-001 (text expansion), TASK-CARE-002 (particle cap).
-**Blocks:** none.
+**External:** OpenDyslexic font; iOS UIAccessibility; Android AccessibilityManager. **Internal:** TASK-INFRA-001 (Cocos scene), TASK-ART-001 (animation reduce-motion path), TASK-PET-003 (stat-bar colour-blind), TASK-I18N-001 (text expansion), TASK-CARE-002 (particle cap). **Blocks:** none.
 
 ---
 

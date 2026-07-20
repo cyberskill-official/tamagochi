@@ -183,18 +183,7 @@ create table public.battle_pass_objectives (
 
 ## §4 — Acceptance criteria
 
-**AC1.** Season starts every 28 days. Verified by cron test.
-**AC2.** XP from care actions + mini-games + objectives accrues correctly. Verified.
-**AC3.** Premium purchase grants retroactive premium rewards. Verified.
-**AC4.** Tier rewards disclosed at season start in /state response. Verified.
-**AC5.** 7-day claim grace post-season. Verified.
-**AC6.** Family tier includes premium. Verified.
-**AC7.** Pet+ does NOT include. Verified.
-**AC8.** Kids cannot purchase directly. Verified.
-**AC9.** Daily 3 objectives + weekly 3 served. Verified.
-**AC10.** Mid-season pricing locked. Verified.
-**AC11.** No mystery rewards. Verified by config lint.
-**AC12.** Tenant seasons isolated. Verified.
+**AC1.** Season starts every 28 days. Verified by cron test. **AC2.** XP from care actions + mini-games + objectives accrues correctly. Verified. **AC3.** Premium purchase grants retroactive premium rewards. Verified. **AC4.** Tier rewards disclosed at season start in /state response. Verified. **AC5.** 7-day claim grace post-season. Verified. **AC6.** Family tier includes premium. Verified. **AC7.** Pet+ does NOT include. Verified. **AC8.** Kids cannot purchase directly. Verified. **AC9.** Daily 3 objectives + weekly 3 served. Verified. **AC10.** Mid-season pricing locked. Verified. **AC11.** No mystery rewards. Verified by config lint. **AC12.** Tenant seasons isolated. Verified.
 
 ---
 
@@ -249,9 +238,7 @@ export class ObjectiveService {
 
 ## §7 — Dependencies
 
-**External:** Apple/Google subscription products for battle pass.
-**Internal:** TASK-ECON-002 IAP, TASK-SUB-001/002 entitlement, TASK-CARE-005 streak hooks, TASK-ECON-001 ledger.
-**Blocks:** none.
+**External:** Apple/Google subscription products for battle pass. **Internal:** TASK-ECON-002 IAP, TASK-SUB-001/002 entitlement, TASK-CARE-005 streak hooks, TASK-ECON-001 ledger. **Blocks:** none.
 
 ---
 

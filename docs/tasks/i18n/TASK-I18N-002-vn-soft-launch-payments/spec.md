@@ -163,18 +163,7 @@ create policy "regional self" on public.regional_payments for select using (user
 
 ## §4 — Acceptance criteria
 
-**AC1.** VN MoMo payment flow end-to-end. Verified.
-**AC2.** ZaloPay flow works. Verified.
-**AC3.** PH GCash flow works. Verified.
-**AC4.** ID DANA flow works. Verified.
-**AC5.** Antom webhook validation. Verified.
-**AC6.** Refund webhook revokes entitlement. Verified.
-**AC7.** Tax-inclusive price display VN. Verified.
-**AC8.** Region-mismatch flagged. Verified.
-**AC9.** Pricing localised correctly. Verified.
-**AC10.** Subscriptions blocked via local rails. Verified.
-**AC11.** Antom outage falls back to Apple/Google. Verified.
-**AC12.** DPA on file for Antom + Xsolla. Verified.
+**AC1.** VN MoMo payment flow end-to-end. Verified. **AC2.** ZaloPay flow works. Verified. **AC3.** PH GCash flow works. Verified. **AC4.** ID DANA flow works. Verified. **AC5.** Antom webhook validation. Verified. **AC6.** Refund webhook revokes entitlement. Verified. **AC7.** Tax-inclusive price display VN. Verified. **AC8.** Region-mismatch flagged. Verified. **AC9.** Pricing localised correctly. Verified. **AC10.** Subscriptions blocked via local rails. Verified. **AC11.** Antom outage falls back to Apple/Google. Verified. **AC12.** DPA on file for Antom + Xsolla. Verified.
 
 ---
 
@@ -220,9 +209,7 @@ export function pickPriceForRegion(productId: string, region: string): { amount:
 
 ## §7 — Dependencies
 
-**External:** Antom + Xsolla account setup; per-region tax registrations.
-**Internal:** TASK-ECON-002 (IAP base + atomic grant), TASK-AUTH-001 (region detection), TASK-I18N-001 (currency formatting), TASK-LEGAL-001 (DPA filing).
-**Blocks:** none.
+**External:** Antom + Xsolla account setup; per-region tax registrations. **Internal:** TASK-ECON-002 (IAP base + atomic grant), TASK-AUTH-001 (region detection), TASK-I18N-001 (currency formatting), TASK-LEGAL-001 (DPA filing). **Blocks:** none.
 
 ---
 

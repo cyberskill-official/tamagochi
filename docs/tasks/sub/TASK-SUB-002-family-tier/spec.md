@@ -208,18 +208,7 @@ create table public.spend_approval_requests (
 
 ## §4 — Acceptance criteria
 
-**AC1.** Family tier subscription ($9.99/mo) via Apple/Google works. Verified.
-**AC2.** Adding a child triggers TASK-AUTH-003 consent flow. Verified.
-**AC3.** Up to 5 children; 6th rejected. Verified.
-**AC4.** Screen-time cap enforced — over-cap launch shows "time's up". Verified.
-**AC5.** Spend cap default 0 — IAP attempt triggers parent approval push. Verified.
-**AC6.** Content filter (AI dialogue disabled) honoured even for 13+ child. Verified.
-**AC7.** Parental dashboard shows per-child summary. Verified.
-**AC8.** Pause child instant-suspends app access. Verified.
-**AC9.** Delete child triggers DSR-erasure. Verified.
-**AC10.** Friend-request approval queue functions. Verified.
-**AC11.** Cross-SKU family link works across Supabase projects. Verified.
-**AC12.** Spend approval 15-min expiry. Verified.
+**AC1.** Family tier subscription ($9.99/mo) via Apple/Google works. Verified. **AC2.** Adding a child triggers TASK-AUTH-003 consent flow. Verified. **AC3.** Up to 5 children; 6th rejected. Verified. **AC4.** Screen-time cap enforced — over-cap launch shows "time's up". Verified. **AC5.** Spend cap default 0 — IAP attempt triggers parent approval push. Verified. **AC6.** Content filter (AI dialogue disabled) honoured even for 13+ child. Verified. **AC7.** Parental dashboard shows per-child summary. Verified. **AC8.** Pause child instant-suspends app access. Verified. **AC9.** Delete child triggers DSR-erasure. Verified. **AC10.** Friend-request approval queue functions. Verified. **AC11.** Cross-SKU family link works across Supabase projects. Verified. **AC12.** Spend approval 15-min expiry. Verified.
 
 ---
 
@@ -270,9 +259,7 @@ export class ParentalDashboardService {
 
 ## §7 — Dependencies
 
-**External:** Apple Family Sharing API; Google Family Library API; TASK-AUTH-003 Safe Harbor vendor.
-**Internal:** TASK-SUB-001 (Pet+ baseline), TASK-AUTH-003 (parental consent), TASK-AI-001/002 (content filter override), TASK-LEGAL-001 (DSR + DPO).
-**Blocks:** none.
+**External:** Apple Family Sharing API; Google Family Library API; TASK-AUTH-003 Safe Harbor vendor. **Internal:** TASK-SUB-001 (Pet+ baseline), TASK-AUTH-003 (parental consent), TASK-AI-001/002 (content filter override), TASK-LEGAL-001 (DSR + DPO). **Blocks:** none.
 
 ---
 

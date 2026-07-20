@@ -189,18 +189,7 @@ async generateAdoption(u: AuthedUser, species: Species, input?: GenerativeInput)
 
 ## §4 — Acceptance criteria
 
-**AC1.** Text-prompt adoption returns palette unique per (species, seed, prompt). Verified.
-**AC2.** Selfie input never stored — only dominant_colors extracted. Verified.
-**AC3.** Kids SKU forces default palette regardless of input. Verified.
-**AC4.** Unsafe prompt rejected with reason. Verified.
-**AC5.** PII regex stripped before moderation. Verified.
-**AC6.** Vision API down → selfie mode blocked. Verified.
-**AC7.** Deterministic blend (same inputs → same output). Verified by property test.
-**AC8.** Palette locked after hatch (no re-roll). Verified.
-**AC9.** AR renders palette correctly. Verified.
-**AC10.** Share caption attributes prompt mode only (text). Verified.
-**AC11.** Tenant override disables path. Verified.
-**AC12.** Audit emits without storing prompt text. Verified.
+**AC1.** Text-prompt adoption returns palette unique per (species, seed, prompt). Verified. **AC2.** Selfie input never stored — only dominant_colors extracted. Verified. **AC3.** Kids SKU forces default palette regardless of input. Verified. **AC4.** Unsafe prompt rejected with reason. Verified. **AC5.** PII regex stripped before moderation. Verified. **AC6.** Vision API down → selfie mode blocked. Verified. **AC7.** Deterministic blend (same inputs → same output). Verified by property test. **AC8.** Palette locked after hatch (no re-roll). Verified. **AC9.** AR renders palette correctly. Verified. **AC10.** Share caption attributes prompt mode only (text). Verified. **AC11.** Tenant override disables path. Verified. **AC12.** Audit emits without storing prompt text. Verified.
 
 ---
 
@@ -251,9 +240,7 @@ export class GenerativePetAdoptionUi extends Component {
 
 ## §7 — Dependencies
 
-**External:** Optional vision-API (Google Vision / AWS Rekognition).
-**Internal:** TASK-PET-006 (species + tier), TASK-AI-002 (content safety), TASK-ART-001 (Spine palette).
-**Blocks:** none.
+**External:** Optional vision-API (Google Vision / AWS Rekognition). **Internal:** TASK-PET-006 (species + tier), TASK-AI-002 (content safety), TASK-ART-001 (Spine palette). **Blocks:** none.
 
 ---
 

@@ -158,18 +158,7 @@ export function installHugHandler(room: PetRoom, svc: HugService) {
 
 ## §4 — Acceptance criteria
 
-**AC1.** Hug on happiness=50 returns happiness_after=75. Verified.
-**AC2.** 25th hug in 24h returns happiness +1 with `diminishing: true` flag. Verified.
-**AC3.** Per-hug cooldown 30s enforced. Verified.
-**AC4.** Onboarding-bypass header skips cooldown + daily cap. Verified by spec test with bypass.
-**AC5.** Stage-locked for egg / grandma_house. Verified.
-**AC6.** Cross-owner attempt → 403. Verified.
-**AC7.** 24h cap resets at player's local midnight (region-aware). Verified by fake-clock test.
-**AC8.** Animation handshake works. Verified.
-**AC9.** No currency spend. Verified (CurrencyLedger.spend not called).
-**AC10.** Heart-burst Lottie respects reduce-motion (static icon). Verified.
-**AC11.** Rate-limit 120/hr. Verified.
-**AC12.** Audit row + AI-surface event emitted. Verified.
+**AC1.** Hug on happiness=50 returns happiness_after=75. Verified. **AC2.** 25th hug in 24h returns happiness +1 with `diminishing: true` flag. Verified. **AC3.** Per-hug cooldown 30s enforced. Verified. **AC4.** Onboarding-bypass header skips cooldown + daily cap. Verified by spec test with bypass. **AC5.** Stage-locked for egg / grandma_house. Verified. **AC6.** Cross-owner attempt → 403. Verified. **AC7.** 24h cap resets at player's local midnight (region-aware). Verified by fake-clock test. **AC8.** Animation handshake works. Verified. **AC9.** No currency spend. Verified (CurrencyLedger.spend not called). **AC10.** Heart-burst Lottie respects reduce-motion (static icon). Verified. **AC11.** Rate-limit 120/hr. Verified. **AC12.** Audit row + AI-surface event emitted. Verified.
 
 ---
 
@@ -227,9 +216,7 @@ export class DailyCounter {
 
 ## §7 — Dependencies
 
-**External:** Redis (daily counter + cooldown).
-**Internal:** TASK-CARE-001 (pattern), TASK-PET-003 (stat apply — needs `hug_diminished` action key extension), TASK-PET-004 (onboarding bypass header), TASK-ART-001 (`care_pet` animation).
-**Blocks:** TASK-CARE-005 (streak system), TASK-VIRAL-002 (Daily Drama events), TASK-AI-001 (persona context).
+**External:** Redis (daily counter + cooldown). **Internal:** TASK-CARE-001 (pattern), TASK-PET-003 (stat apply — needs `hug_diminished` action key extension), TASK-PET-004 (onboarding bypass header), TASK-ART-001 (`care_pet` animation). **Blocks:** TASK-CARE-005 (streak system), TASK-VIRAL-002 (Daily Drama events), TASK-AI-001 (persona context).
 
 ---
 

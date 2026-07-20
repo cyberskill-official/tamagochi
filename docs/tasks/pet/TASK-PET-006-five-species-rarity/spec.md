@@ -207,18 +207,7 @@ create table public.pet_acquisitions (
 
 ## §4 — Acceptance criteria
 
-**AC1.** All 5 species hatchable; constraint rejects unknown species. Verified.
-**AC2.** All 5 tiers stored on pet row; constraint rejects unknown tier. Verified.
-**AC3.** Surprise egg drop rates match published JSON ±0.5% over 10k rolls. Verified by statistical test.
-**AC4.** BE/NL surprise-egg UI hidden. Verified by Playwright.
-**AC5.** No real-money path to any tier — IAP catalogue lint passes. Verified by TASK-LEGAL-002 §1.11 script.
-**AC6.** Tier decay modifier applies in TASK-PET-003 stat decay. Verified.
-**AC7.** Acquisition audit row written for each path. Verified.
-**AC8.** Disclosure surface shown before surprise-egg open. Verified.
-**AC9.** Grandma rescue preserves tier. Verified.
-**AC10.** Tier upgrade attempt forbidden (immutable). Verified.
-**AC11.** Per-species bundle ≤ 1.5 MB. Verified by assert-bundle-budget.
-**AC12.** First-time species unlock UI fires. Verified.
+**AC1.** All 5 species hatchable; constraint rejects unknown species. Verified. **AC2.** All 5 tiers stored on pet row; constraint rejects unknown tier. Verified. **AC3.** Surprise egg drop rates match published JSON ±0.5% over 10k rolls. Verified by statistical test. **AC4.** BE/NL surprise-egg UI hidden. Verified by Playwright. **AC5.** No real-money path to any tier — IAP catalogue lint passes. Verified by TASK-LEGAL-002 §1.11 script. **AC6.** Tier decay modifier applies in TASK-PET-003 stat decay. Verified. **AC7.** Acquisition audit row written for each path. Verified. **AC8.** Disclosure surface shown before surprise-egg open. Verified. **AC9.** Grandma rescue preserves tier. Verified. **AC10.** Tier upgrade attempt forbidden (immutable). Verified. **AC11.** Per-species bundle ≤ 1.5 MB. Verified by assert-bundle-budget. **AC12.** First-time species unlock UI fires. Verified.
 
 ---
 
@@ -266,9 +255,7 @@ export function secureRandom(): number {
 
 ## §7 — Dependencies
 
-**External:** Cocos Spine palette swap; Postgres.
-**Internal:** TASK-PET-005 (slot quota), TASK-LEGAL-002 (drop-rate disclosure + BE/NL safe mode + outcome receipts), TASK-ART-001 (per-species Spine), TASK-CARE-005 (streak reward sources).
-**Blocks:** TASK-PET-007 (breeding output species), TASK-SOCIAL-003 (trade tier display), TASK-ECON-002 (premium species IAP — direct only).
+**External:** Cocos Spine palette swap; Postgres. **Internal:** TASK-PET-005 (slot quota), TASK-LEGAL-002 (drop-rate disclosure + BE/NL safe mode + outcome receipts), TASK-ART-001 (per-species Spine), TASK-CARE-005 (streak reward sources). **Blocks:** TASK-PET-007 (breeding output species), TASK-SOCIAL-003 (trade tier display), TASK-ECON-002 (premium species IAP — direct only).
 
 ---
 

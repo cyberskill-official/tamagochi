@@ -1,7 +1,6 @@
 # Tamagochi — One-By-One Implementation Audit
 
-**Audit date:** 2026-05-18
-**Policy:** validate one task before moving to the next; jump past vendor/device-blocked production checks while keeping local deliverables verified.
+**Audit date:** 2026-05-18 **Policy:** validate one task before moving to the next; jump past vendor/device-blocked production checks while keeping local deliverables verified.
 
 ## Verification Commands
 

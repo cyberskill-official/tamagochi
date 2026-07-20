@@ -1,12 +1,6 @@
 # TASK-AR-001 Fresh Zero-Touch Audit
 
-**Derived state:** done
-**Reason:** Done with local signed/device adapter coverage; production gate remains: ARKit/ARCore require physical devices; Photo Studio fallback and AR decision logic are local.
-**Attempts:** 1
-**Deliverables checked:** 12
-**Missing deliverables:** 0
-**Scaffold deliverables:** 0
-**External production gate:** ARKit/ARCore require physical devices; Photo Studio fallback and AR decision logic are local.
+**Derived state:** done **Reason:** Done with local signed/device adapter coverage; production gate remains: ARKit/ARCore require physical devices; Photo Studio fallback and AR decision logic are local. **Attempts:** 1 **Deliverables checked:** 12 **Missing deliverables:** 0 **Scaffold deliverables:** 0 **External production gate:** ARKit/ARCore require physical devices; Photo Studio fallback and AR decision logic are local.
 
 ## Raw Terminal Results
 
@@ -147,4 +141,3 @@ QA check passed: README, PRD, SRS, social schedule, 53 test-case mappings, 3 uni
 
 exit_code=0
 ```
-

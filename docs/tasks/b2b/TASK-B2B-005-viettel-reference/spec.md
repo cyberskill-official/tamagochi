@@ -144,18 +144,7 @@ export class SimBindingService {
 
 ## §4 — Acceptance criteria
 
-**AC1.** Viettel SSO flow works. Verified.
-**AC2.** Top-up webhook triggers feed. Verified.
-**AC3.** Pet at hunger=100 → coin consolation. Verified.
-**AC4.** SIM-binding 1:1 enforced. Verified.
-**AC5.** Daily-login report monthly. Verified.
-**AC6.** Cross-tenant trade blocked. Verified.
-**AC7.** VN data residency. Verified.
-**AC8.** Family-plan Family tier interop. Verified.
-**AC9.** 7-year audit retention. Verified.
-**AC10.** No real-money out. Verified.
-**AC11.** Parental consent for child sub-profiles. Verified.
-**AC12.** DPO review enforced. Verified.
+**AC1.** Viettel SSO flow works. Verified. **AC2.** Top-up webhook triggers feed. Verified. **AC3.** Pet at hunger=100 → coin consolation. Verified. **AC4.** SIM-binding 1:1 enforced. Verified. **AC5.** Daily-login report monthly. Verified. **AC6.** Cross-tenant trade blocked. Verified. **AC7.** VN data residency. Verified. **AC8.** Family-plan Family tier interop. Verified. **AC9.** 7-year audit retention. Verified. **AC10.** No real-money out. Verified. **AC11.** Parental consent for child sub-profiles. Verified. **AC12.** DPO review enforced. Verified.
 
 ---
 
@@ -200,9 +189,7 @@ export class ViettelSsoController {
 
 ## §7 — Dependencies
 
-**External:** Viettel API + Viettel ID SSO; Viettel webhook signing keys; VN region hosting.
-**Internal:** TASK-B2B-001 manifest, TASK-B2B-002 partition, TASK-B2B-003 console, TASK-CARE-001 feed action, TASK-AUTH-001 + TASK-AUTH-002 (Vietnamese telco SSO model).
-**Blocks:** none.
+**External:** Viettel API + Viettel ID SSO; Viettel webhook signing keys; VN region hosting. **Internal:** TASK-B2B-001 manifest, TASK-B2B-002 partition, TASK-B2B-003 console, TASK-CARE-001 feed action, TASK-AUTH-001 + TASK-AUTH-002 (Vietnamese telco SSO model). **Blocks:** none.
 
 ---
 

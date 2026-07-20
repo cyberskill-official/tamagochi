@@ -205,18 +205,7 @@ create table public.subscription_webhook_dedupe (
 
 ## §4 — Acceptance criteria
 
-**AC1.** Apple subscribe → entitlement active. Verified.
-**AC2.** Renewal → 100 Hearts granted via ledger. Verified.
-**AC3.** Fail-to-renew → grace started for 16 days. Verified.
-**AC4.** After grace → downgrade. Verified.
-**AC5.** Restore purchase on new device re-validates. Verified.
-**AC6.** Webhook replay no double-grant. Verified.
-**AC7.** Pet+ tier unlocks 10 slots in TASK-PET-005. Verified.
-**AC8.** Pet+ tier reduces breeding cooldown 50%. Verified.
-**AC9.** Pet+ tier raises AI quota to 60/pet/day. Verified.
-**AC10.** Pet+ tier +1 forgiveness token. Verified.
-**AC11.** Family Sharing honoured. Verified.
-**AC12.** Kids cannot subscribe directly. Verified.
+**AC1.** Apple subscribe → entitlement active. Verified. **AC2.** Renewal → 100 Hearts granted via ledger. Verified. **AC3.** Fail-to-renew → grace started for 16 days. Verified. **AC4.** After grace → downgrade. Verified. **AC5.** Restore purchase on new device re-validates. Verified. **AC6.** Webhook replay no double-grant. Verified. **AC7.** Pet+ tier unlocks 10 slots in TASK-PET-005. Verified. **AC8.** Pet+ tier reduces breeding cooldown 50%. Verified. **AC9.** Pet+ tier raises AI quota to 60/pet/day. Verified. **AC10.** Pet+ tier +1 forgiveness token. Verified. **AC11.** Family Sharing honoured. Verified. **AC12.** Kids cannot subscribe directly. Verified.
 
 ---
 
@@ -263,9 +252,7 @@ export class GracePeriodService {
 
 ## §7 — Dependencies
 
-**External:** Apple StoreKit 2 + ASSN V2 webhooks; Google Play Billing 6 + RTDN webhooks.
-**Internal:** TASK-ECON-001 ledger, TASK-ECON-002 IAP base, TASK-PET-005/007, TASK-AI-001 cost cap, TASK-CARE-005 forgiveness token, TASK-AUTH-001 (Family Sharing tie-in).
-**Blocks:** TASK-SUB-002 (Family tier extends this).
+**External:** Apple StoreKit 2 + ASSN V2 webhooks; Google Play Billing 6 + RTDN webhooks. **Internal:** TASK-ECON-001 ledger, TASK-ECON-002 IAP base, TASK-PET-005/007, TASK-AI-001 cost cap, TASK-CARE-005 forgiveness token, TASK-AUTH-001 (Family Sharing tie-in). **Blocks:** TASK-SUB-002 (Family tier extends this).
 
 ---
 

@@ -203,18 +203,7 @@ create policy "grandma self" on public.grandma_rescues for select using (owner_i
 
 ## §4 — Acceptance criteria
 
-**AC1.** Pet with all 4 stats=0 for 7+ days transitions to grandma. Verified by fake-clock test.
-**AC2.** Pet with hunger=0 but other stats >0 does NOT transition. Verified.
-**AC3.** Pre-grandma push notifications at day 3, 5, 7. Verified.
-**AC4.** Ritual day 1 of 3 advances progress. Verified.
-**AC5.** Three rituals (≥18h apart) complete rescue + reset stats to 50. Verified.
-**AC6.** 48h skip resets progress to 0. Verified.
-**AC7.** Rescued pet retains species + tier. Verified.
-**AC8.** No real-money rescue path — IAP catalogue lint pass. Verified.
-**AC9.** Grandma pet not in main scene. Verified.
-**AC10.** Grandma pet doesn't count against slot. Verified.
-**AC11.** Trade/breed blocked for grandma pet. Verified.
-**AC12.** AI persona "miss you" line when grandma. Verified.
+**AC1.** Pet with all 4 stats=0 for 7+ days transitions to grandma. Verified by fake-clock test. **AC2.** Pet with hunger=0 but other stats >0 does NOT transition. Verified. **AC3.** Pre-grandma push notifications at day 3, 5, 7. Verified. **AC4.** Ritual day 1 of 3 advances progress. Verified. **AC5.** Three rituals (≥18h apart) complete rescue + reset stats to 50. Verified. **AC6.** 48h skip resets progress to 0. Verified. **AC7.** Rescued pet retains species + tier. Verified. **AC8.** No real-money rescue path — IAP catalogue lint pass. Verified. **AC9.** Grandma pet not in main scene. Verified. **AC10.** Grandma pet doesn't count against slot. Verified. **AC11.** Trade/breed blocked for grandma pet. Verified. **AC12.** AI persona "miss you" line when grandma. Verified.
 
 ---
 
@@ -277,9 +266,7 @@ export class RescueRitualUi extends Component {
 
 ## §7 — Dependencies
 
-**External:** pg_cron for neglect-check.
-**Internal:** TASK-PET-003 (stat values), TASK-LEGAL-002 (no-real-money policy), TASK-VIRAL-005 (push notification for warnings), TASK-AI-001 (grandma persona line).
-**Blocks:** none directly (terminal state); TASK-VIRAL-002 may reference grandma events.
+**External:** pg_cron for neglect-check. **Internal:** TASK-PET-003 (stat values), TASK-LEGAL-002 (no-real-money policy), TASK-VIRAL-005 (push notification for warnings), TASK-AI-001 (grandma persona line). **Blocks:** none directly (terminal state); TASK-VIRAL-002 may reference grandma events.
 
 ---
 

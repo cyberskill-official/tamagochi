@@ -225,18 +225,7 @@ create policy "event_memory self" on public.pet_event_memory for select
 
 ## §4 — Acceptance criteria
 
-**AC1.** `POST /v1/ai/pet/:id/speak` on standard SKU returns text ≤ 80 chars + sentiment + animation_hint. Verified.
-**AC2.** Same endpoint on kids SKU returns 403 `ai.kids.forbidden`. Verified.
-**AC3.** Cost cap (30 calls/pet/day) — 31st call falls back to scripted. Verified.
-**AC4.** Player cost cap (100/day) — 101st call falls back. Verified.
-**AC5.** Cache hit returns response without LLM call (assert via spy). Verified.
-**AC6.** Claude latency > 3s OR 5xx → Gemini fallback. Verified with mocked adapters.
-**AC7.** Content-safety block → scripted fallback + `ai.persona.safety_blocked` event. Verified.
-**AC8.** Event memory rotates at 21st event. Verified.
-**AC9.** User-supplied free-form text in body is rejected. Verified.
-**AC10.** Sentiment→animation mapping correct. Verified.
-**AC11.** Daily spend dashboard captures cost in cents. Verified by spec test asserting cost_cents recorded.
-**AC12.** Persona YAML schema validation rejects malformed YAML at boot. Verified.
+**AC1.** `POST /v1/ai/pet/:id/speak` on standard SKU returns text ≤ 80 chars + sentiment + animation_hint. Verified. **AC2.** Same endpoint on kids SKU returns 403 `ai.kids.forbidden`. Verified. **AC3.** Cost cap (30 calls/pet/day) — 31st call falls back to scripted. Verified. **AC4.** Player cost cap (100/day) — 101st call falls back. Verified. **AC5.** Cache hit returns response without LLM call (assert via spy). Verified. **AC6.** Claude latency > 3s OR 5xx → Gemini fallback. Verified with mocked adapters. **AC7.** Content-safety block → scripted fallback + `ai.persona.safety_blocked` event. Verified. **AC8.** Event memory rotates at 21st event. Verified. **AC9.** User-supplied free-form text in body is rejected. Verified. **AC10.** Sentiment→animation mapping correct. Verified. **AC11.** Daily spend dashboard captures cost in cents. Verified by spec test asserting cost_cents recorded. **AC12.** Persona YAML schema validation rejects malformed YAML at boot. Verified.
 
 ---
 
@@ -297,9 +286,7 @@ export class CostCapService {
 
 ## §7 — Dependencies
 
-**External:** Anthropic Claude Haiku API; Google Gemini Flash API; Redis.
-**Internal:** TASK-PET-002 (stage in prompt), TASK-PET-003 (stats in prompt), TASK-AI-002 (content safety gate), TASK-INFRA-002 (Colyseus events feed event-memory), TASK-INFRA-003 (Supabase persistence), TASK-LEGAL-001 (SKU gate).
-**Blocks:** TASK-VIRAL-002 (Daily Drama uses persona), TASK-VIRAL-003 (generative pet), TASK-AI-003 (personality v2).
+**External:** Anthropic Claude Haiku API; Google Gemini Flash API; Redis. **Internal:** TASK-PET-002 (stage in prompt), TASK-PET-003 (stats in prompt), TASK-AI-002 (content safety gate), TASK-INFRA-002 (Colyseus events feed event-memory), TASK-INFRA-003 (Supabase persistence), TASK-LEGAL-001 (SKU gate). **Blocks:** TASK-VIRAL-002 (Daily Drama uses persona), TASK-VIRAL-003 (generative pet), TASK-AI-003 (personality v2).
 
 ---
 

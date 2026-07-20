@@ -131,18 +131,7 @@ grant select on public.dpo_pets_cross_tenant to dpo;
 
 ## §4 — Acceptance criteria
 
-**AC1.** Every table has tenant_id (CI lint). Verified.
-**AC2.** RLS policies use current_setting. Verified.
-**AC3.** Cross-tenant SELECT returns 0 rows. Verified.
-**AC4.** Tenant context set per request. Verified.
-**AC5.** Colyseus cross-tenant join rejected. Verified.
-**AC6.** Per-tenant rate-limit independent. Verified.
-**AC7.** Bans scoped to tenant. Verified.
-**AC8.** DPO can audit cross-tenant. Verified.
-**AC9.** Per-tenant Storage isolated. Verified.
-**AC10.** Per-tenant analytics workspace. Verified.
-**AC11.** Pet cross-tenant move forbidden without DPO. Verified.
-**AC12.** SLA monitoring per tenant. Verified.
+**AC1.** Every table has tenant_id (CI lint). Verified. **AC2.** RLS policies use current_setting. Verified. **AC3.** Cross-tenant SELECT returns 0 rows. Verified. **AC4.** Tenant context set per request. Verified. **AC5.** Colyseus cross-tenant join rejected. Verified. **AC6.** Per-tenant rate-limit independent. Verified. **AC7.** Bans scoped to tenant. Verified. **AC8.** DPO can audit cross-tenant. Verified. **AC9.** Per-tenant Storage isolated. Verified. **AC10.** Per-tenant analytics workspace. Verified. **AC11.** Pet cross-tenant move forbidden without DPO. Verified. **AC12.** SLA monitoring per tenant. Verified.
 
 ---
 
@@ -191,9 +180,7 @@ export class TenantIsolatorService {
 
 ## §7 — Dependencies
 
-**External:** Postgres RLS; Sentry per-tag dashboards.
-**Internal:** TASK-INFRA-002 (Colyseus), TASK-INFRA-003 (RLS), TASK-OBS-002 (anti-cheat), TASK-B2B-001 (manifest).
-**Blocks:** TASK-B2B-004 (Techcombank), TASK-B2B-005 (Viettel).
+**External:** Postgres RLS; Sentry per-tag dashboards. **Internal:** TASK-INFRA-002 (Colyseus), TASK-INFRA-003 (RLS), TASK-OBS-002 (anti-cheat), TASK-B2B-001 (manifest). **Blocks:** TASK-B2B-004 (Techcombank), TASK-B2B-005 (Viettel).
 
 ---
 

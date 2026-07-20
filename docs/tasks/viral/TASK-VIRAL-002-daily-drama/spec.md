@@ -175,18 +175,7 @@ create policy "drama self" on public.daily_dramas for select using (owner_id = a
 
 ## §4 — Acceptance criteria
 
-**AC1.** First daily call returns drama; second same-day returns 204. Verified.
-**AC2.** Drama 48h unclaimed expiry. Verified.
-**AC3.** Template selection deterministic given pet+date. Verified.
-**AC4.** Stat-lowest weight applied. Verified.
-**AC5.** Standard SKU uses LLM punchline (when AI budget available). Verified.
-**AC6.** Kids SKU uses scripted only. Verified.
-**AC7.** Egg/grandma pets ineligible. Verified.
-**AC8.** Co-parent can claim drama. Verified.
-**AC9.** Share invokes TASK-VIRAL-001. Verified.
-**AC10.** Kids SKU share button hidden. Verified.
-**AC11.** Content safety check on LLM output. Verified.
-**AC12.** Tenant-themed templates override. Verified.
+**AC1.** First daily call returns drama; second same-day returns 204. Verified. **AC2.** Drama 48h unclaimed expiry. Verified. **AC3.** Template selection deterministic given pet+date. Verified. **AC4.** Stat-lowest weight applied. Verified. **AC5.** Standard SKU uses LLM punchline (when AI budget available). Verified. **AC6.** Kids SKU uses scripted only. Verified. **AC7.** Egg/grandma pets ineligible. Verified. **AC8.** Co-parent can claim drama. Verified. **AC9.** Share invokes TASK-VIRAL-001. Verified. **AC10.** Kids SKU share button hidden. Verified. **AC11.** Content safety check on LLM output. Verified. **AC12.** Tenant-themed templates override. Verified.
 
 ---
 
@@ -237,9 +226,7 @@ export const DRAMA_TEMPLATES: DramaTemplate[] = [
 
 ## §7 — Dependencies
 
-**External:** None new.
-**Internal:** TASK-AI-001 (LLM punchline), TASK-AI-002 (kids fallback + safety), TASK-VIRAL-001 (share clip), TASK-PET-002 (stage gate), TASK-PET-003 (stat profile).
-**Blocks:** none.
+**External:** None new. **Internal:** TASK-AI-001 (LLM punchline), TASK-AI-002 (kids fallback + safety), TASK-VIRAL-001 (share clip), TASK-PET-002 (stage gate), TASK-PET-003 (stat profile). **Blocks:** none.
 
 ---
 

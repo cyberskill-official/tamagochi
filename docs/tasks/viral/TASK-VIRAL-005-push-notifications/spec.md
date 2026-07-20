@@ -207,18 +207,7 @@ create table public.push_audit (
 
 ## §4 — Acceptance criteria
 
-**AC1.** Push delivery via FCM (Android) + APNs (iOS) works. Verified by mocked adapters.
-**AC2.** Sleep-hour 22:00-07:00 standard SKU pushes deferred to wake. Verified by fake-clock.
-**AC3.** Kids SKU 20:00-08:00. Verified.
-**AC4.** Engagement category blocked for under-13. Verified.
-**AC5.** Frequency cap 3/day standard, 1/day kids. Verified.
-**AC6.** Per-category opt-in respected. Verified.
-**AC7.** Marketing default OFF. Verified.
-**AC8.** Localised copy fetched. Verified.
-**AC9.** Token invalidation on app uninstall. Verified by FCM/APNs webhook test.
-**AC10.** Deep link kids in-app only. Verified.
-**AC11.** Idempotent dedupe. Verified.
-**AC12.** Cross-tenant push blocked. Verified.
+**AC1.** Push delivery via FCM (Android) + APNs (iOS) works. Verified by mocked adapters. **AC2.** Sleep-hour 22:00-07:00 standard SKU pushes deferred to wake. Verified by fake-clock. **AC3.** Kids SKU 20:00-08:00. Verified. **AC4.** Engagement category blocked for under-13. Verified. **AC5.** Frequency cap 3/day standard, 1/day kids. Verified. **AC6.** Per-category opt-in respected. Verified. **AC7.** Marketing default OFF. Verified. **AC8.** Localised copy fetched. Verified. **AC9.** Token invalidation on app uninstall. Verified by FCM/APNs webhook test. **AC10.** Deep link kids in-app only. Verified. **AC11.** Idempotent dedupe. Verified. **AC12.** Cross-tenant push blocked. Verified.
 
 ---
 
@@ -268,9 +257,7 @@ export class SleepHourService {
 
 ## §7 — Dependencies
 
-**External:** FCM, APNs, IANA tz database.
-**Internal:** TASK-CARE-005 streak notifications, TASK-LEGAL-001 COPPA restrictions, TASK-AUTH-001 region, TASK-SUB-002 parental disable.
-**Blocks:** none.
+**External:** FCM, APNs, IANA tz database. **Internal:** TASK-CARE-005 streak notifications, TASK-LEGAL-001 COPPA restrictions, TASK-AUTH-001 region, TASK-SUB-002 parental disable. **Blocks:** none.
 
 ---
 

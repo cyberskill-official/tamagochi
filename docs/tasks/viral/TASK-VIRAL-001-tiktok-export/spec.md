@@ -173,18 +173,7 @@ export class ShareTrackingController {
 
 ## §4 — Acceptance criteria
 
-**AC1.** Export produces 1080×1920 H.264 MP4 with watermark embedded. Verified by ffprobe inspection.
-**AC2.** Default duration 6s; AR uses 15s. Verified.
-**AC3.** Kids SKU has no Share button visible. Verified by Playwright.
-**AC4.** Share button invokes OS share sheet on iOS + Android. Verified by Detox.
-**AC5.** Prefilled hashtag localised correctly. Verified across EN + VI builds.
-**AC6.** Share link created server-side returns ULID. Verified.
-**AC7.** Share link click increments `click_count`. Verified.
-**AC8.** Trending audio metadata embedded. Verified by ffprobe.
-**AC9.** Export latency ≤ 3s on baseline emulator. Verified.
-**AC10.** No automated post path exists in code. Verified by grep for "post_to_tiktok" etc.
-**AC11.** Share tracking retention 90 days. Verified by retention policy migration.
-**AC12.** Caption length validation 280 chars. Verified.
+**AC1.** Export produces 1080×1920 H.264 MP4 with watermark embedded. Verified by ffprobe inspection. **AC2.** Default duration 6s; AR uses 15s. Verified. **AC3.** Kids SKU has no Share button visible. Verified by Playwright. **AC4.** Share button invokes OS share sheet on iOS + Android. Verified by Detox. **AC5.** Prefilled hashtag localised correctly. Verified across EN + VI builds. **AC6.** Share link created server-side returns ULID. Verified. **AC7.** Share link click increments `click_count`. Verified. **AC8.** Trending audio metadata embedded. Verified by ffprobe. **AC9.** Export latency ≤ 3s on baseline emulator. Verified. **AC10.** No automated post path exists in code. Verified by grep for "post_to_tiktok" etc. **AC11.** Share tracking retention 90 days. Verified by retention policy migration. **AC12.** Caption length validation 280 chars. Verified.
 
 ---
 
@@ -232,9 +221,7 @@ describe('TASK-VIRAL-001 — exporter', () => {
 
 ## §7 — Dependencies
 
-**External:** iOS UIActivityViewController; Android Intent.ACTION_SEND; AVAssetWriter / MediaCodec.
-**Internal:** TASK-AR-001 (provides input video URI), TASK-PET-002 (evolution share moment), TASK-LEGAL-003 (kids gate), TASK-I18N-001 (locale).
-**Blocks:** TASK-VIRAL-002 (Daily Drama share), TASK-VIRAL-003 (generative pet share), TASK-SOCIAL-004 (wedding share).
+**External:** iOS UIActivityViewController; Android Intent.ACTION_SEND; AVAssetWriter / MediaCodec. **Internal:** TASK-AR-001 (provides input video URI), TASK-PET-002 (evolution share moment), TASK-LEGAL-003 (kids gate), TASK-I18N-001 (locale). **Blocks:** TASK-VIRAL-002 (Daily Drama share), TASK-VIRAL-003 (generative pet share), TASK-SOCIAL-004 (wedding share).
 
 ---
 

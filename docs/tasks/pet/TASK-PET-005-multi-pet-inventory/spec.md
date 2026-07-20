@@ -216,18 +216,7 @@ create trigger trg_slot_quota after insert or update of status on public.pets
 
 ## §4 — Acceptance criteria
 
-**AC1.** Free-tier player with 0 active pets has `slot_limit=3, remaining=3`. Verified.
-**AC2.** Free-tier player with 3 active pets hits 402 on 4th hatch. Verified.
-**AC3.** Pet+ stub player can have 10 active pets. Verified.
-**AC4.** Grandma pet does NOT count against slot. Verified.
-**AC5.** Downgrade from Pet+ with 7 pets does NOT auto-delete; player blocked from hatching until count drops. Verified.
-**AC6.** Trigger rejects bypassing 10 cap at DB layer. Verified by direct SQL test.
-**AC7.** `GET /v1/pets/roster` returns grouped by status. Verified.
-**AC8.** Roster query P95 ≤ 200ms with seeded 10-pet roster. Verified.
-**AC9.** Multi-device `roster.changed` broadcast fires on hatch. Verified.
-**AC10.** Non-FOMO upgrade prompt copy verified by content lint.
-**AC11.** Migration script idempotent + handles 0/1/2/3 pet starting states. Verified.
-**AC12.** Cross-tenant pet not visible in roster. Verified.
+**AC1.** Free-tier player with 0 active pets has `slot_limit=3, remaining=3`. Verified. **AC2.** Free-tier player with 3 active pets hits 402 on 4th hatch. Verified. **AC3.** Pet+ stub player can have 10 active pets. Verified. **AC4.** Grandma pet does NOT count against slot. Verified. **AC5.** Downgrade from Pet+ with 7 pets does NOT auto-delete; player blocked from hatching until count drops. Verified. **AC6.** Trigger rejects bypassing 10 cap at DB layer. Verified by direct SQL test. **AC7.** `GET /v1/pets/roster` returns grouped by status. Verified. **AC8.** Roster query P95 ≤ 200ms with seeded 10-pet roster. Verified. **AC9.** Multi-device `roster.changed` broadcast fires on hatch. Verified. **AC10.** Non-FOMO upgrade prompt copy verified by content lint. **AC11.** Migration script idempotent + handles 0/1/2/3 pet starting states. Verified. **AC12.** Cross-tenant pet not visible in roster. Verified.
 
 ---
 
@@ -284,9 +273,7 @@ export class PetRosterUi extends Component {
 
 ## §7 — Dependencies
 
-**External:** none new.
-**Internal:** TASK-PET-001 (pets table), TASK-PET-003 (status field), TASK-SUB-001 (entitlement — stubbed here), TASK-INFRA-002 (broadcast), TASK-INFRA-003 (Postgres + RLS + tenant).
-**Blocks:** TASK-PET-006 (5 species hatching), TASK-PET-007 (breeding offspring slot check), TASK-SOCIAL-003 (trade slot check).
+**External:** none new. **Internal:** TASK-PET-001 (pets table), TASK-PET-003 (status field), TASK-SUB-001 (entitlement — stubbed here), TASK-INFRA-002 (broadcast), TASK-INFRA-003 (Postgres + RLS + tenant). **Blocks:** TASK-PET-006 (5 species hatching), TASK-PET-007 (breeding offspring slot check), TASK-SOCIAL-003 (trade slot check).
 
 ---
 

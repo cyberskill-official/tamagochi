@@ -230,18 +230,7 @@ create table public.forgiveness_token_usage (
 
 ## §4 — Acceptance criteria
 
-**AC1.** First activity records streak=1. Verified.
-**AC2.** Activity on consecutive days advances streak. Verified.
-**AC3.** Missed day with tokens available → forgiveness token consumed, streak preserved. Verified.
-**AC4.** Missed day with 0 tokens → streak resets to 0 with friendly copy. Verified.
-**AC5.** Token monthly reset on 1st (local). Verified.
-**AC6.** Pet+ subscriber starts month with 4 tokens (entitlement integration; stub at P1). Verified.
-**AC7.** Milestone (7 / 30 / 100 / 365 days) triggers reward (Coins + badge + bonus tokens). Verified.
-**AC8.** Cozy Hour scheduled by Mixpanel flag. Verified.
-**AC9.** Cozy Hour applies double-Coins multiplier (stubbed at P1). Verified.
-**AC10.** No FOMO copy in i18n bundles. Verified by content lint.
-**AC11.** No streak leaderboard surface on kids SKU. Verified.
-**AC12.** `GET /v1/streak/me` returns full state. Verified.
+**AC1.** First activity records streak=1. Verified. **AC2.** Activity on consecutive days advances streak. Verified. **AC3.** Missed day with tokens available → forgiveness token consumed, streak preserved. Verified. **AC4.** Missed day with 0 tokens → streak resets to 0 with friendly copy. Verified. **AC5.** Token monthly reset on 1st (local). Verified. **AC6.** Pet+ subscriber starts month with 4 tokens (entitlement integration; stub at P1). Verified. **AC7.** Milestone (7 / 30 / 100 / 365 days) triggers reward (Coins + badge + bonus tokens). Verified. **AC8.** Cozy Hour scheduled by Mixpanel flag. Verified. **AC9.** Cozy Hour applies double-Coins multiplier (stubbed at P1). Verified. **AC10.** No FOMO copy in i18n bundles. Verified by content lint. **AC11.** No streak leaderboard surface on kids SKU. Verified. **AC12.** `GET /v1/streak/me` returns full state. Verified.
 
 ---
 
@@ -305,9 +294,7 @@ export class CozyHourService {
 
 ## §7 — Dependencies
 
-**External:** Resend (notification), Mixpanel feature flag service.
-**Internal:** TASK-CARE-001/002/003/004 (recordActivity called from care handlers), TASK-PET-003 (stat-decay halving during Cozy Hour), TASK-OBS-001 (analytics), TASK-SUB-001 (Pet+ entitlement, P3), TASK-LEGAL-001 (kid-appropriate copy review by DPO).
-**Blocks:** TASK-VIRAL-004 (battle pass uses streak data), TASK-VIRAL-005 (push notification rules use streak state).
+**External:** Resend (notification), Mixpanel feature flag service. **Internal:** TASK-CARE-001/002/003/004 (recordActivity called from care handlers), TASK-PET-003 (stat-decay halving during Cozy Hour), TASK-OBS-001 (analytics), TASK-SUB-001 (Pet+ entitlement, P3), TASK-LEGAL-001 (kid-appropriate copy review by DPO). **Blocks:** TASK-VIRAL-004 (battle pass uses streak data), TASK-VIRAL-005 (push notification rules use streak state).
 
 ---
 

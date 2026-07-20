@@ -1,12 +1,6 @@
 # TASK-SOCIAL-002 Fresh Zero-Touch Audit
 
-**Derived state:** done
-**Reason:** Deliverables, unit tests, targeted task contract, E2E, and QA checks passed.
-**Attempts:** 1
-**Deliverables checked:** 13
-**Missing deliverables:** 0
-**Scaffold deliverables:** 0
-**External production gate:** none
+**Derived state:** done **Reason:** Deliverables, unit tests, targeted task contract, E2E, and QA checks passed. **Attempts:** 1 **Deliverables checked:** 13 **Missing deliverables:** 0 **Scaffold deliverables:** 0 **External production gate:** none
 
 ## Raw Terminal Results
 
@@ -147,4 +141,3 @@ QA check passed: README, PRD, SRS, social schedule, 53 test-case mappings, 3 uni
 
 exit_code=0
 ```
-
